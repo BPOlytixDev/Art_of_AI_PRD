@@ -35,6 +35,7 @@ Production source and reproducible PDF renderer for the 6 × 9 in KDP paperback 
 - The production format is 6 × 9 in, black and white on white paper, with no interior bleed.
 - Cover spine width is calculated from the rendered interior page count using the KDP black-and-white white-paper factor.
 - The Contents page is generated from the final heading structure so later manuscript parts cannot silently be omitted.
+- Interior page numbers are printed in the bottom margin, and Contents references are remapped from the final rendered PDF.
 
 ## Product
 

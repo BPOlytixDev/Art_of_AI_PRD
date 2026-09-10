@@ -1,0 +1,1 @@
+- [Chromium PDF pagination](chromium-pdf-pagination.md) — use print margin boxes for reliable page numbers and derive Contents references from the final PDF.

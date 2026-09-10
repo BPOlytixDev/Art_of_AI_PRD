@@ -8,6 +8,8 @@ This folder contains the reproducible source and output files for the KDP paperb
 - Interior: black and white on white paper
 - Interior bleed: none
 - Interior margins: 0.65 in top, 0.68 in bottom, 0.72 in binding gutter, 0.56 in outer edge
+- Page numbers: centered in the bottom margin on every interior PDF page
+- Contents: rendered with dot leaders and page references derived from the final PDF pagination
 - Cover: full wrap, modern editorial direction, 0.125 in bleed
 - Source of truth: the Markdown files in `source/`
 
@@ -26,9 +28,10 @@ The script:
 1. Reads all `source/manuscript_part*.md` files in numeric order.
 2. Generates the interior HTML and prints it to PDF with Chromium.
 3. Pads the interior to an even page count when needed.
-4. Calculates the KDP black-and-white white-paper spine width from the final page count.
-5. Generates a full-wrap cover PDF with the correct spread dimensions.
-6. Writes production metadata and source SHA-256 hashes.
+4. Re-renders the Contents until its page references match the final chapter and appendix starts.
+5. Calculates the KDP black-and-white white-paper spine width from the final page count.
+6. Generates a full-wrap cover PDF with the correct spread dimensions.
+7. Writes production metadata and source SHA-256 hashes.
 
 ## Outputs
 

@@ -209,13 +209,12 @@ function contentsPageMap(pdfPath) {
     const headingPage = ["intro", "part", "chapter", "appendix"].includes(entry.kind)
       ? rawPageTexts.findIndex((rawPage, index) => {
           if (index + 1 < bodyStartPage) return false;
-          const topLines = rawPage
+          const pageLines = rawPage
             .split(/\r?\n/)
             .map((line) => line.trim())
             .filter(Boolean)
-            .slice(0, 5)
-            .join(" ");
-          return compactPdfText(topLines).includes(compactPdfText(entry.label));
+            .map(compactPdfText);
+          return pageLines.includes(compactPdfText(entry.label));
         }) + 1
       : 0;
     const page =
