@@ -1,0 +1,46 @@
+{
+  "title": "The Art of AI",
+  "subtitle": "How to Get Better Results From Every AI Conversation",
+  "author": "Mitesh Maharaj",
+  "series": "The Art of AI",
+  "seriesNumber": 1,
+  "edition": "First edition",
+  "publicationYear": 2026,
+  "language": "en",
+  "trimSizeInches": {
+    "width": 6,
+    "height": 9
+  },
+  "interior": {
+    "color": "black-and-white",
+    "paper": "white",
+    "bleed": false
+  },
+  "cover": {
+    "style": "modern editorial",
+    "bleed": 0.125,
+    "spineWidthInches": 0.3018
+  },
+  "pageCount": 134,
+  "isbn": null,
+  "kdpBarcode": "reserved-for-KDP-or-publisher-supplied-ISBN",
+  "sourceFiles": [
+    "manuscript_part1_1789036104062.md",
+    "manuscript_part2_1789036104061.md",
+    "manuscript_part3_1789036104060.md",
+    "manuscript_part4_partVI_appendices_1789037161102.md"
+  ],
+  "sourceSha256": {
+    "manuscript_part1_1789036104062.md": "68e94fe4405b42df3cca5dab7e969357a56c7143f6951268969d6c15a0e95827",
+    "manuscript_part2_1789036104061.md": "53f1a154906b41e5869d768f25181ba82b84f06a9e99409979884b595581d92b",
+    "manuscript_part3_1789036104060.md": "e1e3266a2e6d8e42bbf188d163c0cfe564b2c4ec25bbbc205e23f9c4568bd449",
+    "manuscript_part4_partVI_appendices_1789037161102.md": "e61fff0b9961dc414f1394bc8b5a87735151370008b6c5a8203f391174da8f10"
+  },
+  "outputs": {
+    "interiorPdf": "output/the-art-of-ai-book-1-interior.pdf",
+    "fullWrapCoverPdf": "output/the-art-of-ai-book-1-full-wrap-cover.pdf",
+    "metadataJson": "output/the-art-of-ai-book-1-metadata.json"
+  },
+  "contentsNote": "The production contents list is generated from the supplied headings so Appendices D and E are included.",
+  "generatedAt": "2026-09-10T10:49:36.139Z"
+}

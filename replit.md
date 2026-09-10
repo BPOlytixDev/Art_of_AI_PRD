@@ -1,6 +1,6 @@
-# [Project name]
+# The Art of AI — Book 1
 
-_Replace the heading above with the project's name, and this line with one sentence describing what this app does for users._
+Production source and reproducible PDF renderer for the 6 × 9 in KDP paperback edition of *The Art of AI — Book 1* by Mitesh Maharaj.
 
 ## Run & Operate
 
@@ -10,6 +10,7 @@ _Replace the heading above with the project's name, and this line with one sente
 - `pnpm --filter @workspace/api-spec run codegen` — regenerate API hooks and Zod schemas from the OpenAPI spec
 - `pnpm --filter @workspace/db run push` — push DB schema changes (dev only)
 - Required env: `DATABASE_URL` — Postgres connection string
+- `pnpm run build:book` — render the interior PDF, calculate the final page count, and render the full-wrap cover PDF
 
 ## Stack
 
@@ -22,23 +23,32 @@ _Replace the heading above with the project's name, and this line with one sente
 
 ## Where things live
 
-_Populate as you build — short repo map plus pointers to the source-of-truth file for DB schema, API contracts, theme files, etc._
+- `book-production/source/` — source Markdown manuscript parts; do not edit the generated PDFs directly
+- `book-production/src/build-book.mjs` — end-to-end renderer and KDP cover-spine calculation
+- `book-production/src/markdown.mjs` — Markdown-to-print HTML conversion
+- `book-production/src/style.css` — print typography and layout system
+- `book-production/output/` — generated interior PDF, full-wrap cover PDF, and production metadata JSON
 
 ## Architecture decisions
 
-_Populate as you build — non-obvious choices a reader couldn't infer from the code (3-5 bullets)._
+- The Markdown manuscript is the source of truth; the renderer adds only layout, navigation, and visual treatment.
+- The production format is 6 × 9 in, black and white on white paper, with no interior bleed.
+- Cover spine width is calculated from the rendered interior page count using the KDP black-and-white white-paper factor.
+- The Contents page is generated from the final heading structure so later manuscript parts cannot silently be omitted.
 
 ## Product
 
-_Describe the high-level user-facing capabilities of this app once they exist._
+The repository produces the publication-ready files for a practical nonfiction book on prompts, context, workflows, verification, and responsible AI use.
 
 ## User preferences
 
-_Populate as you build — explicit user instructions worth remembering across sessions._
+- Do not deviate from the manuscript; do not add invented content to the book or cover copy.
+- Prioritize a high-quality, editorial design over generic AI styling.
 
 ## Gotchas
 
-_Populate as you build — sharp edges, "always run X before Y" rules._
+- Rebuild after any manuscript change so the interior page count and cover spine stay synchronized.
+- ISBN and barcode placement still need publisher/KDP confirmation before upload.
 
 ## Pointers
 

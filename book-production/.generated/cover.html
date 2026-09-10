@@ -1,0 +1,481 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>The Art of AI — Book 1</title>
+  <meta name="author" content="Mitesh Maharaj">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>@page {
+  size: 6in 9in;
+  margin: 0;
+}
+
+:root {
+  color-scheme: light;
+  --ink: #202124;
+  --muted: #66625c;
+  --rule: #d8d1c6;
+  --wash: #f3f0e9;
+  --accent: #9d3427;
+  --accent-dark: #6f241c;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  background: #fff;
+  color: var(--ink);
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 10.2pt;
+  line-height: 1.46;
+  -webkit-print-color-adjust: exact;
+  print-color-adjust: exact;
+}
+
+body {
+  width: 6in;
+}
+
+.book {
+  width: 6in;
+  background: white;
+}
+
+.front-matter-page {
+  min-height: 9in;
+  padding: 0.78in 0.78in 0.68in 0.85in;
+  break-after: page;
+  position: relative;
+}
+
+.title-page {
+  display: flex;
+  min-height: 9in;
+  flex-direction: column;
+  justify-content: center;
+  padding: 0.85in 0.78in 0.7in 0.85in;
+}
+
+.title-page::before {
+  content: "";
+  display: block;
+  width: 0.52in;
+  height: 0.09in;
+  margin-bottom: 0.55in;
+  background: var(--accent);
+}
+
+.eyebrow,
+.series-line,
+.part-heading,
+.label-heading,
+.workflow-heading {
+  font-family: Arial, Helvetica, sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 0.11em;
+}
+
+.eyebrow {
+  margin: 0 0 0.22in;
+  color: var(--muted);
+  font-size: 8pt;
+  font-weight: 700;
+}
+
+.title-page h1 {
+  margin: 0;
+  max-width: 4.4in;
+  color: #181818;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 32pt;
+  line-height: 0.95;
+  letter-spacing: -0.045em;
+}
+
+.title-page .subtitle {
+  max-width: 4.25in;
+  margin: 0.28in 0 0;
+  color: var(--accent-dark);
+  font-size: 15pt;
+  line-height: 1.18;
+}
+
+.title-page .deck {
+  max-width: 3.9in;
+  margin: 0.32in 0 0;
+  color: var(--muted);
+  font-size: 10.5pt;
+  line-height: 1.35;
+}
+
+.title-page .author {
+  margin: auto 0 0;
+  color: #181818;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 11pt;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.title-page .series-line {
+  margin-top: 0.1in;
+  color: var(--muted);
+  font-size: 7.5pt;
+  font-weight: 700;
+}
+
+.dedication-page {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.dedication-page p {
+  max-width: 3.4in;
+  margin: 0;
+  color: #4a4742;
+  font-size: 12pt;
+  font-style: italic;
+  line-height: 1.55;
+  text-align: center;
+}
+
+.copyright-page h2,
+.contents-page h2 {
+  margin: 0 0 0.28in;
+  color: var(--accent-dark);
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 13pt;
+  letter-spacing: 0.12em;
+  line-height: 1;
+  text-transform: uppercase;
+}
+
+.copyright-page p {
+  margin: 0 0 0.15in;
+  font-size: 8.8pt;
+  line-height: 1.42;
+}
+
+.copyright-page p:nth-last-child(-n + 2) {
+  color: var(--muted);
+  font-size: 8pt;
+}
+
+.contents-page ul {
+  margin: 0;
+  padding-left: 0;
+  list-style: none;
+}
+
+.contents-page li {
+  margin: 0.085in 0;
+  padding-left: 0.16in;
+  border-left: 0.025in solid var(--rule);
+  font-size: 8.7pt;
+  line-height: 1.25;
+}
+
+.contents-page li strong {
+  color: var(--accent-dark);
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 7.8pt;
+  letter-spacing: 0.02em;
+}
+
+.contents-page p {
+  margin: 0.12in 0 0.07in;
+  color: var(--accent-dark);
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 8pt;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.manuscript {
+  padding: 0.72in 0.76in 0.76in 0.86in;
+}
+
+.manuscript > h2.chapter-heading {
+  break-before: page;
+  margin-top: 0;
+  padding-top: 0.08in;
+}
+
+.manuscript > h1.part-heading {
+  break-before: page;
+  margin-top: 0;
+  padding-top: 0.35in;
+}
+
+.manuscript > h1:first-child,
+.manuscript > h2:first-child {
+  break-before: auto;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  break-after: avoid;
+  page-break-after: avoid;
+}
+
+h1.part-heading {
+  margin: 0 0 0.13in;
+  padding-bottom: 0.13in;
+  border-bottom: 0.018in solid var(--accent);
+  color: var(--accent-dark);
+  font-size: 10pt;
+  font-weight: 700;
+  line-height: 1;
+}
+
+h1.part-heading + h2 {
+  max-width: 4.8in;
+  margin: 0 0 0.28in;
+  color: #171717;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 25pt;
+  letter-spacing: -0.04em;
+  line-height: 0.98;
+}
+
+h2.chapter-heading {
+  margin: 0 0 0.09in;
+  color: var(--accent-dark);
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 9pt;
+  letter-spacing: 0.09em;
+  line-height: 1;
+  text-transform: uppercase;
+}
+
+h2:not(.chapter-heading) {
+  margin: 0.36in 0 0.14in;
+  color: #171717;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 18pt;
+  letter-spacing: -0.025em;
+  line-height: 1.05;
+}
+
+h3 {
+  margin: 0.28in 0 0.09in;
+  color: #272727;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 12pt;
+  letter-spacing: -0.012em;
+  line-height: 1.08;
+}
+
+h4.label-heading {
+  margin: 0.2in 0 0.06in;
+  color: var(--accent-dark);
+  font-size: 7.3pt;
+  font-weight: 700;
+  line-height: 1.15;
+}
+
+.workflow-heading {
+  margin-top: 0.38in;
+  padding-top: 0.12in;
+  border-top: 0.025in solid var(--accent);
+  color: var(--accent-dark);
+  font-size: 9.2pt;
+  font-weight: 700;
+  line-height: 1.1;
+}
+
+p {
+  margin: 0 0 0.12in;
+  orphans: 3;
+  widows: 3;
+}
+
+p.standfirst {
+  margin: 0.08in 0 0.18in;
+  color: #4f4b46;
+  font-size: 11pt;
+  font-style: italic;
+  line-height: 1.45;
+}
+
+strong {
+  font-weight: 700;
+}
+
+em {
+  color: #4b4741;
+}
+
+code {
+  padding: 0.01in 0.035in;
+  background: #eeeae3;
+  font-family: "Courier New", Courier, monospace;
+  font-size: 0.9em;
+}
+
+.prompt-block {
+  margin: 0.17in 0 0.19in;
+  padding: 0.17in 0.18in;
+  border-left: 0.045in solid var(--accent);
+  background: #f1eee8;
+  break-inside: avoid;
+  color: #242424;
+  font-family: "Courier New", Courier, monospace;
+  font-size: 7.7pt;
+  line-height: 1.42;
+  white-space: pre-wrap;
+}
+
+.callout {
+  margin: 0.2in 0;
+  padding: 0.14in 0.18in 0.11in;
+  border-top: 0.018in solid var(--accent);
+  border-bottom: 0.018in solid var(--rule);
+  background: #faf8f4;
+  break-inside: avoid;
+}
+
+.callout p:last-child {
+  margin-bottom: 0;
+}
+
+.callout p:first-child {
+  color: var(--accent-dark);
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 7.3pt;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.section-rule {
+  width: 0.42in;
+  height: 0.025in;
+  margin: 0.23in 0;
+  background: var(--rule);
+}
+
+ul,
+ol {
+  margin: 0.05in 0 0.17in;
+  padding-left: 0.27in;
+}
+
+li {
+  margin: 0 0 0.05in;
+  padding-left: 0.025in;
+}
+
+li::marker {
+  color: var(--accent);
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 700;
+}
+
+.table-wrap {
+  margin: 0.16in 0 0.2in;
+  overflow: hidden;
+  break-inside: avoid;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 8.2pt;
+  line-height: 1.28;
+}
+
+th {
+  padding: 0.08in 0.07in;
+  border-bottom: 0.025in solid var(--accent);
+  color: var(--accent-dark);
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 7.2pt;
+  letter-spacing: 0.05em;
+  text-align: left;
+  text-transform: uppercase;
+  vertical-align: bottom;
+}
+
+td {
+  padding: 0.07in;
+  border-bottom: 0.01in solid var(--rule);
+  vertical-align: top;
+}
+
+tr:last-child td {
+  border-bottom: 0;
+}
+
+.blank-page {
+  min-height: 9in;
+  break-after: page;
+}
+
+@media screen {
+  body {
+    margin: 0.35in auto;
+    box-shadow: 0 0 0.2in rgba(0, 0, 0, 0.15);
+  }
+}
+
+
+  .cover { position: relative; width: var(--cover-width); height: var(--cover-height); overflow: hidden; background: #efe9de; color: #1e2428; font-family: Arial, Helvetica, sans-serif; }
+  .cover-back, .cover-front { position: absolute; top: 0; height: var(--cover-height); overflow: hidden; }
+  .cover-back { left: 0; width: 6.125in; padding: 0.72in 0.72in 0.52in 0.72in; background: #efe9de; }
+  .cover-front { left: var(--front-x); width: 6.125in; background: #efe9de; }
+  .cover-spine { position: absolute; left: 6.125in; top: 0; width: var(--spine); height: var(--cover-height); background: #b43d2e; color: #efe9de; display: flex; align-items: center; justify-content: center; overflow: hidden; z-index: 3; }
+  .cover-spine span { transform: rotate(-90deg); white-space: nowrap; font-size: 8pt; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; }
+  .cover-art { position: absolute; inset: 0; width: 100%; height: 100%; }
+  .front-copy { position: absolute; inset: 0; display: flex; flex-direction: column; padding: 0.7in 0.62in 0.62in 0.62in; }
+  .front-series, .back-series { margin: 0; color: #b43d2e; font-size: 8pt; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; }
+  .front-copy h1 { margin: .22in 0 0; max-width: 4.6in; color: #1e2428; font-size: 35pt; letter-spacing: -.065em; line-height: .88; }
+  .front-subtitle { max-width: 3.8in; margin: .22in 0 0; color: #1e2428; font-family: Georgia, serif; font-size: 15pt; line-height: 1.05; }
+  .front-deck { max-width: 3.6in; margin: .18in 0 0; color: #544c44; font-family: Georgia, serif; font-size: 9.5pt; line-height: 1.25; }
+  .front-author { margin: auto 0 0; color: #efe9de; font-size: 9pt; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; }
+  .back-rule { width: .62in; height: .075in; margin-bottom: .42in; background: #b43d2e; }
+  .back-deck { max-width: 3.8in; margin: .3in 0 0; color: #1e2428; font-family: Georgia, serif; font-size: 15pt; line-height: 1.1; }
+  .back-note { max-width: 3.45in; margin-top: .22in; color: #544c44; font-family: Georgia, serif; font-size: 10pt; line-height: 1.32; }
+  .barcode-reserve { position: absolute; right: .52in; bottom: .45in; width: 1.5in; height: .9in; background: #fff; }
+  
+@page { size: 12.551768in 9.25in; margin: 0; }</style>
+</head>
+<body><main class="cover" style="--cover-width:12.551768in;--cover-height:9.25in;--front-x:6.426768in;--spine:0.30176800000000004in">
+    <div class="cover-back">
+      <div class="back-rule"></div>
+      <p class="back-series">The Art of AI — Book 1</p>
+      <p class="back-deck">A Practical Guide to Better Prompts, Better Context, and Better Workflows</p>
+      <div class="barcode-reserve" aria-label="Reserved barcode area"></div>
+    </div>
+    <div class="cover-spine"><span>The Art of AI · Mitesh Maharaj</span></div>
+    <div class="cover-front">
+      
+<svg class="cover-art" viewBox="0 0 1200 900" role="img" aria-label="Abstract editorial cover artwork">
+  <rect width="1200" height="900" fill="#efe9de"/>
+  <path d="M0 700 C210 570 240 160 520 210 C690 240 670 560 870 595 C1010 620 1070 510 1200 450 L1200 900 L0 900 Z" fill="#1e2428"/>
+  <path d="M0 600 C190 470 280 120 470 160 C620 190 660 445 820 485 C1000 530 1060 420 1200 350 L1200 415 C1040 495 1005 580 835 545 C640 505 610 245 465 220 C300 190 260 545 0 665 Z" fill="#b43d2e"/>
+  <circle cx="925" cy="220" r="88" fill="#b43d2e"/>
+  <circle cx="925" cy="220" r="34" fill="#efe9de"/>
+  <path d="M860 220h130M925 155v130" stroke="#1e2428" stroke-width="8"/>
+  <path d="M130 210h290M130 245h180" stroke="#1e2428" stroke-width="9" opacity=".72"/>
+</svg>
+      <div class="front-copy">
+        <p class="front-series">The Art of AI — Book 1</p>
+        <h1>The Art of AI</h1>
+        <p class="front-subtitle">How to Get Better Results From Every AI Conversation</p>
+        <p class="front-deck">A Practical Guide to Better Prompts, Better Context, and Better Workflows</p>
+        <p class="front-author">Mitesh Maharaj</p>
+      </div>
+    </div>
+  </main></body>
+</html>
