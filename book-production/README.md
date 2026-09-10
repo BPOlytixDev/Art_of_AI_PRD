@@ -7,6 +7,7 @@ This folder contains the reproducible source and output files for the KDP paperb
 - Trim: 6 × 9 in
 - Interior: black and white on white paper
 - Interior bleed: none
+- Interior margins: 0.65 in top, 0.68 in bottom, 0.72 in binding gutter, 0.56 in outer edge
 - Cover: full wrap, modern editorial direction, 0.125 in bleed
 - Source of truth: the Markdown files in `source/`
 

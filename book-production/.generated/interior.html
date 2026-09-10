@@ -7,7 +7,17 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <style>@page {
   size: 6in 9in;
-  margin: 0;
+  margin: 0.65in 0.56in 0.68in 0.56in;
+}
+
+@page:left {
+  margin-left: 0.56in;
+  margin-right: 0.72in;
+}
+
+@page:right {
+  margin-left: 0.72in;
+  margin-right: 0.56in;
 }
 
 :root {
@@ -38,27 +48,27 @@ body {
 }
 
 body {
-  width: 6in;
+  width: auto;
 }
 
 .book {
-  width: 6in;
+  width: auto;
   background: white;
 }
 
 .front-matter-page {
-  min-height: 9in;
-  padding: 0.78in 0.78in 0.68in 0.85in;
+  min-height: calc(9in - 1.33in);
+  padding: 0.18in 0.1in 0.18in 0.1in;
   break-after: page;
   position: relative;
 }
 
 .title-page {
   display: flex;
-  min-height: 9in;
+  min-height: calc(9in - 1.33in);
   flex-direction: column;
   justify-content: center;
-  padding: 0.85in 0.78in 0.7in 0.85in;
+  padding: 0.18in 0.1in 0.18in 0.1in;
 }
 
 .title-page::before {
@@ -200,7 +210,7 @@ body {
 }
 
 .manuscript {
-  padding: 0.72in 0.76in 0.76in 0.86in;
+  padding: 0;
 }
 
 .manuscript > h2.chapter-heading {
@@ -418,7 +428,7 @@ tr:last-child td {
 }
 
 .blank-page {
-  min-height: 9in;
+  min-height: calc(9in - 1.33in);
   break-after: page;
 }
 
@@ -430,7 +440,7 @@ tr:last-child td {
 }
 
 
-@page { size: 6in 9in; margin: 0; }</style>
+@page { size: 6in 9in; }</style>
 </head>
 <body><main class="book">
     <section class="front-matter-page title-page">

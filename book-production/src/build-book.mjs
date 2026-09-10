@@ -104,6 +104,10 @@ function renderFrontMatter() {
 }
 
 function htmlDocument(body, pageSize = "6in 9in", extraCss = "") {
+  const pageRule =
+    pageSize === "6in 9in"
+      ? `@page { size: ${pageSize}; }`
+      : `@page { size: ${pageSize}; margin: 0; }`;
   return `<!doctype html>
 <html lang="en">
 <head>
@@ -111,7 +115,7 @@ function htmlDocument(body, pageSize = "6in 9in", extraCss = "") {
   <title>${title} — Book 1</title>
   <meta name="author" content="${author}">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <style>${css}\n${extraCss}\n@page { size: ${pageSize}; margin: 0; }</style>
+  <style>${css}\n${extraCss}\n${pageRule}</style>
 </head>
 <body>${body}</body>
 </html>`;
@@ -238,7 +242,17 @@ const metadata = {
   publicationYear: 2026,
   language: "en",
   trimSizeInches: { width: 6, height: 9 },
-  interior: { color: "black-and-white", paper: "white", bleed: false },
+  interior: {
+    color: "black-and-white",
+    paper: "white",
+    bleed: false,
+    marginsInches: {
+      top: 0.65,
+      bottom: 0.68,
+      inside: 0.72,
+      outside: 0.56,
+    },
+  },
   cover: { style: "modern editorial", bleed: 0.125, spineWidthInches: Number(spineWidth.toFixed(4)) },
   pageCount,
   isbn: null,

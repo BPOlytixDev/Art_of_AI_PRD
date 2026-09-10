@@ -14,14 +14,20 @@
   "interior": {
     "color": "black-and-white",
     "paper": "white",
-    "bleed": false
+    "bleed": false,
+    "marginsInches": {
+      "top": 0.65,
+      "bottom": 0.68,
+      "inside": 0.72,
+      "outside": 0.56
+    }
   },
   "cover": {
     "style": "modern editorial",
     "bleed": 0.125,
-    "spineWidthInches": 0.3018
+    "spineWidthInches": 0.3964
   },
-  "pageCount": 134,
+  "pageCount": 176,
   "isbn": null,
   "kdpBarcode": "reserved-for-KDP-or-publisher-supplied-ISBN",
   "sourceFiles": [
@@ -42,5 +48,5 @@
     "metadataJson": "output/the-art-of-ai-book-1-metadata.json"
   },
   "contentsNote": "The production contents list is generated from the supplied headings so Appendices D and E are included.",
-  "generatedAt": "2026-09-10T10:49:36.139Z"
+  "generatedAt": "2026-09-10T10:55:04.818Z"
 }
