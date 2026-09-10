@@ -57,27 +57,200 @@ const bodyParts = [
 ];
 const bodyLines = bodyParts.flat();
 
-function contentsFromHeadings() {
+function contentsEntries() {
   const entries = [];
-  let currentPart = "";
+  let currentPart = null;
+  let pendingSection = null;
+
   for (const line of bodyLines) {
     const part = line.match(/^# (PART [IVX]+|APPENDICES)$/i);
     if (part) {
-      currentPart = part[1];
-      entries.push(`<li><strong>${inlineMarkdown(currentPart)}</strong></li>`);
+      currentPart = {
+        kind: "part",
+        id: part[1].toLowerCase().replaceAll(" ", "-"),
+        label: part[1],
+        title: "",
+        searches: [part[1]],
+      };
+      entries.push(currentPart);
+      pendingSection = null;
       continue;
     }
+
     const levelTwo = line.match(/^## (.+)$/);
     if (levelTwo) {
-      entries.push(`<li>${inlineMarkdown(levelTwo[1])}</li>`);
+      const heading = levelTwo[1];
+      if (/^INTRODUCTION$/i.test(heading)) {
+        pendingSection = {
+          kind: "intro",
+          id: "introduction",
+          label: heading,
+          title: "",
+          searches: [heading],
+        };
+        entries.push(pendingSection);
+      } else if (/^Chapter \d+$/i.test(heading)) {
+        pendingSection = {
+          kind: "chapter",
+          id: heading.toLowerCase().replaceAll(" ", "-"),
+          label: heading,
+          title: "",
+          searches: [heading],
+        };
+        entries.push(pendingSection);
+      } else if (/^Appendix [A-E]$/i.test(heading)) {
+        pendingSection = {
+          kind: "appendix",
+          id: heading.toLowerCase().replaceAll(" ", "-"),
+          label: heading,
+          title: "",
+          searches: [heading],
+          children: [],
+        };
+        entries.push(pendingSection);
+      } else if (currentPart?.label !== "APPENDICES" && currentPart?.title === "") {
+        currentPart.title = heading;
+        currentPart.searches.push(heading);
+      } else if (currentPart?.label === "PART V") {
+        entries.push({ kind: "category", id: `category-${entries.length}`, label: heading });
+      } else {
+        entries.push({
+          kind: "section",
+          id: `section-${entries.length}`,
+          label: heading,
+          searches: [heading],
+        });
+      }
       continue;
     }
+
     const titleHeading = line.match(/^### (.+)$/);
-    if (titleHeading && (currentPart || /^### You Are Not Bad at AI$/.test(line))) {
-      entries.push(`<li class="contents-subentry">${inlineMarkdown(titleHeading[1])}</li>`);
+    if (!titleHeading) continue;
+    const heading = titleHeading[1];
+
+    if (pendingSection && !pendingSection.title) {
+      pendingSection.title = heading;
+      pendingSection.searches.push(heading);
+      continue;
+    }
+
+    if (currentPart?.label === "APPENDICES" && /^E\d+\s+—/.test(heading)) {
+      const appendix = entries.find((entry) => entry.id === "appendix-e");
+      appendix?.children.push({
+        kind: "appendix-child",
+        id: heading.toLowerCase().replaceAll(" ", "-"),
+        label: heading,
+        searches: [heading],
+      });
+      continue;
+    }
+
+    if (currentPart?.label === "PART V" && /^W\d+\s+—/.test(heading)) {
+      entries.push({
+        kind: "workflow",
+        id: heading.toLowerCase().replaceAll(" ", "-"),
+        label: heading,
+        searches: [heading],
+      });
     }
   }
-  return entries.join("\n");
+
+  return entries;
+}
+
+function normalizePdfText(value) {
+  return value
+    .replace(/\u00ad/g, "")
+    .replace(/[“”]/g, '"')
+    .replace(/[‘’]/g, "'")
+    .replace(/\s+/g, " ")
+    .trim()
+    .toLowerCase();
+}
+
+function compactPdfText(value) {
+  return normalizePdfText(value).replace(/[^a-z0-9]+/g, "");
+}
+
+function pageTextsFromPdf(pdfPath) {
+  const text = execFileSync("pdftotext", ["-layout", pdfPath, "-"], { encoding: "utf8" });
+  return text.split("\f");
+}
+
+function pageForSearches(pageTexts, searches, startPage) {
+  const normalizedSearches = searches.map(normalizePdfText).filter(Boolean);
+  const compactSearches = searches.map(compactPdfText).filter(Boolean);
+  for (let index = startPage - 1; index < pageTexts.length; index += 1) {
+    const page = pageTexts[index];
+    const compactPage = compactPdfText(page);
+    if (
+      normalizedSearches.some((search) => page.includes(search)) ||
+      compactSearches.some((search) => compactPage.includes(search))
+    ) {
+      return index + 1;
+    }
+  }
+  return null;
+}
+
+function contentsPageMap(pdfPath) {
+  const rawPageTexts = pageTextsFromPdf(pdfPath);
+  const pageTexts = rawPageTexts.map(normalizePdfText);
+  const introductionPages = pageTexts
+    .map((page, index) => (page.includes("introduction") ? index + 1 : null))
+    .filter(Boolean);
+  const introTitlePages = pageTexts
+    .map((page, index) => (page.includes("you are not bad at ai") ? index + 1 : null))
+    .filter(Boolean);
+  const bodyStartPage = introTitlePages.at(-1) ?? introductionPages.at(-1) ?? 5;
+  const pageMap = new Map();
+
+  for (const entry of contentsEntries()) {
+    const headingPage = ["intro", "part", "chapter", "appendix"].includes(entry.kind)
+      ? rawPageTexts.findIndex((rawPage, index) => {
+          if (index + 1 < bodyStartPage) return false;
+          const topLines = rawPage
+            .split(/\r?\n/)
+            .map((line) => line.trim())
+            .filter(Boolean)
+            .slice(0, 5)
+            .join(" ");
+          return compactPdfText(topLines).includes(compactPdfText(entry.label));
+        }) + 1
+      : 0;
+    const page =
+      headingPage > 0
+        ? headingPage
+        : pageForSearches(pageTexts, entry.searches ?? [], bodyStartPage);
+    if (page) pageMap.set(entry.id, page);
+    for (const child of entry.children ?? []) {
+      const childPage = pageForSearches(pageTexts, child.searches, bodyStartPage);
+      if (childPage) pageMap.set(child.id, childPage);
+    }
+  }
+  return pageMap;
+}
+
+function contentsRow(entry, pageMap) {
+  const page = pageMap?.get(entry.id);
+  const pageLabel = page ? String(page) : "00";
+  const title = entry.title ? `${entry.label} — ${entry.title}` : entry.label;
+  const className = `contents-entry contents-${entry.kind}`;
+  return `<li class="${className}"><span class="contents-entry-title">${inlineMarkdown(title)}</span><span class="contents-leader" aria-hidden="true"></span><span class="contents-page-number">${pageLabel}</span></li>`;
+}
+
+function contentsFromHeadings(pageMap) {
+  return contentsEntries()
+    .map((entry) => {
+      if (entry.kind === "category") {
+        return `<li class="contents-category">${inlineMarkdown(entry.label)}</li>`;
+      }
+      const children = (entry.children ?? [])
+        .map((child) => contentsRow(child, pageMap))
+        .join("\n");
+      return `${contentsRow(entry, pageMap)}${children}`;
+    })
+    .join("\n");
 }
 
 function renderFrontMatter() {
@@ -98,7 +271,7 @@ function renderFrontMatter() {
     </section>
     <section class="front-matter-page contents-page">
       <h2>Contents</h2>
-      <ul>${contentsFromHeadings()}</ul>
+      <ul>${contentsFromHeadings(pageMap)}</ul>
     </section>
   `;
 }
@@ -107,7 +280,7 @@ function htmlDocument(body, pageSize = "6in 9in", extraCss = "") {
   const pageRule =
     pageSize === "6in 9in"
       ? `@page { size: ${pageSize}; }`
-      : `@page { size: ${pageSize}; margin: 0; }`;
+      : `@page { size: ${pageSize}; margin: 0; @bottom-center { content: none; } }`;
   return `<!doctype html>
 <html lang="en">
 <head>
@@ -121,12 +294,8 @@ function htmlDocument(body, pageSize = "6in 9in", extraCss = "") {
 </html>`;
 }
 
-const interiorHtml = htmlDocument(
-  `<main class="book">${renderFrontMatter()}<article class="manuscript">${renderMarkdown(bodyLines)}</article></main>`,
-);
 const interiorHtmlPath = join(generatedDir, "interior.html");
 const interiorPdfPath = join(outputDir, "the-art-of-ai-book-1-interior.pdf");
-await writeFile(interiorHtmlPath, interiorHtml);
 
 function printPdf(htmlPath, pdfPath) {
   execFileSync(
@@ -144,21 +313,40 @@ function printPdf(htmlPath, pdfPath) {
   );
 }
 
-printPdf(interiorHtmlPath, interiorPdfPath);
-
 function pdfPageCount(pdfPath) {
   const info = execFileSync("pdfinfo", [pdfPath], { encoding: "utf8" });
   return Number(info.match(/^Pages:\s+(\d+)/m)?.[1] ?? 0);
 }
 
-let pageCount = pdfPageCount(interiorPdfPath);
-if (pageCount % 2 !== 0) {
-  const paddedHtml = htmlDocument(
-    `<main class="book">${renderFrontMatter()}<article class="manuscript">${renderMarkdown(bodyLines)}</article><div class="blank-page" aria-hidden="true"></div></main>`,
+function buildInteriorHtml(pageMap, addBlankPage) {
+  const blankPage = addBlankPage ? '<div class="blank-page" aria-hidden="true"></div>' : "";
+  return htmlDocument(
+    `<div class="page-number" aria-hidden="true"></div><main class="book">${renderFrontMatter(pageMap)}<article class="manuscript">${renderMarkdown(bodyLines)}</article>${blankPage}</main>`,
   );
-  await writeFile(interiorHtmlPath, paddedHtml);
+}
+
+let pageMap = null;
+let pageCount = 0;
+for (let attempt = 0; attempt < 4; attempt += 1) {
+  const provisionalHtml = buildInteriorHtml(pageMap, false);
+  await writeFile(interiorHtmlPath, provisionalHtml);
   printPdf(interiorHtmlPath, interiorPdfPath);
   pageCount = pdfPageCount(interiorPdfPath);
+
+  if (pageCount % 2 !== 0) {
+    const paddedHtml = buildInteriorHtml(pageMap, true);
+    await writeFile(interiorHtmlPath, paddedHtml);
+    printPdf(interiorHtmlPath, interiorPdfPath);
+    pageCount = pdfPageCount(interiorPdfPath);
+  }
+
+  const nextPageMap = contentsPageMap(interiorPdfPath);
+  const sameMap =
+    pageMap &&
+    [...nextPageMap.entries()].length === [...pageMap.entries()].length &&
+    [...nextPageMap.entries()].every(([id, page]) => pageMap.get(id) === page);
+  pageMap = nextPageMap;
+  if (sameMap) break;
 }
 
 const bleed = 0.125;

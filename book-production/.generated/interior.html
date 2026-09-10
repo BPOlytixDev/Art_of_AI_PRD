@@ -8,6 +8,12 @@
   <style>@page {
   size: 6in 9in;
   margin: 0.65in 0.56in 0.68in 0.56in;
+  @bottom-center {
+    content: counter(page);
+    color: #66625c;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 8pt;
+  }
 }
 
 @page:left {
@@ -179,24 +185,76 @@ body {
 }
 
 .contents-page ul {
-  margin: 0;
+  margin: 0.02in 0 0;
   padding-left: 0;
   list-style: none;
 }
 
-.contents-page li {
-  margin: 0.085in 0;
-  padding-left: 0.16in;
-  border-left: 0.025in solid var(--rule);
-  font-size: 8.7pt;
-  line-height: 1.25;
+.contents-page li.contents-entry {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto auto;
+  column-gap: 0.07in;
+  align-items: baseline;
+  margin: 0 0 0.105in;
+  padding: 0;
+  font-size: 9.1pt;
+  line-height: 1.28;
+  break-inside: avoid;
 }
 
-.contents-page li strong {
+.contents-page li.contents-entry .contents-entry-title {
+  min-width: 0;
+}
+
+.contents-page li.contents-entry .contents-leader {
+  min-width: 0.08in;
+  align-self: end;
+  margin-bottom: 0.04em;
+  border-bottom: 0.01in dotted var(--rule);
+}
+
+.contents-page li.contents-entry .contents-page-number {
+  min-width: 0.22in;
+  color: var(--muted);
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 8.1pt;
+  text-align: right;
+}
+
+.contents-page li.contents-part {
+  margin: 0.18in 0 0.09in;
+  padding-top: 0.09in;
+  border-top: 0.018in solid var(--accent);
+}
+
+.contents-page li.contents-part:first-child {
+  margin-top: 0;
+}
+
+.contents-page li.contents-part .contents-entry-title {
   color: var(--accent-dark);
   font-family: Arial, Helvetica, sans-serif;
-  font-size: 7.8pt;
+  font-size: 8.2pt;
+  font-weight: 700;
   letter-spacing: 0.02em;
+  text-transform: uppercase;
+}
+
+.contents-page li.contents-intro .contents-entry-title,
+.contents-page li.contents-appendix .contents-entry-title {
+  font-weight: 700;
+}
+
+.contents-page li.contents-category {
+  margin: 0.11in 0 0.06in 0.12in;
+  padding: 0;
+  color: var(--accent-dark);
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 7.6pt;
+  font-weight: 700;
+  letter-spacing: 0.07em;
+  line-height: 1.1;
+  text-transform: uppercase;
 }
 
 .contents-page p {
@@ -439,10 +497,16 @@ tr:last-child td {
   }
 }
 
+@media print {
+  .page-number {
+    display: none;
+  }
+}
+
 
 @page { size: 6in 9in; }</style>
 </head>
-<body><main class="book">
+<body><div class="page-number" aria-hidden="true"></div><main class="book">
     <section class="front-matter-page title-page">
       <p class="eyebrow">The Art of AI — Book 1</p>
       <h1>The Art of AI</h1>
@@ -465,120 +529,83 @@ tr:last-child td {
     </section>
     <section class="front-matter-page contents-page">
       <h2>Contents</h2>
-      <ul><li>INTRODUCTION</li>
-<li class="contents-subentry">You Are Not Bad at AI</li>
-<li><strong>PART I</strong></li>
-<li>A Different Way to Think About AI</li>
-<li>Chapter 1</li>
-<li class="contents-subentry">Why AI Gives You Generic Answers (and How to Change That)</li>
-<li>Chapter 2</li>
-<li class="contents-subentry">The AI Interaction Stack — What Actually Determines Output Quality</li>
-<li>Chapter 3</li>
-<li class="contents-subentry">The 7 Questions — Your Portable AI Framework</li>
-<li>Chapter 4</li>
-<li class="contents-subentry">How to Talk to an AI (It's Not Google)</li>
-<li><strong>PART II</strong></li>
-<li>Build Better Interactions</li>
-<li>Chapter 5</li>
-<li class="contents-subentry">Give AI a Job, Not Just a Question</li>
-<li>Chapter 6</li>
-<li class="contents-subentry">Context Is Everything</li>
-<li>Chapter 7</li>
-<li class="contents-subentry">Instructions That Actually Work</li>
-<li>Chapter 8</li>
-<li class="contents-subentry">Examples Change Everything</li>
-<li>Chapter 9</li>
-<li class="contents-subentry">Control the Output</li>
-<li><strong>PART III</strong></li>
-<li>Build an AI Environment</li>
-<li>Chapter 10</li>
-<li class="contents-subentry">Stop Starting From Zero Every Time</li>
-<li>Chapter 11</li>
-<li class="contents-subentry">Projects and Persistent Instructions</li>
-<li>Chapter 12</li>
-<li class="contents-subentry">Files, Documents, and Source Material</li>
-<li>Chapter 13</li>
-<li class="contents-subentry">Tools — What AI Can Do Beyond Text</li>
-<li>Chapter 14</li>
-<li class="contents-subentry">The Memory Problem (and How to Work Around It)</li>
-<li>Chapter 15</li>
-<li class="contents-subentry">Building Your Personal AI Workspace</li>
-<li><strong>PART IV</strong></li>
-<li>From Prompts to Workflows</li>
-<li>Chapter 16</li>
-<li class="contents-subentry">When One Prompt Isn't Enough</li>
-<li>Chapter 17</li>
-<li class="contents-subentry">Breaking Tasks Into Steps</li>
-<li>Chapter 18</li>
-<li class="contents-subentry">Critique, Edit, and Improve</li>
-<li>Chapter 19</li>
-<li class="contents-subentry">Chains, Loops, and Handoffs</li>
-<li><strong>PART V</strong></li>
-<li>25 Real-World Workflows</li>
-<li>BUSINESS AND PROFESSIONAL</li>
-<li class="contents-subentry">W1 — Write and Improve a Professional Email</li>
-<li class="contents-subentry">W2 — Prepare for a Difficult Conversation</li>
-<li class="contents-subentry">W3 — Research a Topic for a Meeting</li>
-<li class="contents-subentry">W4 — Summarise a Long Document</li>
-<li class="contents-subentry">W5 — Draft a Project Proposal</li>
-<li class="contents-subentry">W6 — Write a Job Posting</li>
-<li class="contents-subentry">W7 — Prepare a Client Report</li>
-<li class="contents-subentry">W8 — Create a Meeting Agenda and Follow-Up</li>
-<li>MARKETING AND CONTENT</li>
-<li class="contents-subentry">W9 — Write a LinkedIn Post</li>
-<li class="contents-subentry">W10 — Draft a Blog Post from Notes</li>
-<li class="contents-subentry">W11 — Repurpose Content Across Formats</li>
-<li class="contents-subentry">W12 — Write Website Copy</li>
-<li>RESEARCH AND LEARNING</li>
-<li class="contents-subentry">W13 — Research a Topic You Know Nothing About</li>
-<li class="contents-subentry">W14 — Understand a Complex Document</li>
-<li class="contents-subentry">W15 — Compare Options Before a Decision</li>
-<li class="contents-subentry">W16 — Learn a New Skill Faster</li>
-<li>PERSONAL PRODUCTIVITY</li>
-<li class="contents-subentry">W17 — Plan a Project</li>
-<li class="contents-subentry">W18 — Process a Backlog of Tasks</li>
-<li class="contents-subentry">W19 — Draft a Difficult Personal Message</li>
-<li class="contents-subentry">W20 — Prepare for a Job Interview</li>
-<li>HOME AND LIFE</li>
-<li class="contents-subentry">W21 — Plan a Trip</li>
-<li class="contents-subentry">W22 — Understand a Contract or Legal Document</li>
-<li class="contents-subentry">W23 — Get a Second Opinion on a Health Question</li>
-<li>WRITING AND EDITING</li>
-<li class="contents-subentry">W24 — Edit and Improve Your Own Writing</li>
-<li class="contents-subentry">W25 — Turn Rough Notes into a Polished Document</li>
-<li><strong>PART VI</strong></li>
-<li>The AI User's Playbook</li>
-<li>Chapter 20</li>
-<li class="contents-subentry">How to Verify AI Output</li>
-<li>Chapter 21</li>
-<li class="contents-subentry">What AI Gets Wrong (Consistently)</li>
-<li>Chapter 22</li>
-<li class="contents-subentry">Calibrating Trust</li>
-<li>Chapter 23</li>
-<li class="contents-subentry">Building Your AI Habits</li>
-<li>Chapter 24</li>
-<li class="contents-subentry">Keeping Up Without Burning Out</li>
-<li><strong>APPENDICES</strong></li>
-<li>Appendix A</li>
-<li class="contents-subentry">The 7 Questions Quick Reference Card</li>
-<li>Appendix B</li>
-<li class="contents-subentry">The Before → Better → Best Worksheet</li>
-<li>Appendix C</li>
-<li class="contents-subentry">Verification Checklist</li>
-<li>Appendix D</li>
-<li class="contents-subentry">AI Use Cases by Profession</li>
-<li>Appendix E</li>
-<li class="contents-subentry">Product Notes — Platform-Specific Information</li>
-<li class="contents-subentry">E1 — Persistent Instructions and Custom Instructions</li>
-<li class="contents-subentry">E2 — Projects</li>
-<li class="contents-subentry">E3 — File and Document Upload</li>
-<li class="contents-subentry">E4 — Web Search</li>
-<li class="contents-subentry">E5 — Voice and Audio</li>
-<li class="contents-subentry">E6 — Memory</li>
-<li class="contents-subentry">E7 — Model differences (brief reference)</li>
-<li>A Note on What Comes Next</li></ul>
+      <ul><li class="contents-entry contents-intro"><span class="contents-entry-title">INTRODUCTION — You Are Not Bad at AI</span><span class="contents-leader" aria-hidden="true"></span><span class="contents-page-number">7</span></li>
+<li class="contents-entry contents-part"><span class="contents-entry-title">PART I — A Different Way to Think About AI</span><span class="contents-leader" aria-hidden="true"></span><span class="contents-page-number">7</span></li>
+<li class="contents-entry contents-chapter"><span class="contents-entry-title">Chapter 1 — Why AI Gives You Generic Answers (and How to Change That)</span><span class="contents-leader" aria-hidden="true"></span><span class="contents-page-number">10</span></li>
+<li class="contents-entry contents-chapter"><span class="contents-entry-title">Chapter 2 — The AI Interaction Stack — What Actually Determines Output Quality</span><span class="contents-leader" aria-hidden="true"></span><span class="contents-page-number">15</span></li>
+<li class="contents-entry contents-chapter"><span class="contents-entry-title">Chapter 3 — The 7 Questions — Your Portable AI Framework</span><span class="contents-leader" aria-hidden="true"></span><span class="contents-page-number">8</span></li>
+<li class="contents-entry contents-chapter"><span class="contents-entry-title">Chapter 4 — How to Talk to an AI (It's Not Google)</span><span class="contents-leader" aria-hidden="true"></span><span class="contents-page-number">27</span></li>
+<li class="contents-entry contents-part"><span class="contents-entry-title">PART II — Build Better Interactions</span><span class="contents-leader" aria-hidden="true"></span><span class="contents-page-number">7</span></li>
+<li class="contents-entry contents-chapter"><span class="contents-entry-title">Chapter 5 — Give AI a Job, Not Just a Question</span><span class="contents-leader" aria-hidden="true"></span><span class="contents-page-number">34</span></li>
+<li class="contents-entry contents-chapter"><span class="contents-entry-title">Chapter 6 — Context Is Everything</span><span class="contents-leader" aria-hidden="true"></span><span class="contents-page-number">39</span></li>
+<li class="contents-entry contents-chapter"><span class="contents-entry-title">Chapter 7 — Instructions That Actually Work</span><span class="contents-leader" aria-hidden="true"></span><span class="contents-page-number">20</span></li>
+<li class="contents-entry contents-chapter"><span class="contents-entry-title">Chapter 8 — Examples Change Everything</span><span class="contents-leader" aria-hidden="true"></span><span class="contents-page-number">49</span></li>
+<li class="contents-entry contents-chapter"><span class="contents-entry-title">Chapter 9 — Control the Output</span><span class="contents-leader" aria-hidden="true"></span><span class="contents-page-number">54</span></li>
+<li class="contents-entry contents-part"><span class="contents-entry-title">PART III — Build an AI Environment</span><span class="contents-leader" aria-hidden="true"></span><span class="contents-page-number">7</span></li>
+<li class="contents-entry contents-chapter"><span class="contents-entry-title">Chapter 10 — Stop Starting From Zero Every Time</span><span class="contents-leader" aria-hidden="true"></span><span class="contents-page-number">61</span></li>
+<li class="contents-entry contents-chapter"><span class="contents-entry-title">Chapter 11 — Projects and Persistent Instructions</span><span class="contents-leader" aria-hidden="true"></span><span class="contents-page-number">26</span></li>
+<li class="contents-entry contents-chapter"><span class="contents-entry-title">Chapter 12 — Files, Documents, and Source Material</span><span class="contents-leader" aria-hidden="true"></span><span class="contents-page-number">68</span></li>
+<li class="contents-entry contents-chapter"><span class="contents-entry-title">Chapter 13 — Tools — What AI Can Do Beyond Text</span><span class="contents-leader" aria-hidden="true"></span><span class="contents-page-number">72</span></li>
+<li class="contents-entry contents-chapter"><span class="contents-entry-title">Chapter 14 — The Memory Problem (and How to Work Around It)</span><span class="contents-leader" aria-hidden="true"></span><span class="contents-page-number">76</span></li>
+<li class="contents-entry contents-chapter"><span class="contents-entry-title">Chapter 15 — Building Your Personal AI Workspace</span><span class="contents-leader" aria-hidden="true"></span><span class="contents-page-number">80</span></li>
+<li class="contents-entry contents-part"><span class="contents-entry-title">PART IV — From Prompts to Workflows</span><span class="contents-leader" aria-hidden="true"></span><span class="contents-page-number">8</span></li>
+<li class="contents-entry contents-chapter"><span class="contents-entry-title">Chapter 16 — When One Prompt Isn't Enough</span><span class="contents-leader" aria-hidden="true"></span><span class="contents-page-number">85</span></li>
+<li class="contents-entry contents-chapter"><span class="contents-entry-title">Chapter 17 — Breaking Tasks Into Steps</span><span class="contents-leader" aria-hidden="true"></span><span class="contents-page-number">89</span></li>
+<li class="contents-entry contents-chapter"><span class="contents-entry-title">Chapter 18 — Critique, Edit, and Improve</span><span class="contents-leader" aria-hidden="true"></span><span class="contents-page-number">90</span></li>
+<li class="contents-entry contents-chapter"><span class="contents-entry-title">Chapter 19 — Chains, Loops, and Handoffs</span><span class="contents-leader" aria-hidden="true"></span><span class="contents-page-number">98</span></li>
+<li class="contents-entry contents-part"><span class="contents-entry-title">PART V — 25 Real-World Workflows</span><span class="contents-leader" aria-hidden="true"></span><span class="contents-page-number">8</span></li>
+<li class="contents-category">BUSINESS AND PROFESSIONAL</li>
+<li class="contents-entry contents-workflow"><span class="contents-entry-title">W1 — Write and Improve a Professional Email</span><span class="contents-leader" aria-hidden="true"></span><span class="contents-page-number">103</span></li>
+<li class="contents-entry contents-workflow"><span class="contents-entry-title">W2 — Prepare for a Difficult Conversation</span><span class="contents-leader" aria-hidden="true"></span><span class="contents-page-number">105</span></li>
+<li class="contents-entry contents-workflow"><span class="contents-entry-title">W3 — Research a Topic for a Meeting</span><span class="contents-leader" aria-hidden="true"></span><span class="contents-page-number">107</span></li>
+<li class="contents-entry contents-workflow"><span class="contents-entry-title">W4 — Summarise a Long Document</span><span class="contents-leader" aria-hidden="true"></span><span class="contents-page-number">108</span></li>
+<li class="contents-entry contents-workflow"><span class="contents-entry-title">W5 — Draft a Project Proposal</span><span class="contents-leader" aria-hidden="true"></span><span class="contents-page-number">110</span></li>
+<li class="contents-entry contents-workflow"><span class="contents-entry-title">W6 — Write a Job Posting</span><span class="contents-leader" aria-hidden="true"></span><span class="contents-page-number">112</span></li>
+<li class="contents-entry contents-workflow"><span class="contents-entry-title">W7 — Prepare a Client Report</span><span class="contents-leader" aria-hidden="true"></span><span class="contents-page-number">113</span></li>
+<li class="contents-entry contents-workflow"><span class="contents-entry-title">W8 — Create a Meeting Agenda and Follow-Up</span><span class="contents-leader" aria-hidden="true"></span><span class="contents-page-number">115</span></li>
+<li class="contents-category">MARKETING AND CONTENT</li>
+<li class="contents-entry contents-workflow"><span class="contents-entry-title">W9 — Write a LinkedIn Post</span><span class="contents-leader" aria-hidden="true"></span><span class="contents-page-number">117</span></li>
+<li class="contents-entry contents-workflow"><span class="contents-entry-title">W10 — Draft a Blog Post from Notes</span><span class="contents-leader" aria-hidden="true"></span><span class="contents-page-number">118</span></li>
+<li class="contents-entry contents-workflow"><span class="contents-entry-title">W11 — Repurpose Content Across Formats</span><span class="contents-leader" aria-hidden="true"></span><span class="contents-page-number">120</span></li>
+<li class="contents-entry contents-workflow"><span class="contents-entry-title">W12 — Write Website Copy</span><span class="contents-leader" aria-hidden="true"></span><span class="contents-page-number">121</span></li>
+<li class="contents-category">RESEARCH AND LEARNING</li>
+<li class="contents-entry contents-workflow"><span class="contents-entry-title">W13 — Research a Topic You Know Nothing About</span><span class="contents-leader" aria-hidden="true"></span><span class="contents-page-number">122</span></li>
+<li class="contents-entry contents-workflow"><span class="contents-entry-title">W14 — Understand a Complex Document</span><span class="contents-leader" aria-hidden="true"></span><span class="contents-page-number">124</span></li>
+<li class="contents-entry contents-workflow"><span class="contents-entry-title">W15 — Compare Options Before a Decision</span><span class="contents-leader" aria-hidden="true"></span><span class="contents-page-number">125</span></li>
+<li class="contents-entry contents-workflow"><span class="contents-entry-title">W16 — Learn a New Skill Faster</span><span class="contents-leader" aria-hidden="true"></span><span class="contents-page-number">126</span></li>
+<li class="contents-category">PERSONAL PRODUCTIVITY</li>
+<li class="contents-entry contents-workflow"><span class="contents-entry-title">W17 — Plan a Project</span><span class="contents-leader" aria-hidden="true"></span><span class="contents-page-number">128</span></li>
+<li class="contents-entry contents-workflow"><span class="contents-entry-title">W18 — Process a Backlog of Tasks</span><span class="contents-leader" aria-hidden="true"></span><span class="contents-page-number">129</span></li>
+<li class="contents-entry contents-workflow"><span class="contents-entry-title">W19 — Draft a Difficult Personal Message</span><span class="contents-leader" aria-hidden="true"></span><span class="contents-page-number">131</span></li>
+<li class="contents-entry contents-workflow"><span class="contents-entry-title">W20 — Prepare for a Job Interview</span><span class="contents-leader" aria-hidden="true"></span><span class="contents-page-number">132</span></li>
+<li class="contents-category">HOME AND LIFE</li>
+<li class="contents-entry contents-workflow"><span class="contents-entry-title">W21 — Plan a Trip</span><span class="contents-leader" aria-hidden="true"></span><span class="contents-page-number">134</span></li>
+<li class="contents-entry contents-workflow"><span class="contents-entry-title">W22 — Understand a Contract or Legal Document</span><span class="contents-leader" aria-hidden="true"></span><span class="contents-page-number">135</span></li>
+<li class="contents-entry contents-workflow"><span class="contents-entry-title">W23 — Get a Second Opinion on a Health Question</span><span class="contents-leader" aria-hidden="true"></span><span class="contents-page-number">136</span></li>
+<li class="contents-category">WRITING AND EDITING</li>
+<li class="contents-entry contents-workflow"><span class="contents-entry-title">W24 — Edit and Improve Your Own Writing</span><span class="contents-leader" aria-hidden="true"></span><span class="contents-page-number">138</span></li>
+<li class="contents-entry contents-workflow"><span class="contents-entry-title">W25 — Turn Rough Notes into a Polished Document</span><span class="contents-leader" aria-hidden="true"></span><span class="contents-page-number">139</span></li>
+<li class="contents-entry contents-part"><span class="contents-entry-title">PART VI — The AI User's Playbook</span><span class="contents-leader" aria-hidden="true"></span><span class="contents-page-number">8</span></li>
+<li class="contents-entry contents-chapter"><span class="contents-entry-title">Chapter 20 — How to Verify AI Output</span><span class="contents-leader" aria-hidden="true"></span><span class="contents-page-number">31</span></li>
+<li class="contents-entry contents-chapter"><span class="contents-entry-title">Chapter 21 — What AI Gets Wrong (Consistently)</span><span class="contents-leader" aria-hidden="true"></span><span class="contents-page-number">150</span></li>
+<li class="contents-entry contents-chapter"><span class="contents-entry-title">Chapter 22 — Calibrating Trust</span><span class="contents-leader" aria-hidden="true"></span><span class="contents-page-number">155</span></li>
+<li class="contents-entry contents-chapter"><span class="contents-entry-title">Chapter 23 — Building Your AI Habits</span><span class="contents-leader" aria-hidden="true"></span><span class="contents-page-number">160</span></li>
+<li class="contents-entry contents-chapter"><span class="contents-entry-title">Chapter 24 — Keeping Up Without Burning Out</span><span class="contents-leader" aria-hidden="true"></span><span class="contents-page-number">165</span></li>
+<li class="contents-entry contents-part"><span class="contents-entry-title">APPENDICES</span><span class="contents-leader" aria-hidden="true"></span><span class="contents-page-number">109</span></li>
+<li class="contents-entry contents-appendix"><span class="contents-entry-title">Appendix A — The 7 Questions Quick Reference Card</span><span class="contents-leader" aria-hidden="true"></span><span class="contents-page-number">25</span></li>
+<li class="contents-entry contents-appendix"><span class="contents-entry-title">Appendix B — The Before → Better → Best Worksheet</span><span class="contents-leader" aria-hidden="true"></span><span class="contents-page-number">169</span></li>
+<li class="contents-entry contents-appendix"><span class="contents-entry-title">Appendix C — Verification Checklist</span><span class="contents-leader" aria-hidden="true"></span><span class="contents-page-number">169</span></li>
+<li class="contents-entry contents-appendix"><span class="contents-entry-title">Appendix D — AI Use Cases by Profession</span><span class="contents-leader" aria-hidden="true"></span><span class="contents-page-number">177</span></li>
+<li class="contents-entry contents-appendix"><span class="contents-entry-title">Appendix E — Product Notes — Platform-Specific Information</span><span class="contents-leader" aria-hidden="true"></span><span class="contents-page-number">74</span></li><li class="contents-entry contents-appendix-child"><span class="contents-entry-title">E1 — Persistent Instructions and Custom Instructions</span><span class="contents-leader" aria-hidden="true"></span><span class="contents-page-number">182</span></li>
+<li class="contents-entry contents-appendix-child"><span class="contents-entry-title">E2 — Projects</span><span class="contents-leader" aria-hidden="true"></span><span class="contents-page-number">183</span></li>
+<li class="contents-entry contents-appendix-child"><span class="contents-entry-title">E3 — File and Document Upload</span><span class="contents-leader" aria-hidden="true"></span><span class="contents-page-number">184</span></li>
+<li class="contents-entry contents-appendix-child"><span class="contents-entry-title">E4 — Web Search</span><span class="contents-leader" aria-hidden="true"></span><span class="contents-page-number">185</span></li>
+<li class="contents-entry contents-appendix-child"><span class="contents-entry-title">E5 — Voice and Audio</span><span class="contents-leader" aria-hidden="true"></span><span class="contents-page-number">186</span></li>
+<li class="contents-entry contents-appendix-child"><span class="contents-entry-title">E6 — Memory</span><span class="contents-leader" aria-hidden="true"></span><span class="contents-page-number">187</span></li>
+<li class="contents-entry contents-appendix-child"><span class="contents-entry-title">E7 — Model differences (brief reference)</span><span class="contents-leader" aria-hidden="true"></span><span class="contents-page-number">188</span></li>
+<li class="contents-entry contents-section"><span class="contents-entry-title">A Note on What Comes Next</span><span class="contents-leader" aria-hidden="true"></span><span class="contents-page-number">189</span></li></ul>
     </section>
-  <article class="manuscript"><h2 class="chapter-heading>INTRODUCTION</h2>
+  <article class="manuscript"><h2 class="chapter-heading">INTRODUCTION</h2>
 <h3>You Are Not Bad at AI</h3>
 <p>There is a particular kind of frustration that comes from using a tool that is supposed to be extraordinary and finding it merely annoying.</p>
 <p>You type a question into ChatGPT or Claude or Gemini. You wait. You read the response. It is, somehow, both very long and not quite what you wanted. It is technically correct in the way that a weather forecast saying &quot;conditions may vary&quot; is technically correct. It is not wrong. It is not useful. You close the tab and do the task yourself.</p>
@@ -600,11 +627,11 @@ tr:last-child td {
 <p>Once you understand that, everything else follows.</p>
 <p>Let's begin.</p>
 <div class="section-rule" aria-hidden="true"></div>
-<h1 class="part-heading>PART I</h1>
+<h1 class="part-heading">PART I</h1>
 <h2>A Different Way to Think About AI</h2>
 <p class="standfirst"><em>The four chapters in this part build the mental model that makes everything else in the book work. They are short by design. If you understand what this part is teaching, you will already be getting noticeably better results before you reach Part II.</em></p>
 <div class="section-rule" aria-hidden="true"></div>
-<h2 class="chapter-heading>Chapter 1</h2>
+<h2 class="chapter-heading">Chapter 1</h2>
 <h3>Why AI Gives You Generic Answers (and How to Change That)</h3>
 <h4 class="label-heading"><strong>The problem everyone has but nobody explains</strong></h4>
 <p>Ask ten people what frustrates them about AI and you will hear the same answers:</p>
@@ -664,7 +691,7 @@ tr:last-child td {
 <aside class="callout "><h4 class="label-heading"><strong>WATCH OUT</strong></h4>
 <p>More detail is not always better. Adding irrelevant information doesn't improve output — it can dilute it. The skill is not writing longer prompts; it's identifying what AI actually needs to know to do this specific task well. You'll develop this judgment through the exercises in Part II.</p></aside>
 <div class="section-rule" aria-hidden="true"></div>
-<h2 class="chapter-heading>Chapter 2</h2>
+<h2 class="chapter-heading">Chapter 2</h2>
 <h3>The AI Interaction Stack — What Actually Determines Output Quality</h3>
 <h4 class="label-heading"><strong>Introducing a map</strong></h4>
 <p>When a piece of work goes wrong, it helps to know where in the process the problem occurred. A cake that doesn't rise failed at a different point than a cake that doesn't taste right. The diagnosis matters.</p>
@@ -754,7 +781,7 @@ tr:last-child td {
 <aside class="callout "><h4 class="label-heading"><strong>WATCH OUT</strong></h4>
 <p>The stack is a mental model, not a procedure. It does not mean you should spend twenty minutes preparing every AI prompt. A quick factual question needs layers 1 and 3, briefly addressed, and that's correct. The stack is useful when you are planning a complex task or diagnosing a poor result — not as mandatory overhead for every interaction.</p></aside>
 <div class="section-rule" aria-hidden="true"></div>
-<h2 class="chapter-heading>Chapter 3</h2>
+<h2 class="chapter-heading">Chapter 3</h2>
 <h3>The 7 Questions — Your Portable AI Framework</h3>
 <h4 class="label-heading"><strong>A framework you can carry in your head</strong></h4>
 <p>The AI Interaction Stack gives you a complete map. But maps aren't always what you need. Sometimes you need a quick checklist — something you can run through in sixty seconds before an important interaction.</p>
@@ -819,7 +846,7 @@ tr:last-child td {
 <aside class="callout "><h4 class="label-heading"><strong>WATCH OUT</strong></h4>
 <p>The 7 Questions are a preparation tool, not a rigid protocol. If you find yourself spending ten minutes answering the questions before a thirty-second task, you are misapplying the framework. Use judgment about scale. The questions exist to catch the gaps that consistently cause problems — not to add overhead to interactions that don't need it.</p></aside>
 <div class="section-rule" aria-hidden="true"></div>
-<h2 class="chapter-heading>Chapter 4</h2>
+<h2 class="chapter-heading">Chapter 4</h2>
 <h3>How to Talk to an AI (It's Not Google)</h3>
 <h4 class="label-heading"><strong>The search engine habit</strong></h4>
 <p>Most people's first instinct when using AI is to type a search query. Short. Keyword-heavy. Punchy.</p>
@@ -898,11 +925,11 @@ I should verify independently.</code></pre>
 <ul><li>Generic inputs produce generic outputs because AI fills gaps with averages</li><li>The AI Interaction Stack identifies the eleven layers that determine output quality</li><li>The 7 Questions give you a portable framework for activating the right layers</li><li>AI is a generation tool, not a retrieval tool — and conversation is the natural mode of interaction</li></ul>
 <p>Part II takes each element of a strong interaction and develops it into a skill.</p>
 <div class="section-rule" aria-hidden="true"></div>
-<h1 class="part-heading>PART II</h1>
+<h1 class="part-heading">PART II</h1>
 <h2>Build Better Interactions</h2>
 <p class="standfirst"><em>The five chapters in Part II develop the core skills that apply to every AI interaction you will ever have. Each chapter takes one element of the AI Interaction Stack and teaches you to use it deliberately. Together they account for the majority of the quality difference between people who get good results from AI and people who don't.</em></p>
 <div class="section-rule" aria-hidden="true"></div>
-<h2 class="chapter-heading>Chapter 5</h2>
+<h2 class="chapter-heading">Chapter 5</h2>
 <h3>Give AI a Job, Not Just a Question</h3>
 <h4 class="label-heading"><strong>The question versus the job</strong></h4>
 <p>There is a meaningful difference between asking AI a question and giving AI a job.</p>
@@ -954,7 +981,7 @@ I should verify independently.</code></pre>
 <aside class="callout "><h4 class="label-heading"><strong>WATCH OUT</strong></h4>
 <p>Assigning an expert role does not make AI's output more accurate. It may make it more fluently confident — which, as noted in Chapter 4, can be more convincing and equally wrong. Role framing improves format, voice, and structure. It does not improve factual accuracy. Verify subject-matter claims regardless of the role you assigned.</p></aside>
 <div class="section-rule" aria-hidden="true"></div>
-<h2 class="chapter-heading>Chapter 6</h2>
+<h2 class="chapter-heading">Chapter 6</h2>
 <h3>Context Is Everything</h3>
 <h4 class="label-heading"><strong>The context gap</strong></h4>
 <p>Here is the uncomfortable truth about most AI interactions: AI starts every conversation knowing nothing about you, your work, your organisation, your history with this client, your professional constraints, or the specific situation you are dealing with.</p>
@@ -1011,7 +1038,7 @@ I should verify independently.</code></pre>
 <aside class="callout "><h4 class="label-heading"><strong>WATCH OUT</strong></h4>
 <p>Providing irrelevant context can dilute the output as much as providing too little. If you paste a twenty-page document when AI only needs three paragraphs, you risk getting a response that is unfocused across all twenty pages. Context should be relevant to this task. If in doubt, introduce the document and tell AI which section matters: <em>&quot;I'm attaching our full company handbook, but for this task only the redundancy policy section (pages 14-17) is relevant.&quot;</em></p></aside>
 <div class="section-rule" aria-hidden="true"></div>
-<h2 class="chapter-heading>Chapter 7</h2>
+<h2 class="chapter-heading">Chapter 7</h2>
 <h3>Instructions That Actually Work</h3>
 <h4 class="label-heading"><strong>Why most instructions are too vague</strong></h4>
 <p>Instructions are where most users put most of their effort — and still get disappointing results. The reason is usually not that the instructions are wrong. It is that they are underspecified.</p>
@@ -1068,7 +1095,7 @@ I should verify independently.</code></pre>
 <aside class="callout "><h4 class="label-heading"><strong>WATCH OUT</strong></h4>
 <p>Instructions that conflict produce confused output. If you say &quot;be brief and comprehensive,&quot; &quot;be formal but conversational,&quot; or &quot;be specific but applicable to all situations,&quot; AI will attempt to honour all instructions simultaneously and usually succeed at none of them. When instructions conflict, decide which takes priority and say so: <em>&quot;Be brief — prioritise this over comprehensiveness if necessary.&quot;</em></p></aside>
 <div class="section-rule" aria-hidden="true"></div>
-<h2 class="chapter-heading>Chapter 8</h2>
+<h2 class="chapter-heading">Chapter 8</h2>
 <h3>Examples Change Everything</h3>
 <h4 class="label-heading"><strong>Showing versus telling</strong></h4>
 <p>There are two ways to specify what you want from AI. You can describe it, or you can demonstrate it.</p>
@@ -1127,7 +1154,7 @@ I should verify independently.</code></pre>
 <aside class="callout "><h4 class="label-heading"><strong>WATCH OUT</strong></h4>
 <p>Examples are most effective for style and format. They are less effective for accuracy. Providing an example of a data table you want does not teach AI to fill it with correct data. You are specifying format, not content. Verify content as normal regardless of how good the format looks.</p></aside>
 <div class="section-rule" aria-hidden="true"></div>
-<h2 class="chapter-heading>Chapter 9</h2>
+<h2 class="chapter-heading">Chapter 9</h2>
 <h3>Control the Output</h3>
 <h4 class="label-heading"><strong>The output problem</strong></h4>
 <p>You have provided excellent context, a clear job description, specific instructions, and a strong example. AI produces a response.</p>
@@ -1195,11 +1222,11 @@ I should verify independently.</code></pre>
 <p>You can now build an effective AI interaction from the ground up:</p>
 <ul><li>Give AI a clear role and a specific job, not a vague question</li><li>Provide the context that closes the gap between what AI assumes and what you actually need</li><li>Write instructions specific enough that a capable person could follow them without asking clarifying questions</li><li>Show AI examples when style, format, or tone matter</li><li>Specify the output in terms of length, format, structure, tone, and audience</li></ul>
 <p>Part III moves from individual interactions to the environment in which they happen — and the significant gains available from building that environment deliberately.</p>
-<h1 class="part-heading>PART III</h1>
+<h1 class="part-heading">PART III</h1>
 <h2>Build an AI Environment</h2>
 <p class="standfirst"><em>Most people use AI as if it were a calculator: pick it up, use it once, put it down. Every new calculation starts from zero. Part III shows you how to change that — building a persistent environment where AI carries your context forward, knows your situation, and becomes genuinely more useful the more you invest in setting it up.</em></p>
 <div class="section-rule" aria-hidden="true"></div>
-<h2 class="chapter-heading>Chapter 10</h2>
+<h2 class="chapter-heading">Chapter 10</h2>
 <h3>Stop Starting From Zero Every Time</h3>
 <h4 class="label-heading"><strong>The repetition problem</strong></h4>
 <p>If you use AI more than occasionally, you have encountered this situation: you are about to start a new conversation and you find yourself typing, again, the things AI should already know.</p>
@@ -1234,7 +1261,7 @@ I should verify independently.</code></pre>
 <aside class="callout "><h4 class="label-heading"><strong>WATCH OUT</strong></h4>
 <p>Persistent context can become stale. If your role changes, a client's preferences shift, or a project evolves, the standing context needs to be updated. Review your projects and persistent instructions every few months. Outdated context is better than no context, but not by much — AI will confidently apply the wrong assumptions.</p></aside>
 <div class="section-rule" aria-hidden="true"></div>
-<h2 class="chapter-heading>Chapter 11</h2>
+<h2 class="chapter-heading">Chapter 11</h2>
 <h3>Projects and Persistent Instructions</h3>
 <h4 class="label-heading"><strong>Setting up persistent instructions</strong></h4>
 <p>Persistent instructions are the highest-leverage single investment most regular AI users can make. Writing them well takes thirty minutes. The return on those thirty minutes compounds with every subsequent AI conversation.</p>
@@ -1302,7 +1329,7 @@ What I always want AI to do:
 <ul><li>A template for the document type</li><li>Style and tone specifications</li><li>An example of a completed version you were happy with</li><li>Any standard information that appears in every edition (team structure, project status, recurring context)</li></ul>
 <p>Each week or month, you open the project, paste in the new content or data, and ask AI to produce the new version to the same standard as the example.</p>
 <div class="section-rule" aria-hidden="true"></div>
-<h2 class="chapter-heading>Chapter 12</h2>
+<h2 class="chapter-heading">Chapter 12</h2>
 <h3>Files, Documents, and Source Material</h3>
 <h4 class="label-heading"><strong>Why you should give AI documents, not descriptions</strong></h4>
 <p>There is a consistent pattern in how people under-use AI: they describe the document instead of providing it.</p>
@@ -1349,7 +1376,7 @@ What I always want AI to do:
 <aside class="callout "><h4 class="label-heading"><strong>PRO TIP</strong></h4>
 <p>When uploading a long document, help AI navigate it. Tell AI which sections are most relevant: &quot;The contract is 22 pages. For this task, the most relevant sections are the Termination clause (section 8) and the Indemnities (section 14). You can skim the rest unless it's relevant.&quot; This focuses AI's attention and tends to produce more accurate extraction from the sections that matter.</p></aside>
 <div class="section-rule" aria-hidden="true"></div>
-<h2 class="chapter-heading>Chapter 13</h2>
+<h2 class="chapter-heading">Chapter 13</h2>
 <h3>Tools — What AI Can Do Beyond Text</h3>
 <h4 class="label-heading"><strong>AI is not just a text generator</strong></h4>
 <p>The AI tools available in late 2026 can do considerably more than generate text. Understanding which capabilities exist — and which don't — determines what you can ask for, what you need to verify externally, and where AI can genuinely replace tasks that previously required separate tools.</p>
@@ -1398,7 +1425,7 @@ What I always want AI to do:
 <aside class="callout "><h4 class="label-heading"><strong>WATCH OUT</strong></h4>
 <p>Tool availability changes. A capability that exists today may be modified, restricted, or removed. A capability that doesn't exist today may arrive. The best practice is to verify current capabilities on the platform's own documentation before designing a workflow around a specific tool feature. This book covers capabilities as of September 2026; check Appendix E and the platform's help centre for current status.</p></aside>
 <div class="section-rule" aria-hidden="true"></div>
-<h2 class="chapter-heading>Chapter 14</h2>
+<h2 class="chapter-heading">Chapter 14</h2>
 <h3>The Memory Problem (and How to Work Around It)</h3>
 <h4 class="label-heading"><strong>Why AI doesn't remember you</strong></h4>
 <p>Every time you start a new conversation with an AI tool, you are meeting a stranger who happens to be very knowledgeable. They have never met you before. They do not know your name, your job, your preferences, your previous conversations, or anything about your situation.</p>
@@ -1451,7 +1478,7 @@ Things I always want AI to do:
 <ul><li>One-off tasks</li><li>Information that changes frequently</li><li>Details specific to a single conversation</li></ul>
 <p>The test: if you would type this information again in your next AI session, persist it. If it's specific to today's task and you won't need it tomorrow, don't bother.</p>
 <div class="section-rule" aria-hidden="true"></div>
-<h2 class="chapter-heading>Chapter 15</h2>
+<h2 class="chapter-heading">Chapter 15</h2>
 <h3>Building Your Personal AI Workspace</h3>
 <h4 class="label-heading"><strong>From ad hoc to systematic</strong></h4>
 <p>Part III has covered the building blocks of an AI environment: persistent instructions, projects, document management, tools, and memory. This chapter shows how to put them together into a workspace that reflects how you actually work.</p>
@@ -1524,11 +1551,11 @@ Output required:
 <ul><li>Persistent instructions that carry your context forward automatically</li><li>Projects that organise your work and maintain document access</li><li>Document handling practices that maximise accuracy and catch common errors</li><li>An understanding of tools and their limitations</li><li>A memory strategy that works across platforms</li><li>A workspace structure suited to professional use</li></ul>
 <p>Part IV moves from individual interactions and workspace setup to something qualitatively different: multi-step workflows that tackle complex tasks by breaking them into stages.</p>
 <div class="section-rule" aria-hidden="true"></div>
-<h1 class="part-heading>PART IV</h1>
+<h1 class="part-heading">PART IV</h1>
 <h2>From Prompts to Workflows</h2>
 <p class="standfirst"><em>Complex work doesn't happen in a single exchange. Part IV introduces the thinking and techniques that take AI from answering individual questions to participating in multi-stage processes — planning, drafting, reviewing, revising, and handing off.</em></p>
 <div class="section-rule" aria-hidden="true"></div>
-<h2 class="chapter-heading>Chapter 16</h2>
+<h2 class="chapter-heading">Chapter 16</h2>
 <h3>When One Prompt Isn't Enough</h3>
 <h4 class="label-heading"><strong>The single-prompt ceiling</strong></h4>
 <p>For simple, well-defined tasks — summarise this, draft that, answer this question — a single well-crafted prompt is usually sufficient. But professional work is rarely simple and well-defined.</p>
@@ -1571,7 +1598,7 @@ Output required:
 <aside class="callout "><h4 class="label-heading"><strong>WHY IT WORKS</strong></h4>
 <p>Multi-stage workflows work for the same reason that professional processes work: each stage has a clear purpose, a clear deliverable, and a defined handoff point. Breaking work into stages allows you to catch errors before they compound. It allows you to apply different types of thinking to different types of sub-tasks. And it allows AI to do each sub-task well rather than doing all sub-tasks adequately.</p></aside>
 <div class="section-rule" aria-hidden="true"></div>
-<h2 class="chapter-heading>Chapter 17</h2>
+<h2 class="chapter-heading">Chapter 17</h2>
 <h3>Breaking Tasks Into Steps</h3>
 <h4 class="label-heading"><strong>The decomposition skill</strong></h4>
 <p>The most important skill in multi-step AI work is not writing better prompts. It is breaking tasks into the right stages.</p>
@@ -1658,7 +1685,7 @@ Stage 3 — Assemble and review
 <aside class="callout "><h4 class="label-heading"><strong>WATCH OUT</strong></h4>
 <p>Stages that are too granular create overhead without benefit. If you find yourself doing ten stages for a task that could be done in three, you have over-decomposed. The right granularity is: each stage produces something that can be reviewed and corrected before the next stage begins. If a stage is so small that there's nothing meaningful to review, combine it with the adjacent stage.</p></aside>
 <div class="section-rule" aria-hidden="true"></div>
-<h2 class="chapter-heading>Chapter 18</h2>
+<h2 class="chapter-heading">Chapter 18</h2>
 <h3>Critique, Edit, and Improve</h3>
 <h4 class="label-heading"><strong>Using AI against its own output</strong></h4>
 <p>One of the most underused techniques in AI work is asking AI to critique what it has produced.</p>
@@ -1723,7 +1750,7 @@ Do not be generous. The goal is a better document, not reassurance.</code></pre>
 <aside class="callout "><h4 class="label-heading"><strong>WATCH OUT</strong></h4>
 <p>AI critique has two consistent weaknesses. First, it tends to be comprehensive in format but inconsistent in depth — it will often identify a problem without identifying the correct solution. Second, it may miss issues that require external knowledge it doesn't have: the client context it wasn't given, the regulatory nuance that requires specialist knowledge, or the political sensitivities you didn't mention. Use AI critique to catch structural, logical, and stylistic issues. Use human review to catch everything that requires knowledge or judgment AI doesn't have.</p></aside>
 <div class="section-rule" aria-hidden="true"></div>
-<h2 class="chapter-heading>Chapter 19</h2>
+<h2 class="chapter-heading">Chapter 19</h2>
 <h3>Chains, Loops, and Handoffs</h3>
 <h4 class="label-heading"><strong>The building blocks of complex workflows</strong></h4>
 <p>Chapter 17 introduced decomposition patterns. This chapter introduces the mechanics of connecting stages together — the &quot;plumbing&quot; of multi-step AI workflows.</p>
@@ -1808,7 +1835,7 @@ Task: Review revised draft
 <p>You can now design and execute multi-step AI workflows:</p>
 <ul><li>Recognise when a task requires multiple stages</li><li>Break tasks into stages with clear deliverables and handoff points</li><li>Apply three decomposition patterns to different task types</li><li>Use the critique loop to improve drafts systematically</li><li>Connect stages with chains, loops, and deliberate handoffs</li></ul>
 <p>Part V applies these skills to twenty-five specific, tested workflows across the most common professional and personal use cases.</p>
-<h1 class="part-heading>PART V</h1>
+<h1 class="part-heading">PART V</h1>
 <h2>25 Real-World Workflows</h2>
 <p class="standfirst"><em>Part V is a reference library. These twenty-five workflows are tested, structured, and ready to use — or adapt for your specific situation. Each follows the same format: Situation, Steps with exact prompts, Verification, and Customisation notes.</em></p>
 <p class="standfirst"><em>How to use this section: find the workflow closest to what you need. Read the Situation to confirm it's a good match. Run the Steps. Follow the Verification. Then read Customisation to adapt it to your specific circumstances.</em></p>
@@ -1816,7 +1843,7 @@ Task: Review revised draft
 <div class="section-rule" aria-hidden="true"></div>
 <h2>BUSINESS AND PROFESSIONAL</h2>
 <div class="section-rule" aria-hidden="true"></div>
-<h3 class="workflow-heading>W1 — Write and Improve a Professional Email</h3>
+<h3 class="workflow-heading">W1 — Write and Improve a Professional Email</h3>
 <h4 class="label-heading"><strong>Situation</strong></h4>
 <p>You need to write an email that matters — a client communication, a proposal follow-up, a difficult message to a colleague, a professional introduction. The stakes are high enough that you don't want to draft it without a second opinion.</p>
 <h4 class="label-heading"><strong>Step 1 — Provide context</strong></h4>
@@ -1848,7 +1875,7 @@ Be direct about any problems.</code></pre>
 <h4 class="label-heading"><strong>Customise</strong></h4>
 <ul><li>For internal communications: reduce formality, increase directness</li><li>For client complaints: add &quot;The tone must acknowledge their frustration without admitting liability or making commitments we haven't authorised&quot; to Step 1</li><li>For cold outreach: add &quot;This person does not know me, so make the value proposition clear within the first two sentences&quot;</li><li>For difficult personal situations: add context about the relationship history and the sensitivity required</li></ul>
 <div class="section-rule" aria-hidden="true"></div>
-<h3 class="workflow-heading>W2 — Prepare for a Difficult Conversation</h3>
+<h3 class="workflow-heading">W2 — Prepare for a Difficult Conversation</h3>
 <h4 class="label-heading"><strong>Situation</strong></h4>
 <p>You have a conversation coming up that you are not looking forward to. Performance review. Negotiation. Complaint. Conflict. Family tension. You want to go in prepared, not reactive.</p>
 <h4 class="label-heading"><strong>Step 1 — Define the conversation</strong></h4>
@@ -1883,7 +1910,7 @@ Tone: [Firm and direct / Warm and collaborative / Measured and professional]</co
 <h4 class="label-heading"><strong>Customise</strong></h4>
 <ul><li>For performance conversations with a direct report: add HR policy context and any documentation you have</li><li>For negotiation: add &quot;I also want to identify possible compromise positions between our positions&quot;</li><li>For family situations: adjust tone instructions significantly and focus Steps 2 and 3 more heavily on empathy</li><li>For complaints: add &quot;I want to be assertive without being hostile&quot;</li></ul>
 <div class="section-rule" aria-hidden="true"></div>
-<h3 class="workflow-heading>W3 — Research a Topic for a Meeting</h3>
+<h3 class="workflow-heading">W3 — Research a Topic for a Meeting</h3>
 <h4 class="label-heading"><strong>Situation</strong></h4>
 <p>You have a meeting coming up on a topic you need to know more about. You want to be prepared enough to contribute intelligently without spending hours reading primary material.</p>
 <h4 class="label-heading"><strong>Step 1 — Establish the knowledge requirement</strong></h4>
@@ -1904,7 +1931,7 @@ Please give me a briefing on [topic] pitched at the right level for my knowledge
 <h4 class="label-heading"><strong>Customise</strong></h4>
 <ul><li>For technical topics: ask AI explicitly to explain technical concepts in plain language before introducing the terminology</li><li>For regulatory topics: add &quot;Focus particularly on the current regulatory position and flag any areas of uncertainty or ongoing change&quot;</li><li>For commercially sensitive topics: structure the briefing around the business context, not just the technical content</li></ul>
 <div class="section-rule" aria-hidden="true"></div>
-<h3 class="workflow-heading>W4 — Summarise a Long Document</h3>
+<h3 class="workflow-heading">W4 — Summarise a Long Document</h3>
 <h4 class="label-heading"><strong>Situation</strong></h4>
 <p>You have a document that is too long to read fully in the time available — or you need to extract specific information efficiently. The document might be a report, a policy, a contract, a research paper, or a lengthy email chain.</p>
 <h4 class="label-heading"><strong>Step 1 — Upload and instruct</strong></h4>
@@ -1930,7 +1957,7 @@ Format: [Prose / Bullet points / Table / Structured sections]</code></pre>
 <h4 class="label-heading"><strong>Customise</strong></h4>
 <ul><li>For contracts: add &quot;Specifically flag: any obligations on us, any deadlines, any unusual clauses, and any terms that differ from standard commercial practice&quot;</li><li>For research papers: add &quot;Evaluate the strength of the evidence. What is the methodology? What are the limitations the authors acknowledge?&quot;</li><li>For meeting notes/transcripts: add &quot;Extract all action items with owner and deadline. Identify all decisions made.&quot;</li><li>For financial documents: add &quot;Flag any calculation that relies on an assumption I should verify&quot;</li></ul>
 <div class="section-rule" aria-hidden="true"></div>
-<h3 class="workflow-heading>W5 — Draft a Project Proposal</h3>
+<h3 class="workflow-heading">W5 — Draft a Project Proposal</h3>
 <h4 class="label-heading"><strong>Situation</strong></h4>
 <p>You need to write a proposal for a project — internal or external — that makes a clear case for the project, describes the approach, and asks for approval or resources.</p>
 <h4 class="label-heading"><strong>Step 1 — Gather information</strong></h4>
@@ -1968,7 +1995,7 @@ Tone: [professional / business-like / persuasive but evidence-based]</code></pre
 <h4 class="label-heading"><strong>Customise</strong></h4>
 <ul><li>For internal proposals: reduce formality, increase emphasis on operational impact and resource efficiency</li><li>For external bids: add the client's evaluation criteria explicitly and verify the proposal addresses each one</li><li>For new budget requests: add a cost-benefit analysis section and ensure the return on investment is explicitly stated</li></ul>
 <div class="section-rule" aria-hidden="true"></div>
-<h3 class="workflow-heading>W6 — Write a Job Posting</h3>
+<h3 class="workflow-heading">W6 — Write a Job Posting</h3>
 <h4 class="label-heading"><strong>Situation</strong></h4>
 <p>You need to attract the right candidates to a role without writing something generic that attracts everyone and therefore no one.</p>
 <h4 class="label-heading"><strong>Step 1 — Define the role</strong></h4>
@@ -2006,7 +2033,7 @@ What would make it stronger?</code></pre>
 <h4 class="label-heading"><strong>Customise</strong></h4>
 <ul><li>For specialist technical roles: add a technical requirements section and be specific about tools and technologies required</li><li>For senior leadership roles: emphasise strategic aspects and leadership behaviours over task descriptions</li><li>For organisations with strong cultures: add context about the culture and be honest about what makes the organisation unusual</li></ul>
 <div class="section-rule" aria-hidden="true"></div>
-<h3 class="workflow-heading>W7 — Prepare a Client Report</h3>
+<h3 class="workflow-heading">W7 — Prepare a Client Report</h3>
 <h4 class="label-heading"><strong>Situation</strong></h4>
 <p>You need to produce a client-facing report that summarises work done, findings, or recommendations. The report must be professional, clear, and demonstrate value.</p>
 <h4 class="label-heading"><strong>Step 1 — Gather and structure content</strong></h4>
@@ -2042,7 +2069,7 @@ Length: One page maximum. Read-first, not read-last.</code></pre>
 <h4 class="label-heading"><strong>Verification</strong></h4>
 <p>Verify all statistics, financial figures, and dates against source material. Check that recommendations are logically supported by the findings. Have a colleague read it who has not been close to the work — they will catch assumptions you've made that the client won't share.</p>
 <div class="section-rule" aria-hidden="true"></div>
-<h3 class="workflow-heading>W8 — Create a Meeting Agenda and Follow-Up</h3>
+<h3 class="workflow-heading">W8 — Create a Meeting Agenda and Follow-Up</h3>
 <h4 class="label-heading"><strong>Situation</strong></h4>
 <p>You are running a meeting that needs to produce decisions or actions, not just discussion. You want an agenda that focuses the meeting, and a follow-up that records what happened clearly.</p>
 <h4 class="label-heading"><strong>Step 1 — Design the agenda</strong></h4>
@@ -2074,7 +2101,7 @@ Format: brief and structured. This will be sent to all participants within 24 ho
 <div class="section-rule" aria-hidden="true"></div>
 <h2>MARKETING AND CONTENT</h2>
 <div class="section-rule" aria-hidden="true"></div>
-<h3 class="workflow-heading>W9 — Write a LinkedIn Post</h3>
+<h3 class="workflow-heading">W9 — Write a LinkedIn Post</h3>
 <h4 class="label-heading"><strong>Situation</strong></h4>
 <p>You want to publish something on LinkedIn that is genuinely worth reading — not corporate content or hollow inspiration, but something that says something real.</p>
 <h4 class="label-heading"><strong>Step 1 — Define the content</strong></h4>
@@ -2102,7 +2129,7 @@ First line must make someone stop scrolling.</code></pre>
 <h4 class="label-heading"><strong>Customise</strong></h4>
 <ul><li>If announcing something: lead with the &quot;so what&quot; — why should the reader care before you describe what's happening</li><li>If sharing expertise: include one specific, non-obvious insight rather than general advice</li><li>If writing about experience: use a specific story, not a generalisation</li></ul>
 <div class="section-rule" aria-hidden="true"></div>
-<h3 class="workflow-heading>W10 — Draft a Blog Post from Notes</h3>
+<h3 class="workflow-heading">W10 — Draft a Blog Post from Notes</h3>
 <h4 class="label-heading"><strong>Situation</strong></h4>
 <p>You have a topic, a rough idea, or a set of notes that you want to turn into a publishable blog post. The notes are not polished prose — they are raw material.</p>
 <h4 class="label-heading"><strong>Step 1 — Extract and structure from notes</strong></h4>
@@ -2134,7 +2161,7 @@ Closing: The conclusion should end with something the reader can do or think abo
 <h4 class="label-heading"><strong>Verification</strong></h4>
 <p>Is the central argument clear? Has anyone made this point before in a nearly identical way — and if so, does your version add something? Are any specific claims, statistics, or examples accurate? Is the reading level and vocabulary appropriate for your audience?</p>
 <div class="section-rule" aria-hidden="true"></div>
-<h3 class="workflow-heading>W11 — Repurpose Content Across Formats</h3>
+<h3 class="workflow-heading">W11 — Repurpose Content Across Formats</h3>
 <h4 class="label-heading"><strong>Situation</strong></h4>
 <p>You have a piece of content — a presentation, a report, an article, a talk — that contains value you want to extract and publish in different formats.</p>
 <h4 class="label-heading"><strong>Step 1 — Content inventory</strong></h4>
@@ -2157,7 +2184,7 @@ For each format I've listed, suggest which part of the original content would wo
 <h4 class="label-heading"><strong>Verification</strong></h4>
 <p>Repurposed content should be adapted, not just repackaged. Verify that each piece works as a standalone without requiring the original context. Check that any statistics or claims retain their accuracy in the new format (statistics can be misleading when stripped of context).</p>
 <div class="section-rule" aria-hidden="true"></div>
-<h3 class="workflow-heading>W12 — Write Website Copy</h3>
+<h3 class="workflow-heading">W12 — Write Website Copy</h3>
 <h4 class="label-heading"><strong>Situation</strong></h4>
 <p>You need to write copy for a website page — a homepage, a services page, an about page, or a landing page — that converts readers into enquiries or customers.</p>
 <h4 class="label-heading"><strong>Step 1 — Define the page</strong></h4>
@@ -2186,7 +2213,7 @@ Please draft this page.</code></pre>
 <div class="section-rule" aria-hidden="true"></div>
 <h2>RESEARCH AND LEARNING</h2>
 <div class="section-rule" aria-hidden="true"></div>
-<h3 class="workflow-heading>W13 — Research a Topic You Know Nothing About</h3>
+<h3 class="workflow-heading">W13 — Research a Topic You Know Nothing About</h3>
 <h4 class="label-heading"><strong>Situation</strong></h4>
 <p>You need to understand a topic you have little or no background in — a new sector, a technical subject, a policy area, a market — well enough to form a view or make a decision.</p>
 <h4 class="label-heading"><strong>Step 1 — Establish orientation</strong></h4>
@@ -2210,7 +2237,7 @@ Given this context, what do I most need to understand? What can I safely deprior
 <h4 class="label-heading"><strong>Customise</strong></h4>
 <ul><li>For legal or regulatory topics: explicitly note &quot;flag any areas of ongoing debate or uncertainty&quot; and add &quot;I'll need to verify the current regulatory position from official sources&quot;</li><li>For scientific topics: ask for the quality of evidence behind major claims</li><li>For market or commercial topics: ask AI to flag the uncertainty inherent in market estimates</li></ul>
 <div class="section-rule" aria-hidden="true"></div>
-<h3 class="workflow-heading>W14 — Understand a Complex Document</h3>
+<h3 class="workflow-heading">W14 — Understand a Complex Document</h3>
 <h4 class="label-heading"><strong>Situation</strong></h4>
 <p>You have a document — a contract, a policy, a technical report, a legal opinion — that you need to understand but that is written in language that does not make understanding easy.</p>
 <h4 class="label-heading"><strong>Step 1 — Initial read</strong></h4>
@@ -2240,7 +2267,7 @@ For each, tell me: what does the document say, what does it mean in plain langua
 <h4 class="label-heading"><strong>Verification</strong></h4>
 <p>For contracts, legal opinions, and regulatory documents: the plain-English summary is an aid to understanding, not a legal substitute. Any action taken on the basis of a document should reference the original text. For significant legal or financial matters, consult a qualified professional.</p>
 <div class="section-rule" aria-hidden="true"></div>
-<h3 class="workflow-heading>W15 — Compare Options Before a Decision</h3>
+<h3 class="workflow-heading">W15 — Compare Options Before a Decision</h3>
 <h4 class="label-heading"><strong>Situation</strong></h4>
 <p>You need to choose between options — suppliers, approaches, products, strategies — and want a structured comparison to inform the decision.</p>
 <h4 class="label-heading"><strong>Step 1 — Define the decision</strong></h4>
@@ -2265,7 +2292,7 @@ Then: challenge the recommendation. What would have to be true for a different o
 <h4 class="label-heading"><strong>Verification</strong></h4>
 <p>Any specific claims about each option should be verified against the options' own documentation. AI comparisons are only as good as the information provided — if you have incomplete information about one option, flag this explicitly in the decision record. For significant procurement decisions, this structured analysis is a useful starting point, not a substitute for due diligence.</p>
 <div class="section-rule" aria-hidden="true"></div>
-<h3 class="workflow-heading>W16 — Learn a New Skill Faster</h3>
+<h3 class="workflow-heading">W16 — Learn a New Skill Faster</h3>
 <h4 class="label-heading"><strong>Situation</strong></h4>
 <p>You want to learn something — a tool, a technique, a process, a domain — and want to use AI to accelerate the learning.</p>
 <h4 class="label-heading"><strong>Step 1 — Map the skill</strong></h4>
@@ -2300,7 +2327,7 @@ Continue until I can explain this concept back to you correctly in my own words.
 <div class="section-rule" aria-hidden="true"></div>
 <h2>PERSONAL PRODUCTIVITY</h2>
 <div class="section-rule" aria-hidden="true"></div>
-<h3 class="workflow-heading>W17 — Plan a Project</h3>
+<h3 class="workflow-heading">W17 — Plan a Project</h3>
 <h4 class="label-heading"><strong>Situation</strong></h4>
 <p>You have a project to deliver — at work or in your personal life — and you want to plan it properly before starting.</p>
 <h4 class="label-heading"><strong>Step 1 — Define the project</strong></h4>
@@ -2328,7 +2355,7 @@ Present as a structured plan I can use to track progress.</code></pre>
 <h4 class="label-heading"><strong>Verification</strong></h4>
 <p>Have someone with relevant experience review the plan — AI planning is good at structure but may miss domain-specific risks or dependencies. Verify timelines are realistic against your actual experience with similar work.</p>
 <div class="section-rule" aria-hidden="true"></div>
-<h3 class="workflow-heading>W18 — Process a Backlog of Tasks</h3>
+<h3 class="workflow-heading">W18 — Process a Backlog of Tasks</h3>
 <h4 class="label-heading"><strong>Situation</strong></h4>
 <p>You have an overwhelming list of tasks, projects, emails, or obligations and need to bring order to it.</p>
 <h4 class="label-heading"><strong>Step 1 — Capture everything</strong></h4>
@@ -2358,7 +2385,7 @@ Which of the Category 1 tasks should happen which day? What is a realistic week 
 <h4 class="label-heading"><strong>Verification</strong></h4>
 <p>Review the prioritisation against your own judgment — AI may prioritise based on what seems externally important without knowing what your actual professional context makes most critical. Check whether any deadline-driven items have been correctly identified as urgent.</p>
 <div class="section-rule" aria-hidden="true"></div>
-<h3 class="workflow-heading>W19 — Draft a Difficult Personal Message</h3>
+<h3 class="workflow-heading">W19 — Draft a Difficult Personal Message</h3>
 <h4 class="label-heading"><strong>Situation</strong></h4>
 <p>You need to write something personal that is emotionally complex — an apology, a message to someone you've lost touch with, a difficult family communication, a message declining an invitation in a way that preserves the relationship.</p>
 <h4 class="label-heading"><strong>Step 1 — Establish the situation</strong></h4>
@@ -2388,7 +2415,7 @@ I'll choose elements from whichever feels most right.</code></pre>
 <h4 class="label-heading"><strong>Verification</strong></h4>
 <p>Read the final draft aloud. Does it sound like you? Would the recipient recognise your voice in it? If the message is truly important, sleep on it before sending — AI drafts can be technically good but emotionally wrong in ways that a night's consideration reveals.</p>
 <div class="section-rule" aria-hidden="true"></div>
-<h3 class="workflow-heading>W20 — Prepare for a Job Interview</h3>
+<h3 class="workflow-heading">W20 — Prepare for a Job Interview</h3>
 <h4 class="label-heading"><strong>Situation</strong></h4>
 <p>You have a job interview — internal or external — and want to prepare seriously rather than just hoping for the best.</p>
 <h4 class="label-heading"><strong>Step 1 — Research</strong></h4>
@@ -2433,7 +2460,7 @@ Avoid: questions that seem presumptuous, overly salary-focused, or that suggest 
 <div class="section-rule" aria-hidden="true"></div>
 <h2>HOME AND LIFE</h2>
 <div class="section-rule" aria-hidden="true"></div>
-<h3 class="workflow-heading>W21 — Plan a Trip</h3>
+<h3 class="workflow-heading">W21 — Plan a Trip</h3>
 <h4 class="label-heading"><strong>Situation</strong></h4>
 <p>You want to plan a trip — city break, holiday, business travel — and want more than a generic list of tourist attractions.</p>
 <h4 class="label-heading"><strong>Step 1 — Define the trip</strong></h4>
@@ -2463,7 +2490,7 @@ Leave space — don't over-schedule.</code></pre>
 <h4 class="label-heading"><strong>Verification</strong></h4>
 <p>Verify opening hours, prices, and booking requirements from current official sources — AI information may be outdated. For international travel, check current visa, health, and entry requirements from official government sources. Book anything time-sensitive or popular in advance.</p>
 <div class="section-rule" aria-hidden="true"></div>
-<h3 class="workflow-heading>W22 — Understand a Contract or Legal Document</h3>
+<h3 class="workflow-heading">W22 — Understand a Contract or Legal Document</h3>
 <h4 class="label-heading"><strong>Situation</strong></h4>
 <p>You have received a contract, terms and conditions, rental agreement, or legal document that you need to understand before signing or acting on.</p>
 <h4 class="label-heading"><strong>Step 1 — Plain-English summary</strong></h4>
@@ -2490,7 +2517,7 @@ Flag:
 <h4 class="label-heading"><strong>Verification</strong></h4>
 <p>This analysis is a tool for understanding and preparation, not legal advice. For any contract involving significant financial commitment, important rights, or professional risk, consult a qualified solicitor. AI can misread or oversimplify legal language. Always read the actual contract before signing — do not rely solely on an AI summary.</p>
 <div class="section-rule" aria-hidden="true"></div>
-<h3 class="workflow-heading>W23 — Get a Second Opinion on a Health Question</h3>
+<h3 class="workflow-heading">W23 — Get a Second Opinion on a Health Question</h3>
 <h4 class="label-heading"><strong>Situation</strong></h4>
 <p>You have a health question — a symptom you want to understand, a diagnosis you've been given and want to learn more about, a medication you want to understand better — and want to use AI as a starting point for a better-informed conversation with your doctor.</p>
 <h4 class="label-heading"><strong>Step 1 — State the question clearly</strong></h4>
@@ -2512,7 +2539,7 @@ Please explain [topic] in plain language. This is to help me understand, not to 
 <div class="section-rule" aria-hidden="true"></div>
 <h2>WRITING AND EDITING</h2>
 <div class="section-rule" aria-hidden="true"></div>
-<h3 class="workflow-heading>W24 — Edit and Improve Your Own Writing</h3>
+<h3 class="workflow-heading">W24 — Edit and Improve Your Own Writing</h3>
 <h4 class="label-heading"><strong>Situation</strong></h4>
 <p>You have written something — an article, a report, a proposal, an email — and want to improve it before it goes out. You know it could be better but aren't sure exactly how.</p>
 <h4 class="label-heading"><strong>Step 1 — Diagnostic read</strong></h4>
@@ -2550,7 +2577,7 @@ For each change: show the original and the improved version, and note briefly wh
 <h4 class="label-heading"><strong>Verification</strong></h4>
 <p>Read the final edited version aloud. Does it still sound like you? Has AI edited out your voice along with your weaknesses? It is better to keep a few imperfections that are genuinely yours than to have a technically polished piece that reads like it was written by someone else.</p>
 <div class="section-rule" aria-hidden="true"></div>
-<h3 class="workflow-heading>W25 — Turn Rough Notes into a Polished Document</h3>
+<h3 class="workflow-heading">W25 — Turn Rough Notes into a Polished Document</h3>
 <h4 class="label-heading"><strong>Situation</strong></h4>
 <p>You have rough notes, a voice memo transcript, scattered thoughts, or a messy draft that needs to become a proper document. The content is there — it just needs structure and polish.</p>
 <h4 class="label-heading"><strong>Step 1 — Make sense of the material</strong></h4>
@@ -2583,13 +2610,13 @@ Start with [first section]. I'll review before you continue to the next.</code><
 <div class="section-rule" aria-hidden="true"></div>
 <p class="standfirst"><em>This completes the twenty-five real-world workflows. The library is designed to be used selectively — find the workflow that matches your situation, adapt the placeholders to your specifics, and use the verification steps before trusting the output.</em></p>
 <p class="standfirst"><em>Part VI covers the habits and practices that make these workflows reliable: how to verify output, what AI consistently gets wrong, and how to build an AI practice that serves you well over time.</em></p>
-<h1 class="part-heading>PART VI</h1>
+<h1 class="part-heading">PART VI</h1>
 <h2>The AI User's Playbook</h2>
 <p class="standfirst"><em>Part V gave you twenty-five workflows to use. Part VI gives you the habits that make them reliable.</em></p>
 <p class="standfirst"><em>This is the part most books skip. They teach you how to get output. They don't teach you what to do with it — how to check it, what to watch for, how much to trust it, and how to build the kind of AI practice that compounds in value over time rather than staying hit-or-miss.</em></p>
 <p class="standfirst"><em>That's what the next five chapters cover.</em></p>
 <div class="section-rule" aria-hidden="true"></div>
-<h2 class="chapter-heading>Chapter 20</h2>
+<h2 class="chapter-heading">Chapter 20</h2>
 <h3>How to Verify AI Output</h3>
 <h4 class="label-heading"><strong>The problem with confident prose</strong></h4>
 <p>AI writes well. This is, in a specific sense, a problem.</p>
@@ -2666,7 +2693,7 @@ What would I need to check before acting on this?</code></pre>
 <aside class="callout "><h4 class="label-heading"><strong>PRO TIP</strong></h4>
 <p>Build a personal &quot;high-stakes list&quot; — the specific types of output you will always verify before using. For most professionals, this includes: statistics and figures you will quote, legal and regulatory statements, financial projections, and any claim that will go in front of a client, employer, or decision-maker. Knowing your own list in advance means you verify consistently, not only when something happens to feel uncertain.</p></aside>
 <div class="section-rule" aria-hidden="true"></div>
-<h2 class="chapter-heading>Chapter 21</h2>
+<h2 class="chapter-heading">Chapter 21</h2>
 <h3>What AI Gets Wrong (Consistently)</h3>
 <h4 class="label-heading"><strong>The honest chapter</strong></h4>
 <p>Every book that teaches you how to use AI better should also tell you, plainly, what AI is not good at. This is that chapter.</p>
@@ -2723,7 +2750,7 @@ What would I need to check before acting on this?</code></pre>
 <h4 class="label-heading"><strong>A summary table</strong></h4>
 <div class="table-wrap"><table><thead><tr><th>What AI gets wrong</th><th>Why it happens</th><th>How to protect yourself</th></tr></thead><tbody><tr><td>Inventing facts</td><td>Trained to produce plausible text</td><td>Verify specific claims from primary sources</td></tr><tr><td>Outdated information</td><td>Knowledge cutoff and lag</td><td>Check time-sensitive facts from current sources</td></tr><tr><td>Telling you what you want to hear</td><td>Human feedback bias</td><td>Ask explicitly for criticism, not balance</td></tr><tr><td>Losing track in long conversations</td><td>Attention limits</td><td>Restate key constraints; use structured workflows</td></tr><tr><td>Misapplying general knowledge</td><td>Can't know your specific situation</td><td>Provide specific context; verify recommendations fit your case</td></tr><tr><td>Not flagging uncertainty</td><td>Metacognition limits</td><td>Don't rely on AI to signal its own limits</td></tr><tr><td>Numerical errors</td><td>Language models aren't calculators</td><td>Verify significant calculations independently</td></tr></tbody></table></div>
 <div class="section-rule" aria-hidden="true"></div>
-<h2 class="chapter-heading>Chapter 22</h2>
+<h2 class="chapter-heading">Chapter 22</h2>
 <h3>Calibrating Trust</h3>
 <h4 class="label-heading"><strong>Trust is not binary</strong></h4>
 <p>The question people most often ask about AI reliability is the wrong question. They ask: &quot;Can I trust it?&quot; — expecting a yes or no.</p>
@@ -2769,7 +2796,7 @@ What would I need to check before acting on this?</code></pre>
 <ol><li>Use AI for a task</li><li>Verify the output</li><li>Note where it was right and where it wasn't</li><li>Adjust your trust calibration for that task type</li><li>Design your prompts and verification accordingly</li></ol>
 <p>This loop, repeated across different task types over time, produces something genuinely useful: a personal model of how AI performs for your specific work. That model — the accumulated experience of knowing where to push hard and where to verify carefully — is one of the most valuable things you can develop as a practitioner.</p>
 <div class="section-rule" aria-hidden="true"></div>
-<h2 class="chapter-heading>Chapter 23</h2>
+<h2 class="chapter-heading">Chapter 23</h2>
 <h3>Building Your AI Habits</h3>
 <h4 class="label-heading"><strong>The habits gap</strong></h4>
 <p>There is a gap between people who use AI occasionally and people who use it well. It is not, primarily, a knowledge gap. Most people who use AI regularly have read the same articles, tried the same features, seen the same demonstrations.</p>
@@ -2823,7 +2850,7 @@ What would I need to check before acting on this?</code></pre>
 <p>A quick email to a colleague doesn't need a full context front-load. A routine internal summary doesn't need a formal critique step. The habits are most valuable when the stakes are high, the task is complex, or the output will carry your name somewhere it matters.</p>
 <p>Part of developing as an AI user is knowing when the full habit stack applies and when a lighter touch is appropriate. That judgment develops with practice.</p>
 <div class="section-rule" aria-hidden="true"></div>
-<h2 class="chapter-heading>Chapter 24</h2>
+<h2 class="chapter-heading">Chapter 24</h2>
 <h3>Keeping Up Without Burning Out</h3>
 <h4 class="label-heading"><strong>The pace problem</strong></h4>
 <p>AI is developing faster than any of us can track. New models, new features, new platforms, new capabilities — often multiple announcements in a single week. For people who use AI professionally, this creates a particular kind of anxiety: the fear of being perpetually behind.</p>

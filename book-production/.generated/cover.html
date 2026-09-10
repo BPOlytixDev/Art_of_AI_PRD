@@ -8,6 +8,12 @@
   <style>@page {
   size: 6in 9in;
   margin: 0.65in 0.56in 0.68in 0.56in;
+  @bottom-center {
+    content: counter(page);
+    color: #66625c;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 8pt;
+  }
 }
 
 @page:left {
@@ -179,24 +185,76 @@ body {
 }
 
 .contents-page ul {
-  margin: 0;
+  margin: 0.02in 0 0;
   padding-left: 0;
   list-style: none;
 }
 
-.contents-page li {
-  margin: 0.085in 0;
-  padding-left: 0.16in;
-  border-left: 0.025in solid var(--rule);
-  font-size: 8.7pt;
-  line-height: 1.25;
+.contents-page li.contents-entry {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto auto;
+  column-gap: 0.07in;
+  align-items: baseline;
+  margin: 0 0 0.105in;
+  padding: 0;
+  font-size: 9.1pt;
+  line-height: 1.28;
+  break-inside: avoid;
 }
 
-.contents-page li strong {
+.contents-page li.contents-entry .contents-entry-title {
+  min-width: 0;
+}
+
+.contents-page li.contents-entry .contents-leader {
+  min-width: 0.08in;
+  align-self: end;
+  margin-bottom: 0.04em;
+  border-bottom: 0.01in dotted var(--rule);
+}
+
+.contents-page li.contents-entry .contents-page-number {
+  min-width: 0.22in;
+  color: var(--muted);
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 8.1pt;
+  text-align: right;
+}
+
+.contents-page li.contents-part {
+  margin: 0.18in 0 0.09in;
+  padding-top: 0.09in;
+  border-top: 0.018in solid var(--accent);
+}
+
+.contents-page li.contents-part:first-child {
+  margin-top: 0;
+}
+
+.contents-page li.contents-part .contents-entry-title {
   color: var(--accent-dark);
   font-family: Arial, Helvetica, sans-serif;
-  font-size: 7.8pt;
+  font-size: 8.2pt;
+  font-weight: 700;
   letter-spacing: 0.02em;
+  text-transform: uppercase;
+}
+
+.contents-page li.contents-intro .contents-entry-title,
+.contents-page li.contents-appendix .contents-entry-title {
+  font-weight: 700;
+}
+
+.contents-page li.contents-category {
+  margin: 0.11in 0 0.06in 0.12in;
+  padding: 0;
+  color: var(--accent-dark);
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 7.6pt;
+  font-weight: 700;
+  letter-spacing: 0.07em;
+  line-height: 1.1;
+  text-transform: uppercase;
 }
 
 .contents-page p {
@@ -439,6 +497,12 @@ tr:last-child td {
   }
 }
 
+@media print {
+  .page-number {
+    display: none;
+  }
+}
+
 
   .cover { position: relative; width: var(--cover-width); height: var(--cover-height); overflow: hidden; background: #efe9de; color: #1e2428; font-family: Arial, Helvetica, sans-serif; }
   .cover-back, .cover-front { position: absolute; top: 0; height: var(--cover-height); overflow: hidden; }
@@ -458,9 +522,9 @@ tr:last-child td {
   .back-note { max-width: 3.45in; margin-top: .22in; color: #544c44; font-family: Georgia, serif; font-size: 10pt; line-height: 1.32; }
   .barcode-reserve { position: absolute; right: .52in; bottom: .45in; width: 1.5in; height: .9in; background: #fff; }
   
-@page { size: 12.646352in 9.25in; margin: 0; }</style>
+@page { size: 12.67788in 9.25in; margin: 0; @bottom-center { content: none; } }</style>
 </head>
-<body><main class="cover" style="--cover-width:12.646352in;--cover-height:9.25in;--front-x:6.521352in;--spine:0.39635200000000004in">
+<body><main class="cover" style="--cover-width:12.67788in;--cover-height:9.25in;--front-x:6.55288in;--spine:0.42788000000000004in">
     <div class="cover-back">
       <div class="back-rule"></div>
       <p class="back-series">The Art of AI — Book 1</p>

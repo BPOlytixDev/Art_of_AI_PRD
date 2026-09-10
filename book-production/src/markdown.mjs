@@ -104,7 +104,7 @@ export function renderMarkdown(source) {
       }
       if (level === 3 && /^W\d+\b/.test(text)) classes.push("workflow-heading");
       output.push(
-        `<h${level}${classes.length ? ` class="${classes.join(" ")}` : ""}>${inlineMarkdown(text)}</h${level}>`,
+        `<h${level}${classes.length ? ` class="${classes.join(" ")}"` : ""}>${inlineMarkdown(text)}</h${level}>`,
       );
       index += 1;
       continue;
