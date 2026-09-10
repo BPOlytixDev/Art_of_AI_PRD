@@ -37,6 +37,7 @@ The script:
 
 - `output/the-art-of-ai-book-1-interior.pdf`
 - `output/the-art-of-ai-book-1-full-wrap-cover.pdf`
+- `output/the-art-of-ai-book-1-complete-book.pdf` — full-wrap cover followed by the complete interior
 - `output/the-art-of-ai-book-1-metadata.json`
 
 The cover reserves a blank white barcode area on the back cover. If an ISBN is supplied by the publisher, update the metadata and replace the reserved area with the final barcode before upload, or allow KDP to place the barcode.

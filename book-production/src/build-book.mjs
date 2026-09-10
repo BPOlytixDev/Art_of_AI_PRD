@@ -410,8 +410,10 @@ const coverHtml = htmlDocument(
 );
 const coverHtmlPath = join(generatedDir, "cover.html");
 const coverPdfPath = join(outputDir, "the-art-of-ai-book-1-full-wrap-cover.pdf");
+const completeBookPdfPath = join(outputDir, "the-art-of-ai-book-1-complete-book.pdf");
 await writeFile(coverHtmlPath, coverHtml);
 printPdf(coverHtmlPath, coverPdfPath);
+execFileSync("pdfunite", [coverPdfPath, interiorPdfPath, completeBookPdfPath], { stdio: "inherit" });
 
 const fileHashes = Object.fromEntries(
   await Promise.all(
@@ -449,6 +451,7 @@ const metadata = {
   outputs: {
     interiorPdf: "output/the-art-of-ai-book-1-interior.pdf",
     fullWrapCoverPdf: "output/the-art-of-ai-book-1-full-wrap-cover.pdf",
+    completeBookPdf: "output/the-art-of-ai-book-1-complete-book.pdf",
     metadataJson: "output/the-art-of-ai-book-1-metadata.json",
   },
   contentsNote:
