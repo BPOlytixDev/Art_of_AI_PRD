@@ -1,6 +1,6 @@
 # The Art of AI — Book 1
 
-Production source and reproducible PDF renderer for the 6 × 9 in KDP paperback edition of *The Art of AI — Book 1* by Mitesh Maharaj.
+Production source and reproducible PDF renderer for the 6 × 9 in KDP paperback edition of *The Art of AI — Book 1* by Eleanor Mercer.
 
 ## Run & Operate
 

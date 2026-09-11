@@ -11,7 +11,7 @@ const sourceDir = join(root, "source");
 const outputDir = join(root, "output");
 const generatedDir = join(root, ".generated");
 const css = await readFile(join(here, "style.css"), "utf8");
-const author = "Mitesh Maharaj";
+const author = "Eleanor Mercer";
 const title = "The Art of AI";
 const subtitle = "How to Get Better Results From Every AI Conversation";
 const deck = "A Practical Guide to Better Prompts, Better Context, and Better Workflows";
@@ -205,17 +205,25 @@ function contentsPageMap(pdfPath) {
   const bodyStartPage = introTitlePages.at(-1) ?? introductionPages.at(-1) ?? 5;
   const pageMap = new Map();
 
+  function headingPageFor(entry) {
+    const label = compactPdfText(entry.label);
+    const title = compactPdfText(entry.title ?? "");
+    return rawPageTexts.findIndex((rawPage, index) => {
+      if (index + 1 < bodyStartPage) return false;
+      const pageLines = rawPage
+        .split(/\r?\n/)
+        .map((line) => line.trim())
+        .filter(Boolean)
+        .map(compactPdfText);
+      // A part title can be mentioned in prose on an earlier page. Requiring
+      // both the exact part label and its title identifies the actual divider.
+      return pageLines.includes(label) && (!title || compactPdfText(rawPage).includes(title));
+    }) + 1;
+  }
+
   for (const entry of contentsEntries()) {
     const headingPage = ["intro", "part", "chapter", "appendix"].includes(entry.kind)
-      ? rawPageTexts.findIndex((rawPage, index) => {
-          if (index + 1 < bodyStartPage) return false;
-          const pageLines = rawPage
-            .split(/\r?\n/)
-            .map((line) => line.trim())
-            .filter(Boolean)
-            .map(compactPdfText);
-          return pageLines.includes(compactPdfText(entry.label));
-        }) + 1
+      ? headingPageFor(entry)
       : 0;
     const page =
       headingPage > 0

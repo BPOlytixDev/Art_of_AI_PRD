@@ -270,6 +270,16 @@ body {
   padding-top: 0.08in;
 }
 
+.manuscript > h2.author-heading {
+  break-before: page;
+  margin-top: 0;
+  padding-top: 0.08in;
+  color: var(--accent-dark);
+  font-size: 13pt;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
 .manuscript > h1.part-heading {
   break-before: page;
   margin-top: 0;
@@ -326,6 +336,25 @@ h2:not(.chapter-heading) {
   font-size: 18pt;
   letter-spacing: -0.025em;
   line-height: 1.05;
+}
+
+h2.author-heading + .author-photo {
+  margin-top: 0.18in;
+}
+
+.author-photo {
+  width: 1.65in;
+  height: 1.65in;
+  margin: 0.16in auto 0.24in;
+  break-inside: avoid;
+}
+
+.author-photo img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
 }
 
 h3 {
@@ -404,6 +433,21 @@ code {
   border-bottom: 0.018in solid var(--rule);
   background: #faf8f4;
   break-inside: avoid;
+}
+
+.callout.try-this,
+.callout.watch-out {
+  border-left: 0.045in solid var(--accent);
+}
+
+.callout.verify,
+.callout.why-it-works {
+  border-left: 0.02in solid var(--rule);
+}
+
+.callout.pro-tip,
+.callout.next-level {
+  border-left: 0.03in solid var(--accent-dark);
 }
 
 .callout p:last-child {

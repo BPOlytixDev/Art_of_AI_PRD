@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <title>The Art of AI — Book 1</title>
-  <meta name="author" content="Mitesh Maharaj">
+  <meta name="author" content="Eleanor Mercer">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <style>@page {
   size: 6in 9in;
@@ -277,6 +277,16 @@ body {
   padding-top: 0.08in;
 }
 
+.manuscript > h2.author-heading {
+  break-before: page;
+  margin-top: 0;
+  padding-top: 0.08in;
+  color: var(--accent-dark);
+  font-size: 13pt;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
 .manuscript > h1.part-heading {
   break-before: page;
   margin-top: 0;
@@ -333,6 +343,25 @@ h2:not(.chapter-heading) {
   font-size: 18pt;
   letter-spacing: -0.025em;
   line-height: 1.05;
+}
+
+h2.author-heading + .author-photo {
+  margin-top: 0.18in;
+}
+
+.author-photo {
+  width: 1.65in;
+  height: 1.65in;
+  margin: 0.16in auto 0.24in;
+  break-inside: avoid;
+}
+
+.author-photo img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
 }
 
 h3 {
@@ -411,6 +440,21 @@ code {
   border-bottom: 0.018in solid var(--rule);
   background: #faf8f4;
   break-inside: avoid;
+}
+
+.callout.try-this,
+.callout.watch-out {
+  border-left: 0.045in solid var(--accent);
+}
+
+.callout.verify,
+.callout.why-it-works {
+  border-left: 0.02in solid var(--rule);
+}
+
+.callout.pro-tip,
+.callout.next-level {
+  border-left: 0.03in solid var(--accent-dark);
 }
 
 .callout p:last-child {
@@ -522,16 +566,16 @@ tr:last-child td {
   .back-note { max-width: 3.45in; margin-top: .22in; color: #544c44; font-family: Georgia, serif; font-size: 10pt; line-height: 1.32; }
   .barcode-reserve { position: absolute; right: .52in; bottom: .45in; width: 1.5in; height: .9in; background: #fff; }
   
-@page { size: 12.67788in 9.25in; margin: 0; @bottom-center { content: none; } }</style>
+@page { size: 12.731928in 9.25in; margin: 0; @bottom-center { content: none; } }</style>
 </head>
-<body><main class="cover" style="--cover-width:12.67788in;--cover-height:9.25in;--front-x:6.55288in;--spine:0.42788000000000004in">
+<body><main class="cover" style="--cover-width:12.731928in;--cover-height:9.25in;--front-x:6.606928in;--spine:0.481928in">
     <div class="cover-back">
       <div class="back-rule"></div>
       <p class="back-series">The Art of AI — Book 1</p>
       <p class="back-deck">A Practical Guide to Better Prompts, Better Context, and Better Workflows</p>
       <div class="barcode-reserve" aria-label="Reserved barcode area"></div>
     </div>
-    <div class="cover-spine"><span>The Art of AI · Mitesh Maharaj</span></div>
+    <div class="cover-spine"><span>The Art of AI · Eleanor Mercer</span></div>
     <div class="cover-front">
       
 <svg class="cover-art" viewBox="0 0 1200 900" role="img" aria-label="Abstract editorial cover artwork">
@@ -548,7 +592,7 @@ tr:last-child td {
         <h1>The Art of AI</h1>
         <p class="front-subtitle">How to Get Better Results From Every AI Conversation</p>
         <p class="front-deck">A Practical Guide to Better Prompts, Better Context, and Better Workflows</p>
-        <p class="front-author">Mitesh Maharaj</p>
+        <p class="front-author">Eleanor Mercer</p>
       </div>
     </div>
   </main></body>

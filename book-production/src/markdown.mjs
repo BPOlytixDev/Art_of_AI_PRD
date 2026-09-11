@@ -64,6 +64,31 @@ export function renderMarkdown(source) {
       continue;
     }
 
+    if (line.trim().startsWith("<!--")) {
+      const comment = [line];
+      index += 1;
+      while (index < lines.length) {
+        if (lines[index].includes("-->")) {
+          comment.push(lines[index]);
+          index += 1;
+          break;
+        }
+        comment.push(lines[index]);
+        index += 1;
+      }
+      output.push(comment.join("\n"));
+      continue;
+    }
+
+    const image = line.match(/^\s*!\[([^\]]*)\]\(([^)]+)\)\s*$/);
+    if (image) {
+      output.push(
+        `<figure class="author-photo"><img src="${escapeHtml(image[2])}" alt="${escapeHtml(image[1])}"></figure>`,
+      );
+      index += 1;
+      continue;
+    }
+
     if (line.trim() === "```") {
       const code = [];
       index += 1;
@@ -102,6 +127,7 @@ export function renderMarkdown(source) {
       if (level === 2 && (/^Chapter\b/i.test(text) || /^Introduction\b/i.test(text))) {
         classes.push("chapter-heading");
       }
+      if (level === 2 && /^About the Author$/i.test(text)) classes.push("author-heading");
       if (level === 3 && /^W\d+\b/.test(text)) classes.push("workflow-heading");
       output.push(
         `<h${level}${classes.length ? ` class="${classes.join(" ")}"` : ""}>${inlineMarkdown(text)}</h${level}>`,

@@ -1,6 +1,6 @@
 # The Art of AI — Book 1 production files
 
-This folder contains the reproducible source and output files for the KDP paperback edition of **The Art of AI — Book 1** by **Mitesh Maharaj**.
+This folder contains the reproducible source and output files for the KDP paperback edition of **The Art of AI — Book 1** by **Eleanor Mercer**.
 
 ## Production decisions
 
