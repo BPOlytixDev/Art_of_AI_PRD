@@ -1,0 +1,620 @@
+[
+  {
+    "right": ""
+  },
+  {
+    "left": ""
+  },
+  {
+    "right": ""
+  },
+  {
+    "left": ""
+  },
+  {
+    "right": ""
+  },
+  {
+    "left": ""
+  },
+  {
+    "right": ""
+  },
+  {
+    "left": ""
+  },
+  {
+    "right": ""
+  },
+  {
+    "left": ""
+  },
+  {
+    "right": ""
+  },
+  {
+    "left": "PART I - A DIFFERENT WAY TO THINK ABOUT AI"
+  },
+  {
+    "right": "Chapter 1 - Why AI Gives You Generic Answers (and How to Change That)"
+  },
+  {
+    "left": "PART I - A DIFFERENT WAY TO THINK ABOUT AI"
+  },
+  {
+    "right": "Chapter 1 - Why AI Gives You Generic Answers (and How to Change That)"
+  },
+  {
+    "left": ""
+  },
+  {
+    "right": "Chapter 2 - The AI Interaction Stack, What Actually Determines Output Quality"
+  },
+  {
+    "left": "PART I - A DIFFERENT WAY TO THINK ABOUT AI"
+  },
+  {
+    "right": "Chapter 2 - The AI Interaction Stack, What Actually Determines Output Quality"
+  },
+  {
+    "left": "PART I - A DIFFERENT WAY TO THINK ABOUT AI"
+  },
+  {
+    "right": "Chapter 2 - The AI Interaction Stack, What Actually Determines Output Quality"
+  },
+  {
+    "left": "PART I - A DIFFERENT WAY TO THINK ABOUT AI"
+  },
+  {
+    "right": ""
+  },
+  {
+    "left": "PART I - A DIFFERENT WAY TO THINK ABOUT AI"
+  },
+  {
+    "right": "Chapter 3 - The 7 Questions, Your Portable AI Framework"
+  },
+  {
+    "left": "PART I - A DIFFERENT WAY TO THINK ABOUT AI"
+  },
+  {
+    "right": "Chapter 3 - The 7 Questions, Your Portable AI Framework"
+  },
+  {
+    "left": "PART I - A DIFFERENT WAY TO THINK ABOUT AI"
+  },
+  {
+    "right": ""
+  },
+  {
+    "left": "PART I - A DIFFERENT WAY TO THINK ABOUT AI"
+  },
+  {
+    "right": "Chapter 4 - How to Talk to an AI (It's Not Google)"
+  },
+  {
+    "left": "PART I - A DIFFERENT WAY TO THINK ABOUT AI"
+  },
+  {
+    "right": "Chapter 4 - How to Talk to an AI (It's Not Google)"
+  },
+  {
+    "left": "PART I - A DIFFERENT WAY TO THINK ABOUT AI"
+  },
+  {
+    "right": ""
+  },
+  {
+    "left": ""
+  },
+  {
+    "right": "Chapter 5 - Give AI a Job, Not Just a Question"
+  },
+  {
+    "left": "PART II - BUILD BETTER INTERACTIONS"
+  },
+  {
+    "right": "Chapter 5 - Give AI a Job, Not Just a Question"
+  },
+  {
+    "left": "PART II - BUILD BETTER INTERACTIONS"
+  },
+  {
+    "right": ""
+  },
+  {
+    "left": "PART II - BUILD BETTER INTERACTIONS"
+  },
+  {
+    "right": "Chapter 6 - Context Is Everything"
+  },
+  {
+    "left": "PART II - BUILD BETTER INTERACTIONS"
+  },
+  {
+    "right": "Chapter 6 - Context Is Everything"
+  },
+  {
+    "left": "PART II - BUILD BETTER INTERACTIONS"
+  },
+  {
+    "right": ""
+  },
+  {
+    "left": "PART II - BUILD BETTER INTERACTIONS"
+  },
+  {
+    "right": "Chapter 7 - Instructions That Actually Work"
+  },
+  {
+    "left": "PART II - BUILD BETTER INTERACTIONS"
+  },
+  {
+    "right": "Chapter 7 - Instructions That Actually Work"
+  },
+  {
+    "left": ""
+  },
+  {
+    "right": "Chapter 8 - Examples Change Everything"
+  },
+  {
+    "left": "PART II - BUILD BETTER INTERACTIONS"
+  },
+  {
+    "right": "Chapter 8 - Examples Change Everything"
+  },
+  {
+    "left": "PART II - BUILD BETTER INTERACTIONS"
+  },
+  {
+    "right": ""
+  },
+  {
+    "left": "PART II - BUILD BETTER INTERACTIONS"
+  },
+  {
+    "right": "Chapter 9 - Control the Output"
+  },
+  {
+    "left": "PART II - BUILD BETTER INTERACTIONS"
+  },
+  {
+    "right": "Chapter 9 - Control the Output"
+  },
+  {
+    "left": "PART II - BUILD BETTER INTERACTIONS"
+  },
+  {
+    "right": "Chapter 9 - Control the Output"
+  },
+  {
+    "left": ""
+  },
+  {
+    "right": ""
+  },
+  {
+    "left": "PART III - BUILD AN AI ENVIRONMENT"
+  },
+  {
+    "right": "Chapter 10 - Stop Starting From Zero Every Time"
+  },
+  {
+    "left": "PART III - BUILD AN AI ENVIRONMENT"
+  },
+  {
+    "right": ""
+  },
+  {
+    "left": "PART III - BUILD AN AI ENVIRONMENT"
+  },
+  {
+    "right": "Chapter 11 - Projects and Persistent Instructions"
+  },
+  {
+    "left": "PART III - BUILD AN AI ENVIRONMENT"
+  },
+  {
+    "right": ""
+  },
+  {
+    "left": "PART III - BUILD AN AI ENVIRONMENT"
+  },
+  {
+    "right": "Chapter 12 - Files, Documents, and Source Material"
+  },
+  {
+    "left": "PART III - BUILD AN AI ENVIRONMENT"
+  },
+  {
+    "right": ""
+  },
+  {
+    "left": "PART III - BUILD AN AI ENVIRONMENT"
+  },
+  {
+    "right": "Chapter 13 - Tools, What AI Can Do Beyond Text"
+  },
+  {
+    "left": "PART III - BUILD AN AI ENVIRONMENT"
+  },
+  {
+    "right": "Chapter 13 - Tools, What AI Can Do Beyond Text"
+  },
+  {
+    "left": "PART III - BUILD AN AI ENVIRONMENT"
+  },
+  {
+    "right": "Chapter 13 - Tools, What AI Can Do Beyond Text"
+  },
+  {
+    "left": ""
+  },
+  {
+    "right": "Chapter 14 - The Memory Problem (and How to Work Around It)"
+  },
+  {
+    "left": "PART III - BUILD AN AI ENVIRONMENT"
+  },
+  {
+    "right": "Chapter 14 - The Memory Problem (and How to Work Around It)"
+  },
+  {
+    "left": ""
+  },
+  {
+    "right": "Chapter 15 - Building Your Personal AI Workspace"
+  },
+  {
+    "left": "PART III - BUILD AN AI ENVIRONMENT"
+  },
+  {
+    "right": "Chapter 15 - Building Your Personal AI Workspace"
+  },
+  {
+    "left": "PART III - BUILD AN AI ENVIRONMENT"
+  },
+  {
+    "right": ""
+  },
+  {
+    "left": ""
+  },
+  {
+    "right": "Chapter 16 - When One Prompt Isn't Enough"
+  },
+  {
+    "left": "PART IV - FROM PROMPTS TO WORKFLOWS"
+  },
+  {
+    "right": "Chapter 16 - When One Prompt Isn't Enough"
+  },
+  {
+    "left": "PART IV - FROM PROMPTS TO WORKFLOWS"
+  },
+  {
+    "right": ""
+  },
+  {
+    "left": "PART IV - FROM PROMPTS TO WORKFLOWS"
+  },
+  {
+    "right": "Chapter 17 - Breaking Tasks Into Steps"
+  },
+  {
+    "left": "PART IV - FROM PROMPTS TO WORKFLOWS"
+  },
+  {
+    "right": ""
+  },
+  {
+    "left": "PART IV - FROM PROMPTS TO WORKFLOWS"
+  },
+  {
+    "right": "Chapter 18 - Critique, Edit, and Improve"
+  },
+  {
+    "left": "PART IV - FROM PROMPTS TO WORKFLOWS"
+  },
+  {
+    "right": "Chapter 18 - Critique, Edit, and Improve"
+  },
+  {
+    "left": ""
+  },
+  {
+    "right": "Chapter 19 - Chains, Loops, and Handoffs"
+  },
+  {
+    "left": "PART IV - FROM PROMPTS TO WORKFLOWS"
+  },
+  {
+    "right": "Chapter 19 - Chains, Loops, and Handoffs"
+  },
+  {
+    "left": "PART IV - FROM PROMPTS TO WORKFLOWS"
+  },
+  {
+    "right": ""
+  },
+  {
+    "left": ""
+  },
+  {
+    "right": "W1, Write and Improve a Professional Email"
+  },
+  {
+    "left": ""
+  },
+  {
+    "right": "W2, Prepare for a Difficult Conversation"
+  },
+  {
+    "left": ""
+  },
+  {
+    "right": ""
+  },
+  {
+    "left": "PART V - 25 REAL-WORLD WORKFLOWS"
+  },
+  {
+    "right": ""
+  },
+  {
+    "left": "PART V - 25 REAL-WORLD WORKFLOWS"
+  },
+  {
+    "right": ""
+  },
+  {
+    "left": "PART V - 25 REAL-WORLD WORKFLOWS"
+  },
+  {
+    "right": ""
+  },
+  {
+    "left": "PART V - 25 REAL-WORLD WORKFLOWS"
+  },
+  {
+    "right": ""
+  },
+  {
+    "left": "PART V - 25 REAL-WORLD WORKFLOWS"
+  },
+  {
+    "right": ""
+  },
+  {
+    "left": ""
+  },
+  {
+    "right": "W10, Draft a Blog Post from Notes"
+  },
+  {
+    "left": ""
+  },
+  {
+    "right": ""
+  },
+  {
+    "left": ""
+  },
+  {
+    "right": "W13, Research a Topic You Know Nothing About"
+  },
+  {
+    "left": ""
+  },
+  {
+    "right": ""
+  },
+  {
+    "left": ""
+  },
+  {
+    "right": "W16, Learn a New Skill Faster"
+  },
+  {
+    "left": ""
+  },
+  {
+    "right": ""
+  },
+  {
+    "left": "PART V - 25 REAL-WORLD WORKFLOWS"
+  },
+  {
+    "right": ""
+  },
+  {
+    "left": ""
+  },
+  {
+    "right": "W20, Prepare for a Job Interview"
+  },
+  {
+    "left": ""
+  },
+  {
+    "right": ""
+  },
+  {
+    "left": ""
+  },
+  {
+    "right": ""
+  },
+  {
+    "left": "PART V - 25 REAL-WORLD WORKFLOWS"
+  },
+  {
+    "right": ""
+  },
+  {
+    "left": "PART V - 25 REAL-WORLD WORKFLOWS"
+  },
+  {
+    "right": "W25, Turn Rough Notes into a Polished Document"
+  },
+  {
+    "left": ""
+  },
+  {
+    "right": ""
+  },
+  {
+    "left": "PART VI - THE AI USER'S PLAYBOOK"
+  },
+  {
+    "right": "Chapter 20 - How to Verify AI Output"
+  },
+  {
+    "left": "PART VI - THE AI USER'S PLAYBOOK"
+  },
+  {
+    "right": "Chapter 20 - How to Verify AI Output"
+  },
+  {
+    "left": "PART VI - THE AI USER'S PLAYBOOK"
+  },
+  {
+    "right": "Chapter 20 - How to Verify AI Output"
+  },
+  {
+    "left": ""
+  },
+  {
+    "right": "Chapter 21 - What AI Gets Wrong (Consistently)"
+  },
+  {
+    "left": "PART VI - THE AI USER'S PLAYBOOK"
+  },
+  {
+    "right": "Chapter 21 - What AI Gets Wrong (Consistently)"
+  },
+  {
+    "left": "PART VI - THE AI USER'S PLAYBOOK"
+  },
+  {
+    "right": "Chapter 21 - What AI Gets Wrong (Consistently)"
+  },
+  {
+    "left": "PART VI - THE AI USER'S PLAYBOOK"
+  },
+  {
+    "right": "Chapter 21 - What AI Gets Wrong (Consistently)"
+  },
+  {
+    "left": ""
+  },
+  {
+    "right": "Chapter 22 - Calibrating Trust"
+  },
+  {
+    "left": "PART VI - THE AI USER'S PLAYBOOK"
+  },
+  {
+    "right": "Chapter 22 - Calibrating Trust"
+  },
+  {
+    "left": ""
+  },
+  {
+    "right": "Chapter 23 - Building Your AI Habits"
+  },
+  {
+    "left": "PART VI - THE AI USER'S PLAYBOOK"
+  },
+  {
+    "right": "Chapter 23 - Building Your AI Habits"
+  },
+  {
+    "left": "PART VI - THE AI USER'S PLAYBOOK"
+  },
+  {
+    "right": ""
+  },
+  {
+    "left": "PART VI - THE AI USER'S PLAYBOOK"
+  },
+  {
+    "right": "Chapter 24 - Keeping Up Without Burning Out"
+  },
+  {
+    "left": "PART VI - THE AI USER'S PLAYBOOK"
+  },
+  {
+    "right": ""
+  },
+  {
+    "left": ""
+  },
+  {
+    "right": "Appendix B - The Before → Better → Best Worksheet"
+  },
+  {
+    "left": ""
+  },
+  {
+    "right": "Appendix C - Verification Checklist"
+  },
+  {
+    "left": ""
+  },
+  {
+    "right": "Appendix D - AI Use Cases by Profession"
+  },
+  {
+    "left": "APPENDICES"
+  },
+  {
+    "right": "Appendix D - AI Use Cases by Profession"
+  },
+  {
+    "left": "APPENDICES"
+  },
+  {
+    "right": "Appendix D - AI Use Cases by Profession"
+  },
+  {
+    "left": ""
+  },
+  {
+    "right": "Appendix E - Product Notes, Platform-Specific Information"
+  },
+  {
+    "left": "APPENDICES"
+  },
+  {
+    "right": "Appendix E - Product Notes, Platform-Specific Information"
+  },
+  {
+    "left": "APPENDICES"
+  },
+  {
+    "right": "Appendix E - Product Notes, Platform-Specific Information"
+  },
+  {
+    "left": "APPENDICES"
+  },
+  {
+    "right": "Appendix E - Product Notes, Platform-Specific Information"
+  },
+  {
+    "left": ""
+  },
+  {
+    "right": "INDEX"
+  },
+  {
+    "left": ""
+  },
+  {
+    "right": ""
+  },
+  {
+    "left": ""
+  }
+]

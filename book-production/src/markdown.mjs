@@ -1,3 +1,5 @@
+import { renderVisual, renderWorkflowMeta } from "./visuals.mjs";
+
 const escapeHtml = (value) =>
   value
     .replaceAll("&", "&amp;")
@@ -42,20 +44,54 @@ function renderTable(lines) {
   ].join("");
 }
 
-function renderList(lines, ordered) {
+function renderList(lines, ordered, className = "") {
   const tag = ordered ? "ol" : "ul";
   const matcher = ordered ? /^\s*\d+\.\s+(.*)$/ : /^\s*[-*]\s+(.*)$/;
+  const classAttribute = className ? ` class="${className}"` : "";
   const items = lines
     .map((line) => line.match(matcher)?.[1] ?? line.trim())
     .map((item) => `<li>${inlineMarkdown(item)}</li>`)
     .join("");
-  return `<${tag}>${items}</${tag}>`;
+  return `<${tag}${classAttribute}>${items}</${tag}>`;
+}
+
+function partChapters(lines, startIndex) {
+  const chapters = [];
+  for (let index = startIndex + 1; index < lines.length; index += 1) {
+    if (/^# (PART [IVX]+|APPENDICES)$/i.test(lines[index].trim())) break;
+    const chapter = lines[index].match(/^## (Chapter \d+)$/i);
+    if (!chapter) continue;
+    let next = index + 1;
+    while (next < lines.length && !lines[next].trim()) next += 1;
+    const title = lines[next]?.match(/^### (.+)$/)?.[1];
+    if (title) chapters.push({ label: chapter[1], title });
+  }
+  return chapters;
+}
+
+function renderPartOverview(chapters) {
+  if (!chapters.length) return "";
+  return `<section class="part-overview" aria-label="Chapters in this part">
+    <p class="part-overview-label">In this part</p>
+    <div class="part-overview-grid">
+      ${chapters
+        .map(
+          ({ label, title }) =>
+            `<div class="part-overview-card"><span class="part-overview-number">${inlineMarkdown(label)}</span><span class="part-overview-title">${inlineMarkdown(title)}</span></div>`,
+        )
+        .join("\n")}
+    </div>
+  </section>`;
 }
 
 export function renderMarkdown(source) {
   const lines = Array.isArray(source) ? source : source.split(/\r?\n/);
   const output = [];
   let index = 0;
+  let currentPart = null;
+  let currentAppendix = null;
+  let partOverviewPending = false;
+  let partOverviewChapters = [];
 
   while (index < lines.length) {
     const line = lines[index];
@@ -65,6 +101,12 @@ export function renderMarkdown(source) {
     }
 
     if (line.trim().startsWith("<!--")) {
+      const visualMarker = line.trim().match(/^<!--\s*VISUAL:\s*([a-z0-9-]+)\s*-->$/i);
+      if (visualMarker) {
+        output.push(renderVisual(visualMarker[1].toLowerCase()));
+        index += 1;
+        continue;
+      }
       const comment = [line];
       index += 1;
       while (index < lines.length) {
@@ -97,8 +139,9 @@ export function renderMarkdown(source) {
         index += 1;
       }
       index += 1;
+      const isStackAscii = code[0]?.trim() === "THE AI INTERACTION STACK";
       output.push(
-        `<pre class="prompt-block"><code>${escapeHtml(code.join("\n"))}</code></pre>`,
+        `<pre class="prompt-block${isStackAscii ? " stack-ascii" : ""}"><code>${escapeHtml(code.join("\n"))}</code></pre>`,
       );
       continue;
     }
@@ -123,21 +166,35 @@ export function renderMarkdown(source) {
       const level = heading[1].length;
       const text = heading[2];
       const classes = [];
-      if (level === 1 && /^PART\b/i.test(text)) classes.push("part-heading");
+      if (level === 1 && (/^PART\b/i.test(text) || /^APPENDICES$/i.test(text))) classes.push("part-heading");
+      if (level === 1 && /^APPENDICES$/i.test(text)) classes.push("appendices-heading");
       if (level === 2 && (/^Chapter\b/i.test(text) || /^Introduction\b/i.test(text))) {
         classes.push("chapter-heading");
       }
       if (level === 2 && /^About the Author$/i.test(text)) classes.push("author-heading");
+      if (level === 2 && /^A Note on Sources$/i.test(text)) classes.push("sources-heading");
+      if (level === 2 && /^About This Book$/i.test(text)) classes.push("about-book-heading");
+      if (level === 2 && /^Appendix [A-E]$/i.test(text)) classes.push("appendix-heading");
+      if (level === 3 && /^Verification Checklist$/i.test(text)) classes.push("checklist-heading");
       if (level === 3 && /^W\d+\b/.test(text)) classes.push("workflow-heading");
+      if (level === 1 && /^PART\b/i.test(text)) currentPart = text;
+      if (level === 2) {
+        const appendix = text.match(/^Appendix ([A-E])$/i);
+        currentAppendix = appendix ? appendix[1].toLowerCase() : null;
+      }
+      if (level === 2 && currentPart && !/^Chapter\b/i.test(text)) {
+        partOverviewPending = currentPart !== "PART V";
+        partOverviewChapters = partOverviewPending ? partChapters(lines, index - 1) : [];
+      }
       output.push(
         `<h${level}${classes.length ? ` class="${classes.join(" ")}"` : ""}>${inlineMarkdown(text)}</h${level}>`,
       );
+      if (classes.includes("workflow-heading")) output.push(renderWorkflowMeta(text));
       index += 1;
       continue;
     }
 
     if (/^---+$/.test(line.trim())) {
-      output.push('<div class="section-rule" aria-hidden="true"></div>');
       index += 1;
       continue;
     }
@@ -166,13 +223,39 @@ export function renderMarkdown(source) {
       continue;
     }
 
+    if (/^\s*☐\s+/.test(line)) {
+      const checklist = [];
+      while (index < lines.length) {
+        if (/^\s*☐\s+/.test(lines[index])) {
+          checklist.push(lines[index].replace(/^\s*☐\s+/, ""));
+          index += 1;
+          continue;
+        }
+        if (!lines[index].trim()) {
+          let next = index + 1;
+          while (next < lines.length && !lines[next].trim()) next += 1;
+          if (next < lines.length && /^\s*☐\s+/.test(lines[next])) {
+            index = next;
+            continue;
+          }
+        }
+        break;
+      }
+      output.push(
+        `<div class="checklist-items">${checklist
+          .map((item) => `<div class="check-item"><span class="check-box" aria-hidden="true"></span><span>${inlineMarkdown(item)}</span></div>`)
+          .join("\n")}</div>`,
+      );
+      continue;
+    }
+
     if (/^\s*\d+\.\s+/.test(line)) {
       const list = [];
       while (index < lines.length && /^\s*\d+\.\s+/.test(lines[index])) {
         list.push(lines[index]);
         index += 1;
       }
-      output.push(renderList(list, true));
+      output.push(renderList(list, true, currentAppendix === "a" ? "appendix-a-list" : ""));
       continue;
     }
 
@@ -184,6 +267,10 @@ export function renderMarkdown(source) {
 
     if (/^\*[^*].*\*$/.test(line.trim()) && !line.includes("**")) {
       output.push(`<p class="standfirst">${inlineMarkdown(line.trim())}</p>`);
+      if (partOverviewPending) {
+        output.push(renderPartOverview(partOverviewChapters));
+        partOverviewPending = false;
+      }
       index += 1;
       continue;
     }
@@ -204,7 +291,14 @@ export function renderMarkdown(source) {
       paragraph.push(lines[index]);
       index += 1;
     }
-    output.push(`<p>${paragraph.map(inlineMarkdown).join("<br>")}</p>`);
+    const paragraphClass = currentAppendix === "a" && paragraph[0].startsWith("The full explanations appear")
+      ? ' class="appendix-a-note"'
+      : "";
+    output.push(`<p${paragraphClass}>${paragraph.map(inlineMarkdown).join("<br>")}</p>`);
+    if (partOverviewPending) {
+      output.push(renderPartOverview(partOverviewChapters));
+      partOverviewPending = false;
+    }
   }
 
   return output.join("\n");

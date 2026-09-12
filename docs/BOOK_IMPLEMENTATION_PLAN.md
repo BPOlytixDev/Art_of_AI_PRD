@@ -185,7 +185,7 @@ Approval should explicitly cover:
 4. Whether the website resource, QR codes, review request, and online Appendix E update are included.
 5. Whether the closing paragraph is trimmed.
 
-The repository-scoped implementation described above has been executed. Any further additions—especially website resources, QR destinations, running headers, an index, or a font change—remain approval-gated.
+The repository-scoped implementation described above has been executed. The approved index and running-header navigation pass has now also been executed. Website resources, QR destinations, online Appendix E updates, and any font redesign remain approval-gated.
 
 ## Sources consulted
 

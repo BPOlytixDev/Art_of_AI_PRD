@@ -2,7 +2,7 @@
 
 ## Build an AI Environment
 
-*Most people use AI as if it were a calculator: pick it up, use it once, put it down. Every new calculation starts from zero. Part III shows you how to change that — building a persistent environment where AI carries your context forward, knows your situation, and becomes genuinely more useful the more you invest in setting it up.*
+*Most people use AI as if it were a calculator: pick it up, use it once, put it down. Every new calculation starts from zero. Part III shows you how to change that, building a persistent environment where AI carries your context forward, knows your situation, and becomes genuinely more useful the more you invest in setting it up.*
 
 ---
 
@@ -20,21 +20,21 @@ This is not how a useful working relationship operates. A good colleague doesn't
 
 The reason this happens is that a fresh AI conversation should not be assumed to have dependable knowledge of previous conversations. Some platforms now offer memory, projects, searchable history, or connected sources, but availability and behaviour vary. Without one of those features being explicitly enabled and used, the context you built in Tuesday's session is not reliably available on Wednesday.
 
-This is one of AI's most significant practical limitations — and one that is largely solvable.
+This is one of AI's most significant practical limitations, and one that is largely solvable.
 
 ---
 
 **Three strategies for not starting from zero**
 
-**Strategy 1 — System instructions (persistent instructions)**
+**Strategy 1, System instructions (persistent instructions)**
 Most AI platforms now offer a way to set persistent instructions that apply to every conversation. Sometimes called "custom instructions," "system prompts," or "memory settings," these are a set of facts and preferences you provide once and that AI carries forward automatically.
 
 This is the most powerful strategy for regular users. Chapter 11 covers it in depth.
 
-**Strategy 2 — Projects**
-ChatGPT, Claude, and several other platforms offer a "Projects" feature that groups conversations, persists context, and maintains uploaded documents within a dedicated workspace. For recurring work — client accounts, ongoing projects, regular document types — projects eliminate most setup repetition.
+**Strategy 2, Projects**
+ChatGPT, Claude, and several other platforms offer a "Projects" feature that groups conversations, persists context, and maintains uploaded documents within a dedicated workspace. For recurring work, client accounts, ongoing projects, regular document types, projects eliminate most setup repetition.
 
-**Strategy 3 — Context documents**
+**Strategy 3, Context documents**
 When platform features are unavailable or insufficient, a context document you paste in at the start of relevant conversations serves the same purpose. A single well-crafted paragraph covering who you are, what you're doing, and what your preferences are can be copied and pasted in seconds.
 
 **A worked first setup**
@@ -55,7 +55,7 @@ This does not try to describe every preference David has. It captures the contex
 
 > **WHY IT WORKS**
 >
-> Persistent context doesn't improve AI's underlying capability. It changes what AI has to work with. An AI that knows your role, your audience, your style preferences, and your constraints produces better first drafts and needs fewer iterations. The investment is front-loaded — you write the context once — and the return compounds with every subsequent conversation.
+> Persistent context doesn't improve AI's underlying capability. It changes what AI has to work with. An AI that knows your role, your audience, your style preferences, and your constraints produces better first drafts and needs fewer iterations. The investment is front-loaded, you write the context once, and the return compounds with every subsequent conversation.
 
 ---
 
@@ -77,9 +77,9 @@ This is a qualitative shift in how AI integrates into professional work. It move
 >
 > Sarah manages a marketing account for three different clients. She sets up a separate Project for each:
 >
-> *Project: Hartley Financial* — contains the brand guidelines document, a style reference email, a note on the client's preferences ("informal tone in client-facing copy; formal in regulatory documents"), the previous quarter's campaign materials, and a standing instruction that the client's compliance team must review any copy before publication.
+> *Project: Hartley Financial*, contains the brand guidelines document, a style reference email, a note on the client's preferences ("informal tone in client-facing copy; formal in regulatory documents"), the previous quarter's campaign materials, and a standing instruction that the client's compliance team must review any copy before publication.
 >
-> *Project: Meridian Retail* — contains the target audience profile, previous copy that worked well, a note on what the Marketing Director has rejected in the past, and the seasonal campaign calendar.
+> *Project: Meridian Retail*, contains the target audience profile, previous copy that worked well, a note on what the Marketing Director has rejected in the past, and the seasonal campaign calendar.
 >
 > When Sarah opens the Hartley Financial project to write new email copy, AI already knows the brand, the style, the constraints, and the history. The first draft is usable. Without the project, she would spend the first five minutes of every session re-briefing context she's already established.
 
@@ -87,7 +87,7 @@ This is a qualitative shift in how AI integrates into professional work. It move
 
 > **WATCH OUT**
 >
-> Persistent context can become stale. If your role changes, a client's preferences shift, or a project evolves, the standing context needs to be updated. Review your projects and persistent instructions every few months. Outdated context is better than no context, but not by much — AI will confidently apply the wrong assumptions.
+> Persistent context can become stale. If your role changes, a client's preferences shift, or a project evolves, the standing context needs to be updated. Review your projects and persistent instructions every few months. Outdated context is better than no context, but not by much, AI will confidently apply the wrong assumptions.
 
 ---
 
@@ -141,26 +141,26 @@ About me:
 [Your role, sector, organisation type, years of experience if relevant]
 
 What I typically need AI for:
-[Your most common use cases — writing, analysis, research, editing, planning]
+[Your most common use cases, writing, analysis, research, editing, planning]
 
 My communication preferences:
 [Tone, vocabulary level, formatting preferences, things you never want]
 
 My standard audience:
-[Who reads your output — clients, colleagues, the public, specialists, generalists]
+[Who reads your output, clients, colleagues, the public, specialists, generalists]
 
 Key constraints that always apply:
 [Legal, regulatory, brand, relationship, or accuracy constraints]
 
 What I always want AI to do:
-[Default behaviours you want in every interaction — verification flags, format defaults, etc.]
+[Default behaviours you want in every interaction, verification flags, format defaults, etc.]
 ```
 
 ---
 
 > **TRY THIS**
 >
-> Set up your persistent instructions today. Use the template above. Start with the sections that feel most obvious — your professional context and communication preferences — and add the others as you notice what you keep re-specifying in individual conversations.
+> Set up your persistent instructions today. Use the template above. Start with the sections that feel most obvious, your professional context and communication preferences, and add the others as you notice what you keep re-specifying in individual conversations.
 >
 > After two weeks, review the instructions. What are you still correcting in every conversation? That's a gap in your persistent instructions. Add it.
 
@@ -170,16 +170,16 @@ What I always want AI to do:
 
 Projects are more powerful than persistent instructions because they can also hold documents, ongoing outputs, and accumulated context. Here is how to approach setting one up:
 
-**Step 1 — Define the project's purpose**
+**Step 1, Define the project's purpose**
 What work is this project for? One client? One recurring task type? One ongoing work project? The answer determines what belongs in it.
 
-**Step 2 — Write the project instructions**
+**Step 2, Write the project instructions**
 These are like persistent instructions but scoped to this project. Include the context specific to this work that doesn't belong in your general instructions.
 
-**Step 3 — Upload relevant documents**
+**Step 3, Upload relevant documents**
 What documents does AI need to do this project's work? Upload them. Brand guidelines, style guides, reference documents, previous outputs, client briefs.
 
-**Step 4 — Name conversations clearly**
+**Step 4, Name conversations clearly**
 Within the project, give conversations descriptive names. "Email sequence for Q4 campaign" is more useful six weeks later than "New Chat (3)."
 
 ---
@@ -193,7 +193,7 @@ Within the project, give conversations descriptive names. "Email sequence for Q4
 
 **The project for recurring work**
 
-Some of the most valuable AI projects are not for unique work, but for recurring tasks. If you produce the same type of document weekly or monthly — a status report, a client briefing, a team update — a project containing your template, your style reference, and your standard content elements saves significant setup time.
+Some of the most valuable AI projects are not for unique work, but for recurring tasks. If you produce the same type of document weekly or monthly, a status report, a client briefing, a team update, a project containing your template, your style reference, and your standard content elements saves significant setup time.
 
 For recurring work, the project contains:
 
@@ -218,7 +218,7 @@ There is a consistent pattern in how people under-use AI: they describe the docu
 *"Based on our company values, which include innovation and customer focus..."*
 *"Our pricing is roughly in the mid-range for the sector..."*
 
-These descriptions are always incomplete. They filter the document through the user's current focus and omit everything that doesn't seem immediately relevant — including things that might matter.
+These descriptions are always incomplete. They filter the document through the user's current focus and omit everything that doesn't seem immediately relevant, including things that might matter.
 
 When you provide the actual document, AI can read all of it. It can notice things you didn't highlight. It can extract the specific data point you forgot to mention. It can identify tensions between different sections that your description smoothed over.
 
@@ -230,17 +230,17 @@ Provide documents, not descriptions of documents.
 
 The practical capabilities, as of late 2026:
 
-**Summarise** — Extract key points, findings, or decisions at a specified level of detail.
+**Summarise**, Extract key points, findings, or decisions at a specified level of detail.
 
-**Extract** — Pull out specific information: all the action items from meeting notes, all the financial figures from a report, all the dates and deadlines from a contract.
+**Extract**, Pull out specific information: all the action items from meeting notes, all the financial figures from a report, all the dates and deadlines from a contract.
 
-**Analyse** — Identify patterns, inconsistencies, risks, or significant points: flag anything in this contract that differs from our standard terms; identify which sections of this report have the weakest evidence.
+**Analyse**, Identify patterns, inconsistencies, risks, or significant points: flag anything in this contract that differs from our standard terms; identify which sections of this report have the weakest evidence.
 
-**Compare** — Compare multiple documents: these two supplier proposals against the same set of criteria; this year's report against last year's.
+**Compare**, Compare multiple documents: these two supplier proposals against the same set of criteria; this year's report against last year's.
 
-**Answer questions** — "What does this contract say about notice periods?" "What is the research paper's conclusion about the effect of X on Y?"
+**Answer questions**, "What does this contract say about notice periods?" "What is the research paper's conclusion about the effect of X on Y?"
 
-**Rewrite or adapt** — Take an existing document and adapt it: rewrite in simpler language; convert to a different format; update with new information.
+**Rewrite or adapt**, Take an existing document and adapt it: rewrite in simpler language; convert to a different format; update with new information.
 
 ---
 
@@ -248,13 +248,13 @@ The practical capabilities, as of late 2026:
 
 AI can make mistakes when working with documents, and those mistakes can be difficult to spot:
 
-**Hallucinating content** — AI may generate a plausible-sounding claim about a document that is not actually in the document. Always verify specific extracted facts against the original.
+**Hallucinating content**, AI may generate a plausible-sounding claim about a document that is not actually in the document. Always verify specific extracted facts against the original.
 
-**Missing important nuance** — AI may summarise a complex legal or financial document in a way that loses critical nuance. "The contract allows termination with 30 days notice" may be accurate but miss that this only applies to non-performance situations.
+**Missing important nuance**, AI may summarise a complex legal or financial document in a way that loses critical nuance. "The contract allows termination with 30 days notice" may be accurate but miss that this only applies to non-performance situations.
 
-**Incorrect numbers** — AI sometimes misreads or miscalculates figures in documents. Any number extracted from a document should be verified against the source.
+**Incorrect numbers**, AI sometimes misreads or miscalculates figures in documents. Any number extracted from a document should be verified against the source.
 
-**Losing track of long documents** — Very long documents may not be fully attended to. Important information in the middle or end of a very long document is more likely to be missed than information at the beginning.
+**Losing track of long documents**, Very long documents may not be fully attended to. Important information in the middle or end of a very long document is more likely to be missed than information at the beginning.
 
 ---
 
@@ -301,13 +301,15 @@ Watch out for: applying information from outdated documents without realising it
 
 ## Chapter 13
 
-### Tools — What AI Can Do Beyond Text
+### Tools, What AI Can Do Beyond Text
 
 **AI is not just a text generator**
 
-The AI tools available in late 2026 can do considerably more than generate text. Understanding which capabilities exist — and which don't — determines what you can ask for, what you need to verify externally, and where AI can genuinely replace tasks that previously required separate tools.
+The AI tools available in late 2026 can do considerably more than generate text. Understanding which capabilities exist, and which don't, determines what you can ask for, what you need to verify externally, and where AI can genuinely replace tasks that previously required separate tools.
 
 This chapter introduces the main tool categories. Because capabilities vary by platform, by plan level, and change frequently, all specific capabilities include a Product Note with a volatility rating. High-volatility items are not in the main body.
+
+<!-- VISUAL: tools-capabilities -->
 
 ---
 
@@ -387,7 +389,7 @@ The citations are a map back to the evidence, not a guarantee that the report is
 
 Some AI platforms can write and run code within the conversation, enabling reliable calculation and data processing.
 
-This is significant because it addresses one of AI's consistent weaknesses: arithmetic and calculation. When AI uses code execution, it doesn't estimate calculations — it runs them. The result is accurate in the same way a spreadsheet result is accurate (if the formula is right).
+This is significant because it addresses one of AI's consistent weaknesses: arithmetic and calculation. When AI uses code execution, it doesn't estimate calculations, it runs them. The result is accurate in the same way a spreadsheet result is accurate (if the formula is right).
 
 Practical uses:
 - Accurate calculations on data you provide
@@ -395,7 +397,7 @@ Practical uses:
 - Running formulas or statistical operations
 - Generating charts and graphs from data
 
-**What this changes:** Calculations performed via code execution are reliable. Calculations performed without code execution — AI simply generating the answer as text — are not reliably accurate, particularly for anything beyond simple arithmetic.
+**What this changes:** Calculations performed via code execution are reliable. Calculations performed without code execution, AI simply generating the answer as text, are not reliably accurate, particularly for anything beyond simple arithmetic.
 
 **The rule:** If your task involves maths that matters, either use a platform with code execution enabled, or verify the calculation yourself.
 
@@ -422,7 +424,7 @@ Some AI tools can generate images from text descriptions. This capability is use
 > **PRODUCT NOTE (Verified September 2026):**
 > Image generation is integrated into several major AI platforms, but product names, models, access, and licensing terms vary. Verify the platform's current terms and applicable law before using generated images commercially.
 >
-> Volatility: HIGH — See Appendix E for current details.
+> Volatility: HIGH, See Appendix E for current details.
 
 ---
 
@@ -440,8 +442,8 @@ Equally important is knowing what AI tools currently cannot do well:
 
 - **Send communications on your behalf** without explicit confirmation steps
 - **Access your internal systems** (email, calendar, CRM, databases) without integration tools set up by your organisation
-- **Make decisions** that require judgment, ethics, or accountability — AI can analyse and recommend; decisions remain with you
-- **Replace professional advice** in law, medicine, finance, or other regulated domains — AI can inform; professionals advise
+- **Make decisions** that require judgment, ethics, or accountability, AI can analyse and recommend; decisions remain with you
+- **Replace professional advice** in law, medicine, finance, or other regulated domains, AI can inform; professionals advise
 
 ---
 
@@ -461,7 +463,7 @@ Unless a platform explicitly supplies relevant saved context, project knowledge,
 
 The practical effect is that you should spend time re-establishing important context unless you have confirmed which persistence feature is active and what it can access.
 
-Some platforms have begun introducing memory features — where AI can retain facts between conversations. These features are useful but imperfect, and their availability and reliability vary. This chapter covers the memory problem and its most practical workarounds.
+Some platforms have begun introducing memory features, where AI can retain facts between conversations. These features are useful but imperfect, and their availability and reliability vary. This chapter covers the memory problem and its most practical workarounds.
 
 ---
 
@@ -471,12 +473,12 @@ Some platforms have begun introducing memory features — where AI can retain fa
 Within a single conversation, AI remembers everything that has been said. You can refer to "the document we discussed" or "your earlier suggestion" and AI will understand. This is reliable and consistent.
 
 **Platform memory features (variable)**
-Some platforms offer features that carry specific facts across conversations — things you told AI about yourself, preferences you established, key information you asked it to remember. These vary in scope and reliability.
+Some platforms offer features that carry specific facts across conversations, things you told AI about yourself, preferences you established, key information you asked it to remember. These vary in scope and reliability.
 
 > **PRODUCT NOTE (Verified September 2026):**
-> ChatGPT offers saved memory and project memory, with availability and settings varying by plan and workspace. Claude offers profile preferences, project instructions, project knowledge, and—where enabled—search across previous chats. These are different mechanisms, not a guarantee that an AI remembers everything. Check the current documentation and verify what context a response actually used.
+> ChatGPT offers saved memory and project memory, with availability and settings varying by plan and workspace. Claude offers profile preferences, project instructions, project knowledge, andwhere enabledsearch across previous chats. These are different mechanisms, not a guarantee that an AI remembers everything. Check the current documentation and verify what context a response actually used.
 >
-> Volatility: HIGH — See Appendix E.
+> Volatility: HIGH, See Appendix E.
 
 **Project memory (the most reliable approach)**
 Working within a Project creates a persistent context that AI carries across all conversations in that project. This is currently the most robust workaround for the memory problem for regular, recurring work.
@@ -493,7 +495,7 @@ A context document is a brief, structured summary of what AI needs to know about
 Here is a template:
 
 ```
-CONTEXT DOCUMENT — [Your name / role]
+CONTEXT DOCUMENT, [Your name / role]
 Last updated: [Date]
 
 About me:
@@ -512,7 +514,7 @@ My standard audience:
 [Who reads what I produce]
 
 Things I always want AI to do:
-[Default behaviours — verification flags, format defaults, etc.]
+[Default behaviours, verification flags, format defaults, etc.]
 ```
 
 A well-written context document takes twenty minutes to produce once and can be pasted into any AI conversation in seconds. It is more reliable than any platform feature and works across all tools.
@@ -522,7 +524,7 @@ A well-written context document takes twenty minutes to produce once and can be 
 Consider Priya, a secondary-school teacher preparing differentiated materials. Her context document might begin:
 
 ```
-CONTEXT DOCUMENT — Priya, Year 8 science teacher
+CONTEXT DOCUMENT, Priya, Year 8 science teacher
 Last updated: September 2026
 
 I teach mixed-ability Year 8 classes in England. Materials must use
@@ -629,7 +631,7 @@ PROJECTS
 
 **The recurring task template**
 
-For any task you do on a regular cadence, a template prompt is worth building. A template prompt is a prompt with placeholders — variables you update with each use — built on a structure you've already tested and refined.
+For any task you do on a regular cadence, a template prompt is worth building. A template prompt is a prompt with placeholders, variables you update with each use, built on a structure you've already tested and refined.
 
 Format:
 
@@ -637,7 +639,7 @@ Format:
 [TEMPLATE NAME]
 
 Context (stable):
-[Everything that stays the same — purpose, audience, style, constraints]
+[Everything that stays the same, purpose, audience, style, constraints]
 
 Variable inputs this week:
 [PASTE CONTENT HERE]
@@ -645,7 +647,7 @@ Variable inputs this week:
 [KEY DECISIONS: X]
 
 Output required:
-[Format, length, structure — specified once, used every time]
+[Format, length, structure, specified once, used every time]
 ```
 
 This reduces a recurring AI task to: open the template, fill in the variables, run. The setup investment is front-loaded; the recurring use is fast.
@@ -654,7 +656,7 @@ This reduces a recurring AI task to: open the template, fill in the variables, r
 
 > **PRO TIP**
 >
-> Keep a "templates" section within your AI workspace — either a Project dedicated to this, or a simple document you maintain. When you write a prompt that works especially well, save it. When you develop an interaction pattern that produces good results consistently, document it. Your prompt library becomes more valuable than any generic prompt template book because it is tested, specific to your work, and continuously refined.
+> Keep a "templates" section within your AI workspace, either a Project dedicated to this, or a simple document you maintain. When you write a prompt that works especially well, save it. When you develop an interaction pattern that produces good results consistently, document it. Your prompt library becomes more valuable than any generic prompt template book because it is tested, specific to your work, and continuously refined.
 
 ---
 
@@ -695,7 +697,7 @@ Part IV moves from individual interactions and workspace setup to something qual
 
 ## From Prompts to Workflows
 
-*Complex work doesn't happen in a single exchange. Part IV introduces the thinking and techniques that take AI from answering individual questions to participating in multi-stage processes — planning, drafting, reviewing, revising, and handing off.*
+*Complex work doesn't happen in a single exchange. Part IV introduces the thinking and techniques that take AI from answering individual questions to participating in multi-stage processes, planning, drafting, reviewing, revising, and handing off.*
 
 ---
 
@@ -705,7 +707,7 @@ Part IV moves from individual interactions and workspace setup to something qual
 
 **The single-prompt ceiling**
 
-For simple, well-defined tasks — summarise this, draft that, answer this question — a single well-crafted prompt is usually sufficient. But professional work is rarely simple and well-defined.
+For simple, well-defined tasks, summarise this, draft that, answer this question, a single well-crafted prompt is usually sufficient. But professional work is rarely simple and well-defined.
 
 A business proposal is not one task. It is: research the client, understand their problem, frame the approach, develop the argument, structure the document, draft each section, review for consistency, check for gaps, refine the language, and produce a final version. Each of these is a distinct cognitive task that benefits from distinct treatment.
 
@@ -724,7 +726,7 @@ A workflow, for our purposes, is any AI task that:
 - Benefits from human review and adjustment at one or more stages
 - Is too complex for a single prompt to handle well
 
-Most significant pieces of work — proposals, reports, analyses, plans, complex communications — are workflows. The shift to thinking in workflows is one of the biggest quality improvements available to regular AI users.
+Most significant pieces of work, proposals, reports, analyses, plans, complex communications, are workflows. The shift to thinking in workflows is one of the biggest quality improvements available to regular AI users.
 
 ---
 
@@ -734,7 +736,7 @@ When you ask AI to do too many things at once, it compromises on everything. The
 
 Breaking a task into stages allows AI to do each stage well, with appropriate depth and focus. It also allows you to review and adjust at each stage before committing the next stage to an approach that might be wrong.
 
-The best analogy is professional practice: a good architect doesn't hand you the construction drawings at the first meeting. They produce a brief, then a concept, then a scheme, then detailed drawings — each stage reviewed and approved before the next begins.
+The best analogy is professional practice: a good architect doesn't hand you the construction drawings at the first meeting. They produce a brief, then a concept, then a scheme, then detailed drawings, each stage reviewed and approved before the next begins.
 
 ---
 
@@ -748,7 +750,7 @@ This is the most universally useful workflow. Almost any document benefits from 
 **The Draft-Review-Refine pattern**
 Stage 1: Produce a complete draft. Stage 2: Review the draft against explicit criteria. Stage 3: Refine based on the review.
 
-This is particularly valuable because Stage 2 uses a different cognitive mode than Stage 1. Writing mode and editing mode are different, and separating them — even within AI — produces better results.
+This is particularly valuable because Stage 2 uses a different cognitive mode than Stage 1. Writing mode and editing mode are different, and separating them, even within AI, produces better results.
 
 **The Decompose-Execute-Assemble pattern**
 Stage 1: Break a large task into components. Stage 2: Execute each component separately. Stage 3: Assemble the components.
@@ -771,11 +773,11 @@ This is most useful for large documents or complex outputs where different secti
 >
 > *Stage 2:* "Using the extracted information, create a narrative structure for the quarterly review. Three sections: What We Achieved, What We Learned, and What Comes Next. For each section, suggest what the key two or three points should be."
 >
-> David adjusts the suggested structure — moves one point to a different section, adds a point AI didn't suggest.
+> David adjusts the suggested structure, moves one point to a different section, adds a point AI didn't suggest.
 >
 > *Stage 3:* "Now draft the quarterly review document using the structure we agreed. Professional tone, plain language, about 800 words. The client is the owner and will share it with their management team."
 >
-> The resulting document is specific, accurate, and usable. It took less time than the single-prompt version and produced dramatically better output — not because AI was better, but because the workflow allowed human judgment to guide it at each stage.
+> The resulting document is specific, accurate, and usable. It took less time than the single-prompt version and produced dramatically better output, not because AI was better, but because the workflow allowed human judgment to guide it at each stage.
 
 ---
 
@@ -810,11 +812,11 @@ This chapter teaches the decomposition patterns that work most reliably across c
 The most broadly applicable pattern. Works for almost any document.
 
 ```
-Stage 1 — Information gathering
+Stage 1, Information gathering
 "Extract all the relevant information from [source(s)]."
 → Output: Raw material, structured as a list
 
-Stage 2 — Structure design
+Stage 2, Structure design
 "Given this information, propose a document structure.
  What are the main sections? What is the most logical order?
  What is the key argument or narrative?"
@@ -822,11 +824,11 @@ Stage 2 — Structure design
 
 [Human review: Adjust structure before committing to draft]
 
-Stage 3 — Draft
+Stage 3, Draft
 "Draft [Document X] using the agreed structure."
 → Output: Full draft
 
-Stage 4 — Review and refine (optional — Chapter 18)
+Stage 4, Review and refine (optional, Chapter 18)
 ```
 
 This pattern works for: proposals, reports, articles, presentations, plans, briefing documents.
@@ -838,19 +840,19 @@ This pattern works for: proposals, reports, articles, presentations, plans, brie
 Most useful for analysis and decision support.
 
 ```
-Stage 1 — Clarify the question
+Stage 1, Clarify the question
 "Help me define exactly what question I need to answer.
  Here is the situation: [context]
  Here is what I'm trying to decide: [decision]
  What additional information would be most valuable? What are the key sub-questions?"
 → Output: Sharper framing of the problem
 
-Stage 2 — Explore options and evidence
+Stage 2, Explore options and evidence
 "Given this framing, what are the main options or considerations?
  What does the evidence suggest about each?"
 → Output: Analysis of options
 
-Stage 3 — Recommend
+Stage 3, Recommend
 "Based on what we've established, what would you recommend and why?
  What are the main risks of your recommendation?"
 → Output: Recommendation with reasoning and risk assessment
@@ -865,24 +867,24 @@ This pattern works for: decision preparation, strategy analysis, problem diagnos
 Most useful for large documents with distinct sections.
 
 ```
-Stage 1 — Define components
+Stage 1, Define components
 "This document has [N] sections: [list them]. 
  Let's draft each one separately. Start with Section 1."
 
-Stage 2 — Draft each component
+Stage 2, Draft each component
 [For each section:]
 "Draft Section [N]: [title]. 
  Key points to cover: [list].
  Length: [specification].
  Tone: [specification]."
 
-Stage 3 — Assemble and review
+Stage 3, Assemble and review
 "I'm going to paste in all sections now. 
  Review them as a complete document:
- — Do they flow logically?
- — Are there repetitions or gaps?
- — Is the tone consistent throughout?
- — What would you change?"
+, Do they flow logically?
+, Are there repetitions or gaps?
+, Is the tone consistent throughout?
+, What would you change?"
 ```
 
 This pattern works for: annual reports, long proposals, training materials, multi-section documents.
@@ -907,7 +909,7 @@ When moving to the next stage, either reference the previous output directly (in
 >
 > 1. What are the distinct stages this work naturally has?
 > 2. What is the deliverable of each stage?
-> 3. Where is human review most important — where could an error in Stage N make Stage N+1 irretrievably wrong?
+> 3. Where is human review most important, where could an error in Stage N make Stage N+1 irretrievably wrong?
 >
 > Now design the workflow before you start. The map will tell you what to ask AI for at each stage.
 
@@ -927,7 +929,7 @@ When moving to the next stage, either reference the previous output directly (in
 
 One of the most underused techniques in AI work is asking AI to critique what it has produced.
 
-This sounds circular — and it is, slightly. AI is reviewing its own work, which might seem unlikely to catch errors it didn't notice the first time. But it is more effective than it sounds, for a practical reason: critique mode is a different cognitive stance than generation mode. When you ask AI to switch from producing to evaluating, it activates different patterns and often catches problems it generated in draft mode.
+This sounds circular, and it is, slightly. AI is reviewing its own work, which might seem unlikely to catch errors it didn't notice the first time. But it is more effective than it sounds, for a practical reason: critique mode is a different cognitive stance than generation mode. When you ask AI to switch from producing to evaluating, it activates different patterns and often catches problems it generated in draft mode.
 
 ---
 
@@ -935,13 +937,13 @@ This sounds circular — and it is, slightly. AI is reviewing its own work, whic
 
 The basic critique loop has three steps:
 
-**Step 1 — Produce a draft**
+**Step 1, Produce a draft**
 Ask AI to produce the draft as normal.
 
-**Step 2 — Apply the critique prompt**
+**Step 2, Apply the critique prompt**
 Ask AI to evaluate the draft against explicit criteria. The more specific the criteria, the more useful the critique.
 
-**Step 3 — Revise based on critique**
+**Step 3, Revise based on critique**
 Ask AI to produce a revised version addressing the issues raised.
 
 ---
@@ -952,11 +954,11 @@ Ask AI to produce a revised version addressing the issues raised.
 Please review the [document/email/proposal/plan] you just produced.
 
 Evaluate it against the following criteria:
-— [Criterion 1: e.g., Does it clearly address the reader's main concern?]
-— [Criterion 2: e.g., Is the argument in the right order?]
-— [Criterion 3: e.g., Are there claims that could be questioned?]
-— [Criterion 4: e.g., Is there anything missing?]
-— [Criterion 5: e.g., Is the tone right for the audience?]
+[Criterion 1: e.g., Does it clearly address the reader's main concern?]
+[Criterion 2: e.g., Is the argument in the right order?]
+[Criterion 3: e.g., Are there claims that could be questioned?]
+[Criterion 4: e.g., Is there anything missing?]
+[Criterion 5: e.g., Is the tone right for the audience?]
 
 For each criterion: identify what is working well and what could be improved.
 At the end: give a one-paragraph overall assessment.
@@ -977,17 +979,17 @@ The instruction "do not be generous" matters. Without it, AI tends to produce cr
 
 The scenario: Sarah has used AI to draft a proposal section and wants to improve it before sending.
 
-*Stage 1 — Draft produced*
+*Stage 1, Draft produced*
 
 [AI produces a draft proposal section about the agency's approach to the client's brief]
 
-*Stage 2 — Critique applied*
+*Stage 2, Critique applied*
 
-Sarah sends: *"Please review the proposal section you just drafted. Evaluate it against these criteria: Does it address the client's specific situation or is it generic? Is the argument clear and logical? Are there any claims that aren't supported by what I've told you? Is the tone right for a director-level reader at a mid-size retail company? What's missing? Be direct — I need useful feedback, not reassurance."*
+Sarah sends: *"Please review the proposal section you just drafted. Evaluate it against these criteria: Does it address the client's specific situation or is it generic? Is the argument clear and logical? Are there any claims that aren't supported by what I've told you? Is the tone right for a director-level reader at a mid-size retail company? What's missing? Be direct, I need useful feedback, not reassurance."*
 
-AI responds: *"A few issues to flag. The opening paragraph describes the agency's general approach rather than the client's specific situation — a sceptical reader will notice you haven't demonstrated understanding of their particular challenge. The 'proven results' claim on page two isn't backed by anything specific in what you've provided. The case study section is good but should come earlier — it's currently buried after the methodology, but for this type of client, demonstrated experience is probably the first thing they want to see. The tone is appropriate throughout."*
+AI responds: *"A few issues to flag. The opening paragraph describes the agency's general approach rather than the client's specific situation, a sceptical reader will notice you haven't demonstrated understanding of their particular challenge. The 'proven results' claim on page two isn't backed by anything specific in what you've provided. The case study section is good but should come earlier, it's currently buried after the methodology, but for this type of client, demonstrated experience is probably the first thing they want to see. The tone is appropriate throughout."*
 
-*Stage 3 — Revision*
+*Stage 3, Revision*
 
 Sarah: *"Revise the draft addressing these points: lead with the client's situation, move the case study up, remove the 'proven results' claim and replace it with [SPECIFIC RESULT I'LL ADD]."*
 
@@ -1029,7 +1031,7 @@ These adversarial critique prompts produce more rigorous feedback than neutral e
 
 > **WATCH OUT**
 >
-> AI critique has two consistent weaknesses. First, it tends to be comprehensive in format but inconsistent in depth — it will often identify a problem without identifying the correct solution. Second, it may miss issues that require external knowledge it doesn't have: the client context it wasn't given, the regulatory nuance that requires specialist knowledge, or the political sensitivities you didn't mention. Use AI critique to catch structural, logical, and stylistic issues. Use human review to catch everything that requires knowledge or judgment AI doesn't have.
+> AI critique has two consistent weaknesses. First, it tends to be comprehensive in format but inconsistent in depth, it will often identify a problem without identifying the correct solution. Second, it may miss issues that require external knowledge it doesn't have: the client context it wasn't given, the regulatory nuance that requires specialist knowledge, or the political sensitivities you didn't mention. Use AI critique to catch structural, logical, and stylistic issues. Use human review to catch everything that requires knowledge or judgment AI doesn't have.
 
 ---
 
@@ -1053,15 +1055,17 @@ The quality comes from the connections between the stages: clear outputs, delibe
 
 **The building blocks of complex workflows**
 
-Chapter 17 introduced decomposition patterns. This chapter introduces the mechanics of connecting stages together — the "plumbing" of multi-step AI workflows.
+Chapter 17 introduced decomposition patterns. This chapter introduces the mechanics of connecting stages together, the "plumbing" of multi-step AI workflows.
 
 Three mechanics cover most of what you will encounter:
 
-**Chains** — Sequential stages where each output becomes the next input
-**Loops** — Iterative cycles where output is reviewed and refined until it meets a standard
-**Handoffs** — Points where the work passes from AI to a human (or vice versa) for a specific contribution
+**Chains**, Sequential stages where each output becomes the next input
+**Loops**, Iterative cycles where output is reviewed and refined until it meets a standard
+**Handoffs**, Points where the work passes from AI to a human (or vice versa) for a specific contribution
 
 Understanding which mechanic applies to which part of a task is what turns a list of stages into a functioning workflow.
+
+<!-- VISUAL: workflow-mechanics -->
 
 ---
 
@@ -1090,15 +1094,15 @@ Loops are appropriate when:
 The critique loop in Chapter 18 is a loop. So is any scenario where you are refining a draft toward a specific standard.
 
 **The loop discipline:**
-- Define what "done" looks like before you start looping — otherwise loops run indefinitely
-- Be specific about what is wrong in each review cycle — vague feedback produces marginal improvement
+- Define what "done" looks like before you start looping, otherwise loops run indefinitely
+- Be specific about what is wrong in each review cycle, vague feedback produces marginal improvement
 - Know when to stop: a document that is 90% right and been through two loops is usually better to complete by hand than to loop a third time
 
 ---
 
 **Handoffs**
 
-A handoff is a point where the work passes between AI and human. Handoffs are not failures — they are deliberate design choices about where human judgment adds value that AI cannot.
+A handoff is a point where the work passes between AI and human. Handoffs are not failures, they are deliberate design choices about where human judgment adds value that AI cannot.
 
 The best workflows design handoffs deliberately:
 
@@ -1109,8 +1113,8 @@ The best workflows design handoffs deliberately:
 - The work will be put in front of someone who needs to trust it
 
 **Human → AI handoffs** occur when:
-- A human has made a judgment that AI should now implement (here's the structure I want — now draft it)
-- New information has arrived that AI needs to incorporate (here's their response — now draft a reply)
+- A human has made a judgment that AI should now implement (here's the structure I want, now draft it)
+- New information has arrived that AI needs to incorporate (here's their response, now draft a reply)
 - A human review has identified specific changes that AI should make
 
 ---
@@ -1119,13 +1123,13 @@ The best workflows design handoffs deliberately:
 
 > **PRO TIP**
 >
-> Document your best workflows. When you design a workflow that works well for a type of task, write it down as a template. The workflow structure — not just individual prompts but the sequence, the handoff points, and the review criteria — is reusable. Over time, a small library of tested workflow templates is one of the most valuable assets you can build as a professional AI user.
+> Document your best workflows. When you design a workflow that works well for a type of task, write it down as a template. The workflow structure, not just individual prompts but the sequence, the handoff points, and the review criteria, is reusable. Over time, a small library of tested workflow templates is one of the most valuable assets you can build as a professional AI user.
 
 ---
 
 > **WATCH OUT**
 >
-> Over-engineered workflows add overhead without proportionate benefit. A three-paragraph email does not need a seven-stage workflow. Scale the process to the stakes and complexity of the work. A major proposal warrants multiple stages with careful review. A routine internal update does not. The workflow discipline is most valuable when the stakes are high and the output will be scrutinised — apply proportionate judgment elsewhere.
+> Over-engineered workflows add overhead without proportionate benefit. A three-paragraph email does not need a seven-stage workflow. Scale the process to the stakes and complexity of the work. A major proposal warrants multiple stages with careful review. A routine internal update does not. The workflow discipline is most valuable when the stakes are high and the output will be scrutinised, apply proportionate judgment elsewhere.
 
 ---
 

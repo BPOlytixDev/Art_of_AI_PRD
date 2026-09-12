@@ -23,7 +23,7 @@ Production source and reproducible PDF renderer for the 6 × 9 in KDP paperback 
 
 ## Where things live
 
-- `book-production/source/` — source Markdown manuscript parts; do not edit the generated PDFs directly
+- `book-production/source/` and `docs/manuscript_part4.md` — source Markdown manuscript parts; Part IV/Appendices is maintained in `docs/`; do not edit the generated PDFs directly
 - `book-production/src/build-book.mjs` — end-to-end renderer and KDP cover-spine calculation
 - `book-production/src/markdown.mjs` — Markdown-to-print HTML conversion
 - `book-production/src/style.css` — print typography and layout system

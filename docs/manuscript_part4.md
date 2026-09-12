@@ -24,7 +24,7 @@ This means verification is not optional for important work. It is a habit as fun
 
 ---
 
-**What verification is — and is not**
+**What verification is, and is not**
 
 Verification is not re-reading the AI output more carefully.
 
@@ -40,11 +40,13 @@ Verification is proportional to stakes. A quick summary of a document you will r
 
 Before trusting and using any significant AI output, work through these eight questions:
 
+<!-- VISUAL: verification-matrix -->
+
 **1. Is this factual or creative?**
 
 Factual content (dates, names, statistics, company information, legal positions, scientific findings) requires verification against sources. Creative content (writing style, structure, framing) can be assessed on its own merits without external sources.
 
-Know which type of output you have. A report that reads like authoritative factual analysis but was written by AI with no source documents is creative content masquerading as factual — and requires the same verification as factual content.
+Know which type of output you have. A report that reads like authoritative factual analysis but was written by AI with no source documents is creative content masquerading as factual, and requires the same verification as factual content.
 
 **2. Does it contain specific numbers?**
 
@@ -54,7 +56,7 @@ The test: can you find this number in a source you can point to?
 
 **3. Does it cite sources?**
 
-If AI has cited sources, verify them. AI hallucination of citations is a well-documented and persistent failure mode. AI may produce a citation that looks real — a plausible author name, a plausible journal, a plausible year — for a paper that does not exist. Verify by finding the actual source and confirming the claim attributed to it is what the source actually says.
+If AI has cited sources, verify them. AI hallucination of citations is a well-documented and persistent failure mode. AI may produce a citation that looks real, a plausible author name, a plausible journal, a plausible year, for a paper that does not exist. Verify by finding the actual source and confirming the claim attributed to it is what the source actually says.
 
 Do not assume that the presence of citations means the claims are verified.
 
@@ -64,7 +66,7 @@ This is distinct from the previous question. Even if AI has provided real source
 
 **5. Could this information have changed?**
 
-AI has a knowledge cutoff. Information about current prices, regulations, leadership, products, statistics, and events may be outdated. For any fast-moving area — technology, regulation, markets, current events — check whether the information reflects the current situation.
+AI has a knowledge cutoff. Information about current prices, regulations, leadership, products, statistics, and events may be outdated. For any fast-moving area, technology, regulation, markets, current events, check whether the information reflects the current situation.
 
 Even with web search enabled, AI may not surface the most recent information or may misread what it finds.
 
@@ -74,7 +76,7 @@ Complex prompts often involve AI filling gaps you didn't explicitly address. AI 
 
 Ask: is there anything in this output that I didn't specify, and has AI assumed correctly? The missing context from Chapter 6 can produce plausible-but-wrong assumptions that make their way into the output.
 
-A useful check: ask AI directly — "What assumptions did you make in producing this output?"
+A useful check: ask AI directly, "What assumptions did you make in producing this output?"
 
 **7. Did it follow my constraints?**
 
@@ -95,14 +97,14 @@ This is the hardest verification task and the one most commonly skipped. It requ
 > **Before You Trust the Answer**
 >
 > Ask:
-> — Is this factual or creative?
-> — Does it contain numbers?
-> — Does it cite sources?
-> — Are the sources real?
-> — Could the information have changed?
-> — Did the AI make an assumption?
-> — Did it follow my constraints?
-> — What evidence supports the conclusion?
+>, Is this factual or creative?
+>, Does it contain numbers?
+>, Does it cite sources?
+>, Are the sources real?
+>, Could the information have changed?
+>, Did the AI make an assumption?
+>, Did it follow my constraints?
+>, What evidence supports the conclusion?
 
 ---
 
@@ -111,7 +113,7 @@ This is the hardest verification task and the one most commonly skipped. It requ
 Some types of AI output require particularly rigorous verification:
 
 **Statistics and data**
-Verify every number against a primary source. AI confabulates plausible statistics with notable regularity. The figure "studies show that 73% of employees..." is a common pattern — verify that the study exists, that the figure is correctly stated, and that it applies to the context in which you're using it.
+Verify every number against a primary source. AI confabulates plausible statistics with notable regularity. The figure "studies show that 73% of employees..." is a common pattern, verify that the study exists, that the figure is correctly stated, and that it applies to the context in which you're using it.
 
 **Names and attributions**
 Quotes attributed to named individuals should be verified. AI can generate plausible-sounding quotes from real people that those people never said. This is a category where being wrong can cause significant professional or legal damage.
@@ -123,7 +125,7 @@ Law changes. Regulations change. Jurisdictional variations are significant. Any 
 As above, and with additional stakes. Verify medical information from qualified professionals and current clinical sources.
 
 **Technical specifications**
-Product features, software capabilities, technical standards — all change and all deserve verification from current official documentation.
+Product features, software capabilities, technical standards, all change and all deserve verification from current official documentation.
 
 ---
 
@@ -147,7 +149,7 @@ Even here, read critically. Low-risk doesn't mean no-risk.
 >
 > She runs the verification checklist. The founding date differs from one she has in a local archive document. The owner's name is slightly different from the name she has found in a census record. The employment figure appears plausible but has no source she can trace.
 >
-> She uses the AI output as a framework and a starting point — it helpfully organised the narrative structure and identified what she should look for. But every specific fact goes back to a source she can cite. The final article is accurate because she verified; it was well-structured because AI helped.
+> She uses the AI output as a framework and a starting point, it helpfully organised the narrative structure and identified what she should look for. But every specific fact goes back to a source she can cite. The final article is accurate because she verified; it was well-structured because AI helped.
 >
 > This is the right relationship between AI production and human verification.
 
@@ -165,7 +167,7 @@ The section that does most harm is the one you verified every part of except the
 
 > **WATCH OUT**
 >
-> Asking AI to verify its own output has limited value. AI can tell you what it believes to be accurate, but this is circular — if AI believed the claim was wrong, it wouldn't have made it in the first place. AI self-review can catch logical inconsistencies and obvious errors, but it cannot substitute for checking claims against independent sources. Use AI critique for structure and reasoning; use external sources for facts.
+> Asking AI to verify its own output has limited value. AI can tell you what it believes to be accurate, but this is circular, if AI believed the claim was wrong, it wouldn't have made it in the first place. AI self-review can catch logical inconsistencies and obvious errors, but it cannot substitute for checking claims against independent sources. Use AI critique for structure and reasoning; use external sources for facts.
 
 ---
 
@@ -177,13 +179,15 @@ The section that does most harm is the one you verified every part of except the
 
 AI failures are not random. They fall into predictable categories that appear consistently across different models, different platforms, and different types of task. Knowing these categories means you can anticipate where to look, rather than discovering errors after they've caused a problem.
 
-This chapter is a practical catalogue of known AI failure modes — not to make you sceptical of AI, but to make your scepticism accurate: applied where the risks are highest, relaxed where the risks are lower.
+This chapter is a practical catalogue of known AI failure modes, not to make you sceptical of AI, but to make your scepticism accurate: applied where the risks are highest, relaxed where the risks are lower.
+
+<!-- VISUAL: failure-taxonomy -->
 
 ---
 
-**Failure Category 1 — Hallucination**
+**Failure Category 1, Hallucination**
 
-*What it is:* AI generates specific facts, names, dates, statistics, citations, or events that did not happen or do not exist — but presents them with the same confidence as accurate information.
+*What it is:* AI generates specific facts, names, dates, statistics, citations, or events that did not happen or do not exist, but presents them with the same confidence as accurate information.
 
 *Why it happens:* AI generates plausible text, not verified text. A hallucinated statistic is generated because it is the kind of statistic that would plausibly appear in this type of document. A hallucinated citation is generated because it is the kind of citation that would plausibly appear in academic writing on this topic.
 
@@ -196,11 +200,11 @@ This chapter is a practical catalogue of known AI failure modes — not to make 
 
 *How to catch it:* Verify specific claims against primary sources. Treat all citations as unverified until confirmed. Be especially sceptical of very specific numbers.
 
-*The severity:* High for professional use. A hallucinated citation in a published article, a made-up statistic in a board presentation, or an incorrect legal date in a contract review — these cause real professional and sometimes legal consequences.
+*The severity:* High for professional use. A hallucinated citation in a published article, a made-up statistic in a board presentation, or an incorrect legal date in a contract review, these cause real professional and sometimes legal consequences.
 
 ---
 
-**Failure Category 2 — Outdated information**
+**Failure Category 2, Outdated information**
 
 *What it is:* AI presents information that was accurate as of its training cutoff but is no longer current.
 
@@ -219,9 +223,9 @@ This chapter is a practical catalogue of known AI failure modes — not to make 
 
 ---
 
-**Failure Category 3 — Confident over-generalisation**
+**Failure Category 3, Confident over-generalisation**
 
-*What it is:* AI produces statements that are broadly plausible but overstate how generally applicable they are — missing important exceptions, jurisdictional variations, sector-specific differences, or situational nuances.
+*What it is:* AI produces statements that are broadly plausible but overstate how generally applicable they are, missing important exceptions, jurisdictional variations, sector-specific differences, or situational nuances.
 
 *Why it happens:* AI generates the most generally accurate response to the most common interpretation of the question. It doesn't automatically surface the ways in which the answer differs for your specific situation.
 
@@ -235,11 +239,11 @@ This chapter is a practical catalogue of known AI failure modes — not to make 
 
 ---
 
-**Failure Category 4 — Arithmetic errors**
+**Failure Category 4, Arithmetic errors**
 
-*What it is:* AI makes errors in arithmetic, calculation, and numerical reasoning — particularly on multi-step calculations, percentage calculations, and anything requiring exact arithmetic.
+*What it is:* AI makes errors in arithmetic, calculation, and numerical reasoning, particularly on multi-step calculations, percentage calculations, and anything requiring exact arithmetic.
 
-*Why it happens:* AI generates text. Numbers are text. When AI produces "the answer is 43%," it has generated the number 43 because it is plausible in context — not because it has calculated and arrived at 43. Text generation and mathematical calculation are different processes. Without code execution, AI maths is unreliable.
+*Why it happens:* AI generates text. Numbers are text. When AI produces "the answer is 43%," it has generated the number 43 because it is plausible in context, not because it has calculated and arrived at 43. Text generation and mathematical calculation are different processes. Without code execution, AI maths is unreliable.
 
 *Where it appears most:*
 - Percentage calculations in reports or analyses
@@ -254,7 +258,7 @@ This chapter is a practical catalogue of known AI failure modes — not to make 
 
 ---
 
-**Failure Category 5 — Context drift**
+**Failure Category 5, Context drift**
 
 *What it is:* In long conversations, AI gradually loses track of constraints and context established early in the conversation, reverting to defaults it would apply without those constraints.
 
@@ -269,7 +273,7 @@ This chapter is a practical catalogue of known AI failure modes — not to make 
 
 ---
 
-**Failure Category 6 — Sycophancy**
+**Failure Category 6, Sycophancy**
 
 *What it is:* AI tends to agree with and validate what the user presents, even when the user is wrong. It will often affirm an incorrect claim rather than challenge it, adjust its previous answer to accommodate the user's pushback even when its original answer was correct, and frame critique in ways that are so mild as to be useless.
 
@@ -286,7 +290,7 @@ This chapter is a practical catalogue of known AI failure modes — not to make 
 
 ---
 
-**Failure Category 7 — Instruction drift**
+**Failure Category 7, Instruction drift**
 
 *What it is:* AI partially follows instructions rather than fully following them. It may honour the spirit of an instruction while missing a specific requirement, or follow all instructions except one.
 
@@ -301,9 +305,9 @@ This chapter is a practical catalogue of known AI failure modes — not to make 
 
 ---
 
-**Failure Category 8 — Plausible but wrong reasoning**
+**Failure Category 8, Plausible but wrong reasoning**
 
-*What it is:* AI produces reasoning that appears sound — logical structure, coherent argument, sensible-sounding progression — but reaches the wrong conclusion, misapplies a principle, or draws on an incorrect premise.
+*What it is:* AI produces reasoning that appears sound, logical structure, coherent argument, sensible-sounding progression, but reaches the wrong conclusion, misapplies a principle, or draws on an incorrect premise.
 
 *Why it happens:* Plausible reasoning is generated in the same way as plausible text. A well-structured argument is a pattern AI has encountered many times and can reproduce convincingly. The quality of the reasoning structure does not guarantee the quality of the reasoning.
 
@@ -320,7 +324,7 @@ This chapter is a practical catalogue of known AI failure modes — not to make 
 
 > **PRO TIP**
 >
-> When you receive an output that matters, ask AI: "What are the three most important ways this analysis could be wrong? What assumptions am I relying on that might not hold?" This is not a perfect catch-all, but it surfaces failure modes AI can identify — which is often enough to direct your verification effort toward the right areas.
+> When you receive an output that matters, ask AI: "What are the three most important ways this analysis could be wrong? What assumptions am I relying on that might not hold?" This is not a perfect catch-all, but it surfaces failure modes AI can identify, which is often enough to direct your verification effort toward the right areas.
 
 ---
 
@@ -328,15 +332,15 @@ This chapter is a practical catalogue of known AI failure modes — not to make 
 
 | Output type | Primary failure risk | Verification priority |
 |---|---|---|
-| Statistics and numbers | Hallucination, arithmetic error | HIGH — verify all figures |
-| Citations and references | Hallucination | HIGH — verify all citations exist |
-| Legal/regulatory claims | Outdated info, over-generalisation | HIGH — verify from current official sources |
-| Medical information | Over-generalisation | HIGH — verify from clinical sources |
-| Reasoning and analysis | Plausible-wrong reasoning, sycophancy | MEDIUM — check argument logic |
-| Current events/market data | Outdated information | MEDIUM — verify recency |
-| Technology specifications | Outdated information | MEDIUM — verify from official docs |
-| Writing and structure | Instruction drift | LOW — read against your brief |
-| Creative framing | Generally lower risk | LOW — assess on merits |
+| Statistics and numbers | Hallucination, arithmetic error | HIGH, verify all figures |
+| Citations and references | Hallucination | HIGH, verify all citations exist |
+| Legal/regulatory claims | Outdated info, over-generalisation | HIGH, verify from current official sources |
+| Medical information | Over-generalisation | HIGH, verify from clinical sources |
+| Reasoning and analysis | Plausible-wrong reasoning, sycophancy | MEDIUM, check argument logic |
+| Current events/market data | Outdated information | MEDIUM, verify recency |
+| Technology specifications | Outdated information | MEDIUM, verify from official docs |
+| Writing and structure | Instruction drift | LOW, read against your brief |
+| Creative framing | Generally lower risk | LOW, assess on merits |
 
 ---
 
@@ -348,7 +352,7 @@ This chapter is a practical catalogue of known AI failure modes — not to make 
 
 The wrong response to AI's failure modes is distrust of everything AI produces. The right response is calibrated trust: knowing which outputs to use confidently, which to verify before using, and which to treat as starting points only.
 
-Calibration means your level of trust is proportionate to the actual risk profile of the output. A person who trusts everything AI produces equally — the sentence structure and the legal claim alike — will eventually rely on something they should have checked. A person who trusts nothing AI produces is throwing away most of the tool's value for no good reason.
+Calibration means your level of trust is proportionate to the actual risk profile of the output. A person who trusts everything AI produces equally, the sentence structure and the legal claim alike, will eventually rely on something they should have checked. A person who trusts nothing AI produces is throwing away most of the tool's value for no good reason.
 
 ---
 
@@ -356,23 +360,23 @@ Calibration means your level of trust is proportionate to the actual risk profil
 
 Two dimensions determine how much trust is appropriate:
 
-**Stakes** — What happens if this output is wrong?
+**Stakes**, What happens if this output is wrong?
 
 - High stakes: wrong output causes significant professional, financial, legal, or personal harm
 - Medium stakes: wrong output causes embarrassment, rework, or moderate professional consequences
 - Low stakes: wrong output is caught before any harm, or the consequences are easily reversible
 
-**Verifiability** — How easily can you check this?
+**Verifiability**, How easily can you check this?
 
 - Easy: you can verify against a source you have access to in minutes
-- Moderate: verification requires more effort — finding sources, specialist input, research
+- Moderate: verification requires more effort, finding sources, specialist input, research
 - Hard: verification requires expertise or information you don't have easy access to
 
 Use these two dimensions to calibrate your verification investment:
 
 | Stakes \ Verifiability | Easy to verify | Moderate | Hard to verify |
 |---|---|---|---|
-| **High stakes** | Verify and document | Verify carefully, seek expert input | Do not rely on AI alone — use as one input among several |
+| **High stakes** | Verify and document | Verify carefully, seek expert input | Do not rely on AI alone, use as one input among several |
 | **Medium stakes** | Verify key claims | Spot-check critical elements | Flag uncertainty; present as AI-assisted |
 | **Low stakes** | Read critically | Use with awareness | Use cautiously; review if consequences grow |
 
@@ -382,9 +386,9 @@ Use these two dimensions to calibrate your verification investment:
 
 Over time, you will build a sense of where AI performs reliably for your specific use cases and where it consistently needs correction.
 
-This is worth tracking, at least informally. When you notice a consistent failure pattern — AI always overestimates timelines in project plans; AI never quite captures your organisation's formal register; AI gets financial calculations wrong — note it. That pattern becomes a standing verification rule in your practice.
+This is worth tracking, at least informally. When you notice a consistent failure pattern, AI always overestimates timelines in project plans; AI never quite captures your organisation's formal register; AI gets financial calculations wrong, note it. That pattern becomes a standing verification rule in your practice.
 
-When you notice consistent strengths — AI always produces excellent first-draft email structures; AI is consistently right about the logical order of a presentation; AI's summarisation of meeting notes is almost always accurate — you can extend trust in those areas and invest verification effort where it's most needed.
+When you notice consistent strengths, AI always produces excellent first-draft email structures; AI is consistently right about the logical order of a presentation; AI's summarisation of meeting notes is almost always accurate, you can extend trust in those areas and invest verification effort where it's most needed.
 
 Calibration is personal and task-specific. It improves with experience.
 
@@ -418,7 +422,7 @@ In professional contexts, it is worth having a clear internal policy on how you 
 
 > **WATCH OUT**
 >
-> Trust miscalibration can go in both directions. Over-trusting AI produces errors that damage professional credibility. But over-distrusting AI — refusing to use well-verified AI output because it came from AI — is also a miscalibration. It adds unnecessary time and effort and fails to take advantage of a tool that works well in the right context. The goal is accurate calibration, not maximum scepticism.
+> Trust miscalibration can go in both directions. Over-trusting AI produces errors that damage professional credibility. But over-distrusting AI, refusing to use well-verified AI output because it came from AI, is also a miscalibration. It adds unnecessary time and effort and fails to take advantage of a tool that works well in the right context. The goal is accurate calibration, not maximum scepticism.
 
 ---
 
@@ -428,7 +432,7 @@ In professional contexts, it is worth having a clear internal policy on how you 
 
 **Why habits matter more than techniques**
 
-Every technique in this book is available to you from today. The 7 Questions, the Before → Better → Best approach, the critique loop, the verification framework — all of them can be applied immediately.
+Every technique in this book is available to you from today. The 7 Questions, the Before → Better → Best approach, the critique loop, the verification framework, all of them can be applied immediately.
 
 But techniques that aren't habitual are techniques that get used occasionally, in high-stakes situations, when you remember, and not used the rest of the time. The people who get the most consistent value from AI are not necessarily the most technically sophisticated. They are the people who have built consistent habits that apply the right practices automatically.
 
@@ -440,27 +444,27 @@ This chapter is about building those habits.
 
 From watching how people build effective AI practices, four habits account for most of the difference between occasional useful results and consistently good output:
 
-**Habit 1 — Prepare before you prompt**
+**Habit 1, Prepare before you prompt**
 
 The single biggest quality leverage point is the thirty seconds spent applying the 7 Questions before starting a significant AI task. Most people skip this and type whatever is on their mind. Those who make it habitual find that they invest slightly more time upfront and substantially less time in revision.
 
 Make it automatic: for any AI task that involves more than a few minutes of work, run the 7 Questions first. Even quickly. Even imperfectly. The discipline of asking "what am I trying to achieve?" before typing is worth far more than any clever prompt technique.
 
-**Habit 2 — Verify before you use**
+**Habit 2, Verify before you use**
 
 Establish a consistent minimum verification standard for any output you will use professionally. The specific standard depends on the stakes of your work, but the habit is non-negotiable: before you send, publish, present, or act on significant AI output, you have checked something.
 
 For most professional use, the minimum is: read critically, check any numbers and specific facts, and confirm the output follows the constraints you set. This takes two to five minutes. Make it as automatic as saving a file.
 
-**Habit 3 — Build your workspace iteratively**
+**Habit 3, Build your workspace iteratively**
 
-Your AI workspace is not something you set up once and leave. It improves every time you notice a gap — every time AI gets something wrong that it would have got right with better standing instructions, every time you re-type context you've already established, every time you use a prompt that worked particularly well.
+Your AI workspace is not something you set up once and leave. It improves every time you notice a gap, every time AI gets something wrong that it would have got right with better standing instructions, every time you re-type context you've already established, every time you use a prompt that worked particularly well.
 
 The habit: when something goes wrong that a better workspace would have prevented, fix the workspace. When you write a prompt that works especially well, save it. When you notice you're re-entering the same context repeatedly, persist it. Small iterative improvements to your workspace compound into significant efficiency gains over time.
 
-**Habit 4 — Critique before you finish**
+**Habit 4, Critique before you finish**
 
-Before finalising any significant piece of AI-assisted work, run it through a critique pass. This doesn't need to be formal — it can be as simple as asking AI "what is weak about this?" and reading the response with genuine openness.
+Before finalising any significant piece of AI-assisted work, run it through a critique pass. This doesn't need to be formal, it can be as simple as asking AI "what is weak about this?" and reading the response with genuine openness.
 
 People who skip this step send proposals with obvious structural weaknesses, publish articles with underdeveloped arguments, and submit reports with claims that don't hold up. People who make critique a habit catch these things before they matter.
 
@@ -486,10 +490,10 @@ Once a month, look at what you're using AI for and ask: is my practice serving m
 To make this concrete, here is what a week of integrated AI use looks like for someone with established habits:
 
 *Monday morning:*
-Preparing for a client review meeting. Opens the client's Project. Pastes in the latest project data and asks AI for a status summary. Reviews it against his own knowledge — catches one outdated figure. Uses the agenda workflow (W8). Both ready in thirty minutes.
+Preparing for a client review meeting. Opens the client's Project. Pastes in the latest project data and asks AI for a status summary. Reviews it against his own knowledge, catches one outdated figure. Uses the agenda workflow (W8). Both ready in thirty minutes.
 
 *Tuesday:*
-Needs to draft a challenging email to a supplier about a missed deadline. Runs the 7 Questions briefly. Uses W1. Reviews the draft — adjusts the tone. Sends within twenty minutes of starting.
+Needs to draft a challenging email to a supplier about a missed deadline. Runs the 7 Questions briefly. Uses W1. Reviews the draft, adjusts the tone. Sends within twenty minutes of starting.
 
 *Wednesday:*
 Writing a quarterly business report. Starts with the Information → Structure → Content pattern (Chapter 17). Reviews the structure before drafting. Runs a critique loop on the draft (Chapter 18). Verifies the two financial figures independently. Done in two hours rather than half a day.
@@ -498,7 +502,7 @@ Writing a quarterly business report. Starts with the Information → Structure �
 Reviewing a contract. Uses W22. Checks the flag list AI produces against her solicitor's advice. Updates her standing workspace instructions to include a note about a contract clause type she should always flag.
 
 *Friday:*
-Reflecting on the week. One output needed correction — AI got a date wrong. Updates her personal verification checklist to add "verify dates in contract summaries." Small improvement. Compounds over time.
+Reflecting on the week. One output needed correction, AI got a date wrong. Updates her personal verification checklist to add "verify dates in contract summaries." Small improvement. Compounds over time.
 
 ---
 
@@ -514,13 +518,13 @@ It is worth being explicit about the patterns that look like productive AI use b
 
 **Prompt collecting without application.** Building a library of prompts from the internet and using them once before returning to the same vague requests as before.
 
-**Volume without quality.** Generating large quantities of AI output and editing it all manually because it's not quite right — faster to produce, slower overall because verification and correction eat the time savings.
+**Volume without quality.** Generating large quantities of AI output and editing it all manually because it's not quite right, faster to produce, slower overall because verification and correction eat the time savings.
 
 **Outsourcing judgment.** Using AI to make decisions that require accountability. AI can inform decisions; it cannot make them on your behalf.
 
 **Ignoring failure patterns.** Noticing that AI consistently gets something wrong and continuing to rely on it in that area without verification or adjustment.
 
-**Treating the first draft as final.** The first AI output on a complex task is almost never the best it can be. One iteration — a critique loop, a refinement pass, a targeted revision — consistently improves it.
+**Treating the first draft as final.** The first AI output on a complex task is almost never the best it can be. One iteration, a critique loop, a refinement pass, a targeted revision, consistently improves it.
 
 ---
 
@@ -549,12 +553,12 @@ The most important distinction for anyone trying to keep up: some things change 
 
 **Things that change slowly or not at all:**
 - The principles of good interaction design (context, instructions, examples, output specs)
-- The 7 Questions framework — these questions are derived from human communication theory, not from AI quirks
+- The 7 Questions framework, these questions are derived from human communication theory, not from AI quirks
 - The verification mindset
 - The workflow thinking
 - The habit of preparing before prompting
 
-The core framework in this book — the 7 Questions, the AI Interaction Stack, the verification habits, the workflow patterns — is designed to be durable. These are not tricks that work today because of a specific model behaviour. They are principles that reflect what it means to communicate a task clearly to a capable but uninformed agent. That doesn't change when the models improve.
+The core framework in this book, the 7 Questions, the AI Interaction Stack, the verification habits, the workflow patterns, is designed to be durable. These are not tricks that work today because of a specific model behaviour. They are principles that reflect what it means to communicate a task clearly to a capable but uninformed agent. That doesn't change when the models improve.
 
 What you need to update is the feature-level detail: which capabilities exist, what the product notes say, where volatile information lives. That is why this book puts product-specific detail in Appendix E rather than in the main text.
 
@@ -598,7 +602,7 @@ You do not need to update your practice because:
 
 The early period of AI use is typically characterised by inconsistency: some interactions work well, most don't, and the reasons feel opaque. This book is intended to take you out of that phase.
 
-The middle period — where good habits are established and the core framework is internalised — is where most of the professional value lives. Consistent results, predictable quality, reliable verification. This is not exciting. It is useful.
+The middle period, where good habits are established and the core framework is internalised, is where most of the professional value lives. Consistent results, predictable quality, reliable verification. This is not exciting. It is useful.
 
 The advanced period involves increasing sophistication in workflow design, more precise calibration of trust, and the ability to identify the right tool and technique for novel situations without referring back to a guide. It comes with accumulated practice, not with reading more AI content.
 
@@ -608,7 +612,7 @@ The trajectory is this: from opaque and inconsistent to systematic and reliable,
 
 > **WHY IT WORKS**
 >
-> The people who develop the best AI practices are not the ones who read the most about AI. They are the ones who use it most consistently, reflect on what works, and gradually refine their approach. The 7 Questions and the verification habits give you a framework to do that reflection productively — so that each iteration of your practice is an improvement on the last.
+> The people who develop the best AI practices are not the ones who read the most about AI. They are the ones who use it most consistently, reflect on what works, and gradually refine their approach. The 7 Questions and the verification habits give you a framework to do that reflection productively, so that each iteration of your practice is an improvement on the last.
 
 ---
 
@@ -630,19 +634,19 @@ And, in time, it becomes less like following a framework and more like simply kn
 
 ## Appendix A
 
-### The 7 Questions — Quick Reference Card
+### The 7 Questions, Quick Reference Card
 
 *Print this. Photograph it. Keep it visible until the questions become automatic.*
 
 **Before every significant AI interaction**
 
-1. **What am I trying to achieve?** — State the real goal, not just the surface task.
-2. **What does AI need to know?** — Add the background, audience, constraints, and relationships that matter.
-3. **What information can I provide?** — Attach or paste documents, data, examples, and previous work.
-4. **What exactly should AI do?** — Use a clear action verb and define the scope.
-5. **What should the result look like?** — Specify format, length, tone, structure, and audience.
-6. **How will I check it?** — Identify the facts, numbers, assumptions, and reasoning that need review.
-7. **What should happen next?** — Decide whether this is the final result or the input to another stage.
+1. **What am I trying to achieve?**, State the real goal, not just the surface task.
+2. **What does AI need to know?**, Add the background, audience, constraints, and relationships that matter.
+3. **What information can I provide?**, Attach or paste documents, data, examples, and previous work.
+4. **What exactly should AI do?**, Use a clear action verb and define the scope.
+5. **What should the result look like?**, Specify format, length, tone, structure, and audience.
+6. **How will I check it?**, Identify the facts, numbers, assumptions, and reasoning that need review.
+7. **What should happen next?**, Decide whether this is the final result or the input to another stage.
 
 **The Interaction Stack, compressed**
 
@@ -674,13 +678,13 @@ Write out your current prompt exactly as you usually send it:
 
 ---
 
-**STAGE 1 — DIAGNOSE THE GAPS**
+**STAGE 1, DIAGNOSE THE GAPS**
 
 Answer these questions about your current prompt:
 
 **Job clarity**
 What specific action have you asked AI to take?
-If the answer is vague ("help me," "work on," "assist with") — rewrite with a clear verb and scope.
+If the answer is vague ("help me," "work on," "assist with"), rewrite with a clear verb and scope.
 
 **Context provided**
 What background have you given AI that it couldn't know on its own?
@@ -692,7 +696,7 @@ Is there source material that would make the output more accurate or specific?
 
 **Output specified**
 Have you specified: format, length, tone, audience?
-If any of these are unspecified, what is AI likely to default to — and is that what you want?
+If any of these are unspecified, what is AI likely to default to, and is that what you want?
 
 **Verification planned**
 What specifically might be wrong in the output?
@@ -700,7 +704,7 @@ How will you check it?
 
 ---
 
-**STAGE 2 — BUILD THE BETTER VERSION**
+**STAGE 2, BUILD THE BETTER VERSION**
 
 Using your diagnosis, write the improved prompt:
 
@@ -709,7 +713,7 @@ ROLE (if relevant):
 You are a [role] with expertise in [domain].
 
 CONTEXT:
-[Background information — situation, history, constraints, relationships]
+[Background information, situation, history, constraints, relationships]
 
 TASK:
 [Specific action verb] [specific deliverable] for [purpose].
@@ -734,7 +738,7 @@ assumptions you have made.
 
 ---
 
-**STAGE 3 — THE BEST VERSION**
+**STAGE 3, THE BEST VERSION**
 
 After receiving output from the Better version:
 
@@ -754,7 +758,7 @@ After receiving output from the Better version:
 |---|---|---|
 | Before | "Help me with a presentation for our board." | Vague task, no context, no output specs |
 | Better | "Create a presentation outline for our Q3 board update covering financial performance, key decisions, and outlook." | Specific task, content defined |
-| Best | "You are preparing a board presentation for [Company]. Audience: eight non-executive directors, one of whom is new. Format: twelve slides maximum. Content: Q3 financial performance (headline numbers I'll provide), two strategic decisions made this quarter, and a twelve-month outlook. Tone: direct and professional. Lead with the most important finding, not with agenda. Do not include operational detail — board level only. Flag any section where you've made assumptions about emphasis that I should review." | Role, specific deliverable, audience, slide count, content list, tone, structural requirement, exclusion, verification request |
+| Best | "You are preparing a board presentation for [Company]. Audience: eight non-executive directors, one of whom is new. Format: twelve slides maximum. Content: Q3 financial performance (headline numbers I'll provide), two strategic decisions made this quarter, and a twelve-month outlook. Tone: direct and professional. Lead with the most important finding, not with agenda. Do not include operational detail, board level only. Flag any section where you've made assumptions about emphasis that I should review." | Role, specific deliverable, audience, slide count, content list, tone, structural requirement, exclusion, verification request |
 
 ---
 
@@ -797,7 +801,7 @@ Beyond checking that sources exist: does the source's content actually support t
 ---
 
 ☐ **5. Could this have changed?**
-For any claim about current facts — who holds a role, what a product costs, what a regulation says, what an organisation does — is this current? AI knowledge has a cutoff. For fast-moving topics, verify from official current sources.
+For any claim about current facts, who holds a role, what a product costs, what a regulation says, what an organisation does, is this current? AI knowledge has a cutoff. For fast-moving topics, verify from official current sources.
 
 ---
 
@@ -823,7 +827,7 @@ For analytical outputs: does the conclusion actually follow from the evidence? C
 | Report with statistics | 2 (numbers), 5 (currency), 8 (reasoning) |
 | Academic or research content | 2, 3 (citations), 4 (sources), 8 |
 | Legal or regulatory content | 5 (currency), 6 (assumptions), 8 |
-| Medical information | 5, 6, 8 — plus qualified professional review |
+| Medical information | 5, 6, 8, plus qualified professional review |
 | Client-facing communications | 6 (assumptions), 7 (constraints), 8 |
 | Internal communications | 7 (constraints), light check on others |
 | Creative/editorial content | Read critically; 7 (constraints) |
@@ -865,7 +869,7 @@ For analytical outputs: does the conclusion actually follow from the evidence? C
 - Standard exclusions per client (regulatory constraints, competitor references, etc.)
 
 **Where to be most careful:**
-Statistics and market claims in copy — these are high-visibility and often checked by clients or regulators. Verify every specific figure before it goes into client-facing material.
+Statistics and market claims in copy, these are high-visibility and often checked by clients or regulators. Verify every specific figure before it goes into client-facing material.
 
 ---
 
@@ -987,18 +991,18 @@ Curriculum-specific content should be verified against current specifications. C
 - Level of technical language appropriate for target publication
 
 **Where to be most careful:**
-All citations must be verified independently — AI hallucination of academic references is well-documented. AI summaries of research papers may miss important methodological nuance. AI should not be used to generate empirical claims or research findings. Follow your institution's and target journal's guidelines on AI disclosure.
+All citations must be verified independently, AI hallucination of academic references is well-documented. AI summaries of research papers may miss important methodological nuance. AI should not be used to generate empirical claims or research findings. Follow your institution's and target journal's guidelines on AI disclosure.
 
 ---
 
 ### General Professionals (Broad Business Contexts)
 
 **Most valuable starting workflows:**
-- W1 (Professional email) — universally applicable
-- W3 (Meeting preparation) — very high return
-- W4 (Summarising documents) — immediate time saving
-- W8 (Meeting agenda and follow-up) — immediately practical
-- W15 (Building a workspace) — the highest long-term leverage point
+- W1 (Professional email), universally applicable
+- W3 (Meeting preparation), very high return
+- W4 (Summarising documents), immediate time saving
+- W8 (Meeting agenda and follow-up), immediately practical
+- W15 (Building a workspace), the highest long-term leverage point
 
 **Minimum viable workspace:**
 - Your role and organisation type (two sentences)
@@ -1011,7 +1015,7 @@ All citations must be verified independently — AI hallucination of academic re
 
 ## Appendix E
 
-### Product Notes — Platform-Specific Information
+### Product Notes, Platform-Specific Information
 
 *This appendix contains product-specific information that is subject to change. All entries are verified as of September 2026. Volatility ratings indicate how likely information is to have changed since verification.*
 
@@ -1038,7 +1042,7 @@ Useful official starting points:
 
 ---
 
-### E1 — ChatGPT (OpenAI)
+### E1, ChatGPT (OpenAI)
 
 **Plans available (September 2026):** Free, Plus, Pro, Team, Enterprise
 
@@ -1067,21 +1071,21 @@ You can use existing GPTs where your account and workspace permit it. Creating o
 *Volatility: HIGH*
 
 **Image generation (ChatGPT Images):**
-Integrated into ChatGPT, with capabilities and access changing over time. Commercial use is subject to OpenAI's current terms and applicable law — verify both before using generated images in commercial projects.
-*Volatility: HIGH — terms and capabilities change*
+Integrated into ChatGPT, with capabilities and access changing over time. Commercial use is subject to OpenAI's current terms and applicable law, verify both before using generated images in commercial projects.
+*Volatility: HIGH, terms and capabilities change*
 
 **File upload:**
-PDF, Word, Excel, images and other formats. Size and count limits apply — check current documentation.
+PDF, Word, Excel, images and other formats. Size and count limits apply, check current documentation.
 *Volatility: MEDIUM*
 
 ---
 
-### E2 — Claude (Anthropic)
+### E2, Claude (Anthropic)
 
 **Plans available (September 2026):** Free, Pro, Team, Enterprise
 
 **Projects feature:**
-Available on Pro and above. Similar to ChatGPT Projects — groups conversations, maintains uploaded documents, supports project-level instructions. One of the more mature implementations of this feature.
+Available on Pro and above. Similar to ChatGPT Projects, groups conversations, maintains uploaded documents, supports project-level instructions. One of the more mature implementations of this feature.
 *Volatility: MEDIUM*
 
 **System prompts / persistent instructions:**
@@ -1093,11 +1097,11 @@ Available on Pro and above, via tool integration. As with all AI web search: ver
 *Volatility: MEDIUM*
 
 **File upload:**
-PDFs, Word documents, images, and other formats supported. Claude has historically handled long documents well — but verify large document behaviour from current documentation.
+PDFs, Word documents, images, and other formats supported. Claude has historically handled long documents well, but verify large document behaviour from current documentation.
 *Volatility: MEDIUM*
 
 **Memory:**
-Claude provides several forms of persistence and personalisation, including profile preferences, project instructions, project knowledge, and—where enabled—search across previous chats. These mechanisms differ from one another and do not guarantee complete recall across conversations. Check current availability and settings in Claude's documentation.
+Claude provides several forms of persistence and personalisation, including profile preferences, project instructions, project knowledge, andwhere enabledsearch across previous chats. These mechanisms differ from one another and do not guarantee complete recall across conversations. Check current availability and settings in Claude's documentation.
 *Volatility: HIGH*
 
 **Extended context window:**
@@ -1106,13 +1110,13 @@ Claude models have historically supported long context windows, enabling analysi
 
 ---
 
-### E3 — Gemini (Google)
+### E3, Gemini (Google)
 
 **Plans available (September 2026):** Gemini (free), Gemini Advanced (paid subscription), Gemini for Workspace (business integration)
 
 **Google Workspace integration:**
 Gemini integrates with Google Docs, Gmail, Drive, Sheets, and Slides for users with Workspace accounts. For professionals already using Google Workspace, this integration is significant for productivity. Depth and reliability of integration varies by product.
-*Volatility: HIGH — integration features are actively expanding*
+*Volatility: HIGH, integration features are actively expanding*
 
 **Web search:**
 Gemini has native Google Search integration, which is a meaningful advantage for tasks requiring current information. Search quality is generally strong; verify important claims as normal.
@@ -1128,16 +1132,16 @@ Images, PDFs, and other formats supported. Google Workspace document integration
 
 ---
 
-### E4 — Microsoft Copilot
+### E4, Microsoft Copilot
 
 **Plans available (September 2026):** Copilot (free, integrated into Windows and Edge), Copilot Pro (paid), Microsoft 365 Copilot (business, requires M365 subscription)
 
 **Primary use case:**
-Copilot's primary value for professional users is its integration with Microsoft 365 applications — Word, Excel, Outlook, Teams, PowerPoint. For organisations running M365, this integration can be significant.
+Copilot's primary value for professional users is its integration with Microsoft 365 applications, Word, Excel, Outlook, Teams, PowerPoint. For organisations running M365, this integration can be significant.
 
 **Microsoft 365 Copilot:**
 If your organisation has deployed M365 Copilot, AI assistance is available within the applications you already use. Capabilities include: summarising emails and meetings, drafting documents within Word, analysing data in Excel, generating presentations in PowerPoint.
-*Volatility: HIGH — M365 Copilot is rapidly evolving*
+*Volatility: HIGH, M365 Copilot is rapidly evolving*
 
 **Data security:**
 For organisations using M365 Copilot under an enterprise agreement, data handling follows Microsoft's enterprise data protection terms. This is significant for regulated industries. Verify current terms with your IT and legal teams.
@@ -1145,7 +1149,7 @@ For organisations using M365 Copilot under an enterprise agreement, data handlin
 
 ---
 
-### E5 — Cross-Platform Notes
+### E5, Cross-Platform Notes
 
 **Choosing a primary platform:**
 For most professional users, the choice of primary AI platform should be based on: integration with your existing tools (if you use Google Workspace, Gemini's integration is worth considering; if you use M365, Copilot may be relevant); the specific capabilities you need most (long document analysis, code execution, image generation); and the plan that provides the right features for your use.
@@ -1161,11 +1165,11 @@ All major AI platforms have privacy policies governing how they use your inputs.
 
 For professional use involving client data, sensitive business information, or personally identifiable information, review the platform's current privacy and data terms before processing that information.
 
-*Volatility: HIGH — policies change; verify before processing sensitive data*
+*Volatility: HIGH, policies change; verify before processing sensitive data*
 
 ---
 
-### E6 — Image Generation (All Platforms)
+### E6, Image Generation (All Platforms)
 
 **Current state (September 2026):**
 Image generation is integrated into ChatGPT through its current image-generation experience and is available through several other platforms. Product names, models, access, and quality change frequently.
@@ -1176,7 +1180,7 @@ Before using AI-generated images in commercial contexts (client work, marketing,
 **Copyright considerations:**
 The legal status of AI-generated images for commercial use is an evolving area in multiple jurisdictions. Current legal guidance in the UK and elsewhere is subject to ongoing development. Check current legal guidance before relying on AI-generated images in commercial contexts.
 
-*Volatility: VERY HIGH — both platform terms and legal frameworks are actively changing*
+*Volatility: VERY HIGH, both platform terms and legal frameworks are actively changing*
 
 ---
 
@@ -1189,13 +1193,13 @@ The legal status of AI-generated images for commercial use is an evolving area i
 *This book does not use footnotes in the main text, because most of the principles it describes are based on documented patterns of AI behaviour rather than a single research paper or study. The following notes point to the most useful reference points for readers who want to go further.*
 
 **On AI failure modes and hallucination:**
-The phenomenon of AI hallucination is well-documented in academic literature. A practical starting point is work published by researchers at major AI labs themselves — Anthropic, OpenAI, and Google DeepMind all publish research findings on model behaviour that is accessible to non-specialists on their respective research websites.
+The phenomenon of AI hallucination is well-documented in academic literature. A practical starting point is work published by researchers at major AI labs themselves, Anthropic, OpenAI, and Google DeepMind all publish research findings on model behaviour that is accessible to non-specialists on their respective research websites.
 
 **On prompt engineering:**
-The field has produced several peer-reviewed studies on what makes prompts effective. The most reliable summary of current understanding remains the documentation produced by each AI lab — particularly Anthropic's documentation on working with Claude and OpenAI's guidance on ChatGPT. These are updated more frequently than academic publications.
+The field has produced several peer-reviewed studies on what makes prompts effective. The most reliable summary of current understanding remains the documentation produced by each AI lab, particularly Anthropic's documentation on working with Claude and OpenAI's guidance on ChatGPT. These are updated more frequently than academic publications.
 
 **On verification practices:**
-Standards for AI output verification in professional contexts are still emerging. In the UK, professional bodies in law, accounting, and medicine have begun to publish guidance — check your relevant professional body's current guidance.
+Standards for AI output verification in professional contexts are still emerging. In the UK, professional bodies in law, accounting, and medicine have begun to publish guidance, check your relevant professional body's current guidance.
 
 **On platform features:**
 All platform-specific information should be verified from the platform's own documentation. The most current information is always on the platform's help centre, not in any third-party publication.
@@ -1205,7 +1209,7 @@ All platform-specific information should be verified from the platform's own doc
 ## About the Author
 
 <!-- ============================================================
-PRODUCTION NOTE — PHOTO PLACEMENT
+PRODUCTION NOTE, PHOTO PLACEMENT
 Insert a professional author headshot here.
 Dimensions: 1:1 square crop, minimum 300 dpi for print.
 Alignment: centred, or floated left with text wrapping right,
@@ -1216,11 +1220,11 @@ See photo brief in the Author File for full specification.
 
 ![Eleanor Mercer](../../attached_assets/eleanor-mercer-author-photo.png)
 
-Eleanor Mercer is a professional development trainer and consultant who has worked with professionals across law, financial services, and management consulting for fifteen years. Her original practice focused on communication, writing, and presentation — the skills that separate people who can do excellent work from people who can also explain it clearly.
+Eleanor Mercer is a professional development trainer and consultant who has worked with professionals across law, financial services, and management consulting for fifteen years. Her original practice focused on communication, writing, and presentation, the skills that separate people who can do excellent work from people who can also explain it clearly.
 
 When AI tools entered professional workplaces in 2022, she began testing them, helping clients use them, and watching closely what happened when capable professionals sat down with capable technology and still got mediocre results.
 
-The pattern was consistent: the gap was almost never technical. It was what people gave AI before they started — the context, the instructions, the job description, the source material, and the verification process.
+The pattern was consistent: the gap was almost never technical. It was what people gave AI before they started, the context, the instructions, the job description, the source material, and the verification process.
 
 The 7 Questions framework and the AI Interaction Stack in this book were developed through that observation, tested in professional training practice, and refined over two years of real use before appearing in print.
 
@@ -1236,7 +1240,7 @@ The 7 Questions framework and the AI Interaction Stack in this book were develop
 
 ---
 
-*AI tools were used in the research, drafting, and editing of this book. All factual claims were verified against primary sources at the time of writing. All examples were tested. All editorial decisions — structure, voice, inclusion, emphasis — are the author's own.*
+*AI tools were used in the research, drafting, and editing of this book. All factual claims were verified against primary sources at the time of writing. All examples were tested. All editorial decisions, structure, voice, inclusion, emphasis, are the author's own.*
 
 *Published 2026. First edition.*
 

@@ -1,26 +1,31 @@
 import { execFileSync } from "node:child_process";
 import { createHash } from "node:crypto";
-import { mkdir, readFile, readdir, writeFile } from "node:fs/promises";
+import { mkdir, readFile, readdir, rename, writeFile } from "node:fs/promises";
+import { readFileSync } from "node:fs";
 import { basename, dirname, join, resolve } from "node:path";
 import { fileURLToPath } from "node:url";
 import { inlineMarkdown, renderMarkdown } from "./markdown.mjs";
 
 const here = dirname(fileURLToPath(import.meta.url));
 const root = resolve(here, "..");
+const repositoryRoot = resolve(root, "..");
 const sourceDir = join(root, "source");
+const docsDir = join(repositoryRoot, "docs");
 const outputDir = join(root, "output");
 const generatedDir = join(root, ".generated");
+const python = "/tmp/art-of-ai-pdfvenv/bin/python";
+const pdfTextTool = join(here, "pdf_text.py");
 const css = await readFile(join(here, "style.css"), "utf8");
 const author = "Eleanor Mercer";
 const title = "The Art of AI";
 const subtitle = "How to Get Better Results From Every AI Conversation";
 const deck = "A Practical Guide to Better Prompts, Better Context, and Better Workflows";
-const series = "The Art of AI — Book 1";
+const series = "The Art of AI, Book 1";
 
 await mkdir(outputDir, { recursive: true });
 await mkdir(generatedDir, { recursive: true });
 
-const sourceFiles = (await readdir(sourceDir))
+const productionSourceFiles = (await readdir(sourceDir))
   .filter((name) => name.endsWith(".md"))
   .sort((a, b) => {
     const partA = Number(a.match(/part(\d+)/)?.[1] ?? 0);
@@ -28,14 +33,24 @@ const sourceFiles = (await readdir(sourceDir))
     return partA - partB;
   });
 
+const sourceSpecs = [
+  ...productionSourceFiles.map((name) => ({ name, path: join(sourceDir, name) })),
+  { name: "docs/manuscript_part4.md", path: join(docsDir, "manuscript_part4.md") },
+].sort((a, b) => {
+  const partA = Number(a.name.match(/part(\d+)/)?.[1] ?? 0);
+  const partB = Number(b.name.match(/part(\d+)/)?.[1] ?? 0);
+  return partA - partB;
+});
+const sourceFiles = sourceSpecs.map(({ name }) => name);
+
 if (sourceFiles.length < 4) {
   throw new Error("Expected four manuscript parts before building the final book.");
 }
 
 const sourceTexts = await Promise.all(
-  sourceFiles.map(async (name) => ({
+  sourceSpecs.map(async ({ name, path }) => ({
     name,
-    text: await readFile(join(sourceDir, name), "utf8"),
+    text: await readFile(path, "utf8"),
   })),
 );
 
@@ -56,13 +71,49 @@ const bodyParts = [
   ...sourceTexts.slice(1).map(({ text }) => text.split(/\r?\n/)),
 ];
 const bodyLines = bodyParts.flat();
+const authorStart = bodyLines.findIndex((line) => /^## About the Author$/i.test(line.trim()));
+const colophonStart = bodyLines.findIndex((line) => /^\*AI tools were used in the research/i.test(line.trim()));
+const renderBodyLines =
+  authorStart >= 0 && colophonStart > authorStart
+    ? [...bodyLines.slice(0, authorStart), ...bodyLines.slice(colophonStart)]
+    : bodyLines;
+
+const indexTerms = [
+  { term: "7 Questions", searches: ["7 Questions"] },
+  { term: "AI Interaction Stack", searches: ["AI Interaction Stack"] },
+  { term: "chains", searches: ["chains"] },
+  { term: "code execution", searches: ["code execution"] },
+  { term: "context", searches: ["context"] },
+  { term: "context documents", searches: ["context document", "context documents"] },
+  { term: "context drift", searches: ["context drift"] },
+  { term: "constraints", searches: ["constraints"] },
+  { term: "Deep Research", searches: ["Deep Research"] },
+  { term: "examples", searches: ["examples"] },
+  { term: "few-shot prompting", searches: ["few-shot prompting", "few shot prompting"] },
+  { term: "hallucination", searches: ["hallucination", "hallucinations"] },
+  { term: "handoffs", searches: ["handoffs", "handoff"] },
+  { term: "instructions", searches: ["instructions"] },
+  { term: "iteration", searches: ["iteration", "iterative"] },
+  { term: "memory", searches: ["memory"] },
+  { term: "output format", searches: ["output format"] },
+  { term: "persistent instructions", searches: ["persistent instructions"] },
+  { term: "privacy", searches: ["privacy"] },
+  { term: "Projects", searches: ["Projects"] },
+  { term: "prompt injection", searches: ["prompt injection"] },
+  { term: "role", searches: ["role"] },
+  { term: "source material", searches: ["source material"] },
+  { term: "sycophancy", searches: ["sycophancy"] },
+  { term: "verification", searches: ["verification", "verify"] },
+  { term: "web search", searches: ["web search"] },
+  { term: "workflows", searches: ["workflows", "workflow"] },
+];
 
 function contentsEntries() {
   const entries = [];
   let currentPart = null;
   let pendingSection = null;
 
-  for (const line of bodyLines) {
+  for (const line of renderBodyLines) {
     const part = line.match(/^# (PART [IVX]+|APPENDICES)$/i);
     if (part) {
       currentPart = {
@@ -80,6 +131,9 @@ function contentsEntries() {
     const levelTwo = line.match(/^## (.+)$/);
     if (levelTwo) {
       const heading = levelTwo[1];
+      if (/^A Note on Sources$/i.test(heading)) {
+        entries.push({ kind: "index", id: "index", label: "Index", searches: ["Index"] });
+      }
       if (/^INTRODUCTION$/i.test(heading)) {
         pendingSection = {
           kind: "intro",
@@ -134,7 +188,7 @@ function contentsEntries() {
       continue;
     }
 
-    if (currentPart?.label === "APPENDICES" && /^E\d+\s+—/.test(heading)) {
+    if (currentPart?.label === "APPENDICES" && /^E\d+\s*,/.test(heading)) {
       const appendix = entries.find((entry) => entry.id === "appendix-e");
       appendix?.children.push({
         kind: "appendix-child",
@@ -145,7 +199,7 @@ function contentsEntries() {
       continue;
     }
 
-    if (currentPart?.label === "PART V" && /^W\d+\s+—/.test(heading)) {
+    if (currentPart?.label === "PART V" && /^W\d+\s*,/.test(heading)) {
       entries.push({
         kind: "workflow",
         id: heading.toLowerCase().replaceAll(" ", "-"),
@@ -173,7 +227,9 @@ function compactPdfText(value) {
 }
 
 function pageTextsFromPdf(pdfPath) {
-  const text = execFileSync("pdftotext", ["-layout", pdfPath, "-"], { encoding: "utf8" });
+  const textPath = join(generatedDir, "pdf-text.txt");
+  execFileSync(python, [pdfTextTool, "text", pdfPath, textPath], { stdio: "inherit" });
+  const text = readFileSync(textPath, "utf8");
   return text.split("\f");
 }
 
@@ -205,11 +261,11 @@ function contentsPageMap(pdfPath) {
   const bodyStartPage = introTitlePages.at(-1) ?? introductionPages.at(-1) ?? 5;
   const pageMap = new Map();
 
-  function headingPageFor(entry) {
+  function headingPageFor(entry, minimumPage = bodyStartPage) {
     const label = compactPdfText(entry.label);
     const title = compactPdfText(entry.title ?? "");
     return rawPageTexts.findIndex((rawPage, index) => {
-      if (index + 1 < bodyStartPage) return false;
+      if (index + 1 < minimumPage) return false;
       const pageLines = rawPage
         .split(/\r?\n/)
         .map((line) => line.trim())
@@ -221,15 +277,19 @@ function contentsPageMap(pdfPath) {
     }) + 1;
   }
 
+  let activePartPage = bodyStartPage - 1;
   for (const entry of contentsEntries()) {
+    const minimumHeadingPage =
+      entry.kind === "chapter" ? Math.max(bodyStartPage, activePartPage + 1) : bodyStartPage;
     const headingPage = ["intro", "part", "chapter", "appendix"].includes(entry.kind)
-      ? headingPageFor(entry)
+      ? headingPageFor(entry, minimumHeadingPage)
       : 0;
     const page =
       headingPage > 0
         ? headingPage
         : pageForSearches(pageTexts, entry.searches ?? [], bodyStartPage);
     if (page) pageMap.set(entry.id, page);
+    if (entry.kind === "part" && page) activePartPage = page;
     for (const child of entry.children ?? []) {
       const childPage = pageForSearches(pageTexts, child.searches, bodyStartPage);
       if (childPage) pageMap.set(child.id, childPage);
@@ -241,7 +301,7 @@ function contentsPageMap(pdfPath) {
 function contentsRow(entry, pageMap) {
   const page = pageMap?.get(entry.id);
   const pageLabel = page ? String(page) : "00";
-  const title = entry.title ? `${entry.label} — ${entry.title}` : entry.label;
+  const title = entry.title ? `${entry.label}, ${entry.title}` : entry.label;
   const className = `contents-entry contents-${entry.kind}`;
   return `<li class="${className}"><span class="contents-entry-title">${inlineMarkdown(title)}</span><span class="contents-leader" aria-hidden="true"></span><span class="contents-page-number">${pageLabel}</span></li>`;
 }
@@ -258,6 +318,63 @@ function contentsFromHeadings(pageMap) {
       return `${contentsRow(entry, pageMap)}${children}`;
     })
     .join("\n");
+}
+
+function indexPageNumbers(pdfPath) {
+  const rawPageTexts = pageTextsFromPdf(pdfPath);
+  const pageTexts = rawPageTexts.map(normalizePdfText);
+  const introTitlePages = pageTexts
+    .map((page, index) => (page.includes("you are not bad at ai") ? index + 1 : null))
+    .filter(Boolean);
+  const introductionPages = pageTexts
+    .map((page, index) => (page.includes("introduction") ? index + 1 : null))
+    .filter(Boolean);
+  const bodyStartPage = introTitlePages.at(-1) ?? introductionPages.at(-1) ?? 5;
+  const sourcePage = pageForSearches(pageTexts, ["A Note on Sources"], bodyStartPage) ?? pageTexts.length + 1;
+  const indexStart = rawPageTexts.findIndex((page, pageIndex) => {
+    if (pageIndex + 1 < bodyStartPage || pageIndex + 1 >= sourcePage) return false;
+    return page
+      .split(/\r?\n/)
+      .map((line) => compactPdfText(line))
+      .includes("index");
+  }) + 1;
+  const indexPages = new Set();
+  if (indexStart > 0) {
+    for (let pageIndex = indexStart; pageIndex < sourcePage; pageIndex += 1) {
+      indexPages.add(pageIndex);
+    }
+  }
+
+  return indexTerms
+    .map(({ term, searches }) => {
+      const pages = new Set();
+      const normalizedSearches = searches.map(normalizePdfText);
+      for (let pageIndex = bodyStartPage; pageIndex < sourcePage; pageIndex += 1) {
+        if (indexPages.has(pageIndex)) continue;
+        const page = pageTexts[pageIndex - 1];
+        if (normalizedSearches.some((search) => page.includes(search))) pages.add(pageIndex);
+      }
+      return { term, pages: [...pages].sort((a, b) => a - b) };
+    })
+    .filter(({ pages }) => pages.length > 0);
+}
+
+function renderIndex(pdfPath) {
+  if (!pdfPath) {
+    return `<section class="index-page"><h2 class="index-heading">Index</h2><p class="index-pending">Index page references will be generated after the first layout pass.</p></section>`;
+  }
+  const entries = indexPageNumbers(pdfPath)
+    .map(({ term, pages }) => `<div class="index-entry"><span class="index-term">${inlineMarkdown(term)}</span><span class="index-pages">${pages.join(", ")}</span></div>`)
+    .join("\n");
+  return `<section class="index-page"><h2 class="index-heading">Index</h2><div class="index-columns">${entries}</div></section>`;
+}
+
+function renderBody(pageMap, pdfPath) {
+  const insertion = renderBodyLines.findIndex((line) => /^## A Note on Sources$/i.test(line.trim()));
+  if (insertion < 0) return renderMarkdown(renderBodyLines);
+  const before = renderBodyLines.slice(0, insertion);
+  const after = renderBodyLines.slice(insertion);
+  return `${renderMarkdown(before)}${renderIndex(pdfPath)}${renderMarkdown(after)}`;
 }
 
 function renderFrontMatter() {
@@ -292,7 +409,7 @@ function htmlDocument(body, pageSize = "6in 9in", extraCss = "") {
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <title>${title} — Book 1</title>
+  <title>${title}, Book 1</title>
   <meta name="author" content="${author}">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <style>${css}\n${extraCss}\n${pageRule}</style>
@@ -306,7 +423,7 @@ const interiorPdfPath = join(outputDir, "the-art-of-ai-book-1-interior.pdf");
 
 function printPdf(htmlPath, pdfPath) {
   execFileSync(
-    "chromium",
+    process.env.ART_OF_AI_CHROME ?? "chromium",
     [
       "--headless=new",
       "--no-sandbox",
@@ -321,15 +438,56 @@ function printPdf(htmlPath, pdfPath) {
 }
 
 function pdfPageCount(pdfPath) {
-  const info = execFileSync("pdfinfo", [pdfPath], { encoding: "utf8" });
-  return Number(info.match(/^Pages:\s+(\d+)/m)?.[1] ?? 0);
+  return Number(execFileSync(python, [pdfTextTool, "count", pdfPath], { encoding: "utf8" }).trim());
 }
 
 function buildInteriorHtml(pageMap, addBlankPage) {
   const blankPage = addBlankPage ? '<div class="blank-page" aria-hidden="true"></div>' : "";
   return htmlDocument(
-    `<div class="page-number" aria-hidden="true"></div><main class="book">${renderFrontMatter(pageMap)}<article class="manuscript">${renderMarkdown(bodyLines)}</article>${blankPage}</main>`,
+    `<div class="page-number" aria-hidden="true"></div><main class="book">${renderFrontMatter(pageMap)}<article class="manuscript">${renderBody(pageMap, interiorPdfPath)}</article>${blankPage}</main>`,
   );
+}
+
+function headerPlan(pageMap, pdfPath) {
+  const entries = contentsEntries();
+  const pageCount = pdfPageCount(pdfPath);
+  const bodyStart = Math.min(...entries.map((entry) => pageMap.get(entry.id) ?? Number.MAX_SAFE_INTEGER));
+  const parts = entries.filter((entry) => entry.kind === "part");
+  const sections = entries.filter((entry) =>
+    ["intro", "chapter", "appendix", "appendix-child", "workflow", "index"].includes(entry.kind),
+  );
+  const backMatterStart = Math.min(
+    ...entries
+      .filter((entry) => ["A Note on Sources", "About the Author", "About This Book"].includes(entry.label))
+      .map((entry) => pageMap.get(entry.id) ?? Infinity),
+  );
+  const headerText = (entry) => entry.title ? `${entry.label} - ${entry.title}` : entry.label;
+  const plan = [];
+  for (let page = 1; page <= pageCount; page += 1) {
+    const part = [...parts].reverse().find((entry) => (pageMap.get(entry.id) ?? Infinity) <= page);
+    const section = [...sections].reverse().find((entry) => (pageMap.get(entry.id) ?? Infinity) <= page);
+    const isOpener = [part, section].some((entry) => entry && pageMap.get(entry.id) === page);
+    const isBackMatter = page >= (pageMap.get("index") ?? Infinity);
+    const header = { left: "", right: "" };
+    if (page >= bodyStart && !isOpener && !isBackMatter && part) {
+      header.left = headerText(part).toUpperCase();
+      if (section) header.right = headerText(section);
+    } else if (
+      isBackMatter &&
+      section &&
+      section.kind === "index" &&
+      page > pageMap.get("index") &&
+      page < backMatterStart
+    ) {
+      header.right = "INDEX";
+    }
+    if (page % 2 === 0) {
+      plan.push({ left: header.left });
+    } else {
+      plan.push({ right: header.right });
+    }
+  }
+  return plan;
 }
 
 let pageMap = null;
@@ -355,6 +513,12 @@ for (let attempt = 0; attempt < 4; attempt += 1) {
   pageMap = nextPageMap;
   if (sameMap) break;
 }
+
+const headerPlanPath = join(generatedDir, "running-headers.json");
+const headerOutputPath = join(generatedDir, "interior-with-headers.pdf");
+await writeFile(headerPlanPath, JSON.stringify(headerPlan(pageMap, interiorPdfPath), null, 2));
+execFileSync(python, [join(here, "add-running-headers.py"), interiorPdfPath, headerOutputPath, headerPlanPath], { stdio: "inherit" });
+await rename(headerOutputPath, interiorPdfPath);
 
 const bleed = 0.125;
 const trimWidth = 6;
@@ -421,7 +585,14 @@ const coverPdfPath = join(outputDir, "the-art-of-ai-book-1-full-wrap-cover.pdf")
 const completeBookPdfPath = join(outputDir, "the-art-of-ai-book-1-complete-book.pdf");
 await writeFile(coverHtmlPath, coverHtml);
 printPdf(coverHtmlPath, coverPdfPath);
-execFileSync("pdfunite", [coverPdfPath, interiorPdfPath, completeBookPdfPath], { stdio: "inherit" });
+const coverSizedPath = join(generatedDir, "cover-sized.pdf");
+execFileSync(
+  python,
+  [pdfTextTool, "resize", coverPdfPath, String(coverWidth * 72), String(coverHeight * 72), coverSizedPath],
+  { stdio: "inherit" },
+);
+await rename(coverSizedPath, coverPdfPath);
+execFileSync(python, [pdfTextTool, "merge", coverPdfPath, interiorPdfPath, completeBookPdfPath], { stdio: "inherit" });
 
 const fileHashes = Object.fromEntries(
   await Promise.all(

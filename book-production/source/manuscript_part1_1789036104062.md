@@ -4,7 +4,7 @@
 
 ### A Practical Guide to Better Prompts, Better Context, and Better Workflows
 
-**The Art of AI — Book 1**
+**The Art of AI, Book 1**
 
 ---
 
@@ -32,34 +32,34 @@ All rights reserved. No part of this publication may be reproduced, distributed,
 
 **Introduction:** You Are Not Bad at AI
 
-**Part I — A Different Way to Think About AI**
+**Part I, A Different Way to Think About AI**
 - Chapter 1: Why AI Gives You Generic Answers (and How to Change That)
-- Chapter 2: The AI Interaction Stack — What Actually Determines Output Quality
-- Chapter 3: The 7 Questions — Your Portable AI Framework
+- Chapter 2: The AI Interaction Stack, What Actually Determines Output Quality
+- Chapter 3: The 7 Questions, Your Portable AI Framework
 - Chapter 4: How to Talk to an AI (It's Not Google)
 
-**Part II — Build Better Interactions**
+**Part II, Build Better Interactions**
 - Chapter 5: Give AI a Job, Not Just a Question
 - Chapter 6: Context Is Everything
 - Chapter 7: Instructions That Actually Work
 - Chapter 8: Examples Change Everything
 - Chapter 9: Control the Output
 
-**Part III — Build an AI Environment**
+**Part III, Build an AI Environment**
 - Chapter 10: Stop Starting From Zero Every Time
 - Chapter 11: Projects and Persistent Instructions
 - Chapter 12: Files, Documents, and Source Material
-- Chapter 13: Tools — What AI Can Do Beyond Text
+- Chapter 13: Tools, What AI Can Do Beyond Text
 - Chapter 14: The Memory Problem (and How to Work Around It)
 - Chapter 15: Building Your Personal AI Workspace
 
-**Part IV — From Prompts to Workflows**
+**Part IV, From Prompts to Workflows**
 - Chapter 16: When One Prompt Isn't Enough
 - Chapter 17: Breaking Tasks Into Steps
 - Chapter 18: Critique, Edit, and Improve
 - Chapter 19: Chains, Loops, and Handoffs
 
-**Part V — 25 Real-World Workflows**
+**Part V, 25 Real-World Workflows**
 - W1–W8: Business and Professional
 - W9–W12: Marketing and Content
 - W13–W16: Research and Learning
@@ -67,7 +67,7 @@ All rights reserved. No part of this publication may be reproduced, distributed,
 - W21–W23: Home and Life
 - W24–W25: Writing and Editing
 
-**Part VI — The AI User's Playbook**
+**Part VI, The AI User's Playbook**
 - Chapter 20: How to Verify AI Output
 - Chapter 21: What AI Gets Wrong (Consistently)
 - Chapter 22: Calibrating Trust
@@ -91,7 +91,7 @@ There is a particular kind of frustration that comes from using a tool that is s
 
 You type a question into ChatGPT or Claude or Gemini. You wait. You read the response. It is, somehow, both very long and not quite what you wanted. It is technically correct in the way that a weather forecast saying "conditions may vary" is technically correct. It is not wrong. It is not useful. You close the tab and do the task yourself.
 
-This happens to most people most of the time. Not because AI is bad — it isn't — but because the interaction was badly set up from the start.
+This happens to most people most of the time. Not because AI is bad, it isn't, but because the interaction was badly set up from the start.
 
 Here is what no one tells you: the quality of what AI produces is determined less by the AI and more by what you give it. Not your technical knowledge. Not your ability to write special commands. What you give it: the information, the instructions, the structure, the context, the constraints, the documents, the clear job description.
 
@@ -99,11 +99,11 @@ This book is about that system.
 
 **What you will actually learn**
 
-By the end of Part I, you will understand why AI produces generic output and exactly what changes when it produces something good. That understanding alone is worth more than any list of prompts, because it means you can diagnose what went wrong in any interaction and fix it — rather than just trying different words until something works.
+By the end of Part I, you will understand why AI produces generic output and exactly what changes when it produces something good. That understanding alone is worth more than any list of prompts, because it means you can diagnose what went wrong in any interaction and fix it, rather than just trying different words until something works.
 
 By the end of Part II, you will know how to build an AI interaction deliberately: giving AI the role, the context, the instructions, the examples, and the output format that get you the result you need.
 
-By the end of Part III, you will know how to build an AI environment — a persistent workspace where you stop repeating yourself, where your files and preferences carry forward, and where AI actually knows something about your situation.
+By the end of Part III, you will know how to build an AI environment, a persistent workspace where you stop repeating yourself, where your files and preferences carry forward, and where AI actually knows something about your situation.
 
 By the end of Part IV, you will be able to design multi-step workflows: decomposing a complex task into stages, running them in sequence, and using AI's output from one step as the input to the next.
 
@@ -111,7 +111,7 @@ Part V gives you twenty-five tested workflows to use immediately or adapt. Part 
 
 **The framework**
 
-Running through all of it is a single seven-question framework you can carry in your head. Before any significant AI interaction, these seven questions identify what you need to provide. They work on every AI platform — ChatGPT, Claude, Gemini, Copilot, and every tool built on these models. They will still work when the current models are replaced by the next generation.
+Running through all of it is a single seven-question framework you can carry in your head. Before any significant AI interaction, these seven questions identify what you need to provide. They work on every AI platform, ChatGPT, Claude, Gemini, Copilot, and every tool built on these models. They will still work when the current models are replaced by the next generation.
 
 The framework is called The 7 Questions. You will encounter it in Chapter 3, and you will use it for the rest of the book.
 
@@ -119,7 +119,7 @@ The framework is called The 7 Questions. You will encounter it in Chapter 3, and
 
 None of this requires technical knowledge. You do not need to understand how large language models work. You do not need to know what a token is, or an API, or an embedding. When technical concepts appear in this book, they appear because they directly affect how you use AI, and they are always explained in ordinary language before the technical term is introduced.
 
-What you need is the willingness to think about AI interactions differently — not as typing questions into a search engine, but as briefing a capable colleague who starts every conversation knowing nothing about you, your work, or what you need.
+What you need is the willingness to think about AI interactions differently, not as typing questions into a search engine, but as briefing a capable colleague who starts every conversation knowing nothing about you, your work, or what you need.
 
 Once you understand that, everything else follows.
 
@@ -151,7 +151,7 @@ Ask ten people what frustrates them about AI and you will hear the same answers:
 
 These are not problems with the AI. They are problems with the interaction.
 
-This chapter explains why generic inputs produce generic outputs — and what specifically changes when they don't.
+This chapter explains why generic inputs produce generic outputs, and what specifically changes when they don't.
 
 ---
 
@@ -167,7 +167,7 @@ The people who get consistently good results from AI are not luckier. They are n
 
 **Why AI is generic by default**
 
-When you send AI a vague request — "Write me a summary of this report" — it has to make assumptions about everything it doesn't know:
+When you send AI a vague request, "Write me a summary of this report", it has to make assumptions about everything it doesn't know:
 
 - Who is going to read this summary?
 - How long should it be?
@@ -177,7 +177,7 @@ When you send AI a vague request — "Write me a summary of this report" — it 
 - What does the reader already know?
 - What is the purpose of the summary?
 
-AI will fill in all of these gaps. It will fill them in with the most statistically average answers it can construct — the kind of summary that would be acceptable to the largest number of readers in the largest number of situations. This is why AI output so often feels as though it was written for everyone and therefore fits no one particularly well.
+AI will fill in all of these gaps. It will fill them in with the most statistically average answers it can construct, the kind of summary that would be acceptable to the largest number of readers in the largest number of situations. This is why AI output so often feels as though it was written for everyone and therefore fits no one particularly well.
 
 The good news: every assumption AI makes is one you could have specified yourself. The summary would look completely different if you told AI: *"This is for our CEO, who hasn't read the report and needs to decide whether to approve a £200,000 budget. She wants two paragraphs, direct language, and the headline number up front."*
 
@@ -187,7 +187,7 @@ Same document. Same AI. Dramatically different output. The only difference is wh
 
 > **WHY IT WORKS**
 >
-> AI tools generate text by predicting what words should follow what came before, based on patterns learned from enormous quantities of written material. This means the quality and specificity of what they produce is directly shaped by the quality and specificity of what they receive. Providing more relevant information doesn't confuse AI — it constrains the prediction space to something closer to what you actually need.
+> AI tools generate text by predicting what words should follow what came before, based on patterns learned from enormous quantities of written material. This means the quality and specificity of what they produce is directly shaped by the quality and specificity of what they receive. Providing more relevant information doesn't confuse AI, it constrains the prediction space to something closer to what you actually need.
 
 ---
 
@@ -205,7 +205,7 @@ After looking at hundreds of AI interactions that produced poor results, three i
 
 **3. The wrong assumed audience**
 
-*"Explain compound interest"* gives AI a topic. But who is asking? A secondary school student? A financial professional? Someone deciding whether to take out a mortgage? AI will produce an explanation pitched at a generic reader — which means it may be too basic, too technical, or simply beside the point for your actual need.
+*"Explain compound interest"* gives AI a topic. But who is asking? A secondary school student? A financial professional? Someone deciding whether to take out a mortgage? AI will produce an explanation pitched at a generic reader, which means it may be too basic, too technical, or simply beside the point for your actual need.
 
 ---
 
@@ -227,10 +227,10 @@ After looking at hundreds of AI interactions that produced poor results, three i
 
 Five inputs move the needle most consistently. They appear in greater detail throughout this book, but in brief:
 
-1. **A clear job**: What specifically do you want AI to do? (Not "help with" — do.)
+1. **A clear job**: What specifically do you want AI to do? (Not "help with", do.)
 2. **Relevant context**: What does AI need to know about your situation, audience, and constraints?
 3. **Source material**: What documents, notes, or data should AI work from?
-4. **Output specifications**: What should the result look like — length, format, tone, structure?
+4. **Output specifications**: What should the result look like, length, format, tone, structure?
 5. **Verification instructions**: How should AI flag uncertainty or potential errors?
 
 This is not a complete list. The next chapter introduces the full model. But if you apply only these five, you will notice an immediate and significant improvement.
@@ -249,27 +249,27 @@ This is not a complete list. The next chapter introduces the full model. But if 
 
 **What this chapter established**
 
-Generic inputs produce generic outputs. This is a feature, not a bug — it means every improvement you make to your input produces a corresponding improvement in output. You are not at the mercy of the AI. You are in control of the most important variable in every interaction.
+Generic inputs produce generic outputs. This is a feature, not a bug, it means every improvement you make to your input produces a corresponding improvement in output. You are not at the mercy of the AI. You are in control of the most important variable in every interaction.
 
-The next chapter introduces a model for understanding exactly which variables are in play — and which ones matter most for any given task.
+The next chapter introduces a model for understanding exactly which variables are in play, and which ones matter most for any given task.
 
 ---
 
 > **WATCH OUT**
 >
-> More detail is not always better. Adding irrelevant information doesn't improve output — it can dilute it. The skill is not writing longer prompts; it's identifying what AI actually needs to know to do this specific task well. You'll develop this judgment through the exercises in Part II.
+> More detail is not always better. Adding irrelevant information doesn't improve output, it can dilute it. The skill is not writing longer prompts; it's identifying what AI actually needs to know to do this specific task well. You'll develop this judgment through the exercises in Part II.
 
 ---
 
 ## Chapter 2
 
-### The AI Interaction Stack — What Actually Determines Output Quality
+### The AI Interaction Stack, What Actually Determines Output Quality
 
 **Introducing a map**
 
 When a piece of work goes wrong, it helps to know where in the process the problem occurred. A cake that doesn't rise failed at a different point than a cake that doesn't taste right. The diagnosis matters.
 
-AI interactions fail at predictable places. This chapter introduces a model — the AI Interaction Stack — that maps those places. It gives you a vocabulary for diagnosing what went wrong and a checklist for getting it right before you start.
+AI interactions fail at predictable places. This chapter introduces a model, the AI Interaction Stack, that maps those places. It gives you a vocabulary for diagnosing what went wrong and a checklist for getting it right before you start.
 
 ---
 
@@ -299,9 +299,11 @@ THE AI INTERACTION STACK
 
 Read the stack from the bottom up. Start with the real goal, then add only the layers that this task needs. The upper layers help you check, improve, and continue the work; they do not replace the clarity of the layers below them.
 
+<!-- VISUAL: interaction-stack -->
+
 ---
 
-**Layer 1 — Intent**
+**Layer 1, Intent**
 
 What are you actually trying to achieve? Not the surface task ("write a summary") but the underlying goal ("help my CEO decide quickly"). These are often different, and the difference matters.
 
@@ -311,7 +313,7 @@ A summary intended to help someone decide looks different from a summary intende
 
 ---
 
-**Layer 2 — Context**
+**Layer 2, Context**
 
 What does AI need to know about your situation? Who is involved? What is the background? What constraints apply? What has already been tried?
 
@@ -321,7 +323,7 @@ Context is the layer most people consistently underinvest in. It is also the lay
 
 ---
 
-**Layer 3 — Instructions**
+**Layer 3, Instructions**
 
 What exactly should AI do? This is distinct from intent. Intent is the goal; instructions are the specific action you want AI to take to achieve it.
 
@@ -331,9 +333,9 @@ What exactly should AI do? This is distinct from intent. Intent is the goal; ins
 
 ---
 
-**Layer 4 — Examples**
+**Layer 4, Examples**
 
-What does good look like? Sometimes the most efficient way to specify a tone, structure, or style is to show AI an example of it — a previous email you wrote, a format you liked, a sample of the style you want.
+What does good look like? Sometimes the most efficient way to specify a tone, structure, or style is to show AI an example of it, a previous email you wrote, a format you liked, a sample of the style you want.
 
 Examples do more than description. Telling AI to be "warm but professional" is imprecise. Showing it a warm-but-professional email is not.
 
@@ -341,19 +343,19 @@ Examples do more than description. Telling AI to be "warm but professional" is i
 
 ---
 
-**Layer 5 — Source material**
+**Layer 5, Source material**
 
-What documents, data, notes, or materials should AI work from? AI can read files — contracts, reports, research papers, meeting notes, spreadsheets — and its output will be grounded in what you provide rather than in generalisation.
+What documents, data, notes, or materials should AI work from? AI can read files, contracts, reports, research papers, meeting notes, spreadsheets, and its output will be grounded in what you provide rather than in generalisation.
 
-When you ask AI to help with a specific document or dataset, provide it. Don't describe it — provide it.
+When you ask AI to help with a specific document or dataset, provide it. Don't describe it, provide it.
 
 *Before you start:* What source materials could improve the specificity and accuracy of the output?
 
 ---
 
-**Layer 6 — Workspace**
+**Layer 6, Workspace**
 
-Have you set up a persistent context — a project, a set of standing instructions, a shared background — so you don't have to repeat essential information every time?
+Have you set up a persistent context, a project, a set of standing instructions, a shared background, so you don't have to repeat essential information every time?
 
 For tasks you do repeatedly, a workspace eliminates repetition and builds consistency. Part III is dedicated to this layer.
 
@@ -361,17 +363,17 @@ For tasks you do repeatedly, a workspace eliminates repetition and builds consis
 
 ---
 
-**Layer 7 — Tools**
+**Layer 7, Tools**
 
 What capabilities does AI have access to in this context? Can it search the web? Run calculations? Read uploaded files? Generate images? Access calendar or email?
 
-Knowing which tools are available — and which aren't — shapes what you can reasonably ask for and where you need to verify externally.
+Knowing which tools are available, and which aren't, shapes what you can reasonably ask for and where you need to verify externally.
 
 *Before you start:* What tools are available? Does this task benefit from any of them?
 
 ---
 
-**Layer 8 — Workflow**
+**Layer 8, Workflow**
 
 Is this a single-step task or a multi-step process? Complex work almost always benefits from decomposition: breaking the task into stages, running each stage separately, reviewing and adjusting between stages.
 
@@ -381,9 +383,9 @@ Single-prompt attempts at complex tasks produce mediocre results that are hard t
 
 ---
 
-**Layer 9 — Output**
+**Layer 9, Output**
 
-What should the result look like? Format, length, structure, tone, audience, medium — all of these shape the output and all are specifiable.
+What should the result look like? Format, length, structure, tone, audience, medium, all of these shape the output and all are specifiable.
 
 Without output specifications, AI defaults to whatever format its training suggests is most common for this type of request. That default is often wrong for your specific situation.
 
@@ -391,9 +393,9 @@ Without output specifications, AI defaults to whatever format its training sugge
 
 ---
 
-**Layer 10 — Verification**
+**Layer 10, Verification**
 
-How will you check the output? What specifically might be wrong? AI makes errors — factual, logical, and interpretive — with calm confidence. Your verification approach should match the stakes of the task and the risk profile of the content.
+How will you check the output? What specifically might be wrong? AI makes errors, factual, logical, and interpretive, with calm confidence. Your verification approach should match the stakes of the task and the risk profile of the content.
 
 Telling AI to flag its own uncertainties is a useful first step. It doesn't replace your review, but it helps.
 
@@ -401,9 +403,9 @@ Telling AI to flag its own uncertainties is a useful first step. It doesn't repl
 
 ---
 
-**Layer 11 — Iteration**
+**Layer 11, Iteration**
 
-How will you use this output as the starting point for the next stage? AI interactions are rarely single exchanges — they are conversations where each response informs the next prompt. Good output at layer 11 becomes input at layer 2 of the next pass.
+How will you use this output as the starting point for the next stage? AI interactions are rarely single exchanges, they are conversations where each response informs the next prompt. Good output at layer 11 becomes input at layer 2 of the next pass.
 
 *Before you start:* Is this a one-shot task, or will you need to iterate? What will the next step be?
 
@@ -427,7 +429,7 @@ Result: A generic summary with equal weight given to all topics discussed. Possi
 
 **High stack (layers 1–5, 9–10):**
 
-*"I need a meeting summary for three people who weren't present: my manager, the client's account manager, and one of our developers. Each person needs to see different things. My manager wants the key decisions and next steps only. The client account manager wants what the client committed to. The developer wants the technical requirements we discussed. The attached transcript is the source. Write three separate summaries — one for each person — no longer than half a page each. Flag anything that seemed unresolved or ambiguous."*
+*"I need a meeting summary for three people who weren't present: my manager, the client's account manager, and one of our developers. Each person needs to see different things. My manager wants the key decisions and next steps only. The client account manager wants what the client committed to. The developer wants the technical requirements we discussed. The attached transcript is the source. Write three separate summaries, one for each person, no longer than half a page each. Flag anything that seemed unresolved or ambiguous."*
 
 Result: Three targeted summaries, immediately usable, with potential problems flagged.
 
@@ -437,7 +439,7 @@ The difference is not length of prompt. It is activation of the right layers for
 
 > **TRY THIS**
 >
-> Think of an AI task you need to do this week. Write down what layers of the stack you would normally activate — most people use layers 1, 3, and maybe 9 by default. Now consider which additional layers are relevant to this task. What would you add if you invested two more minutes in the setup?
+> Think of an AI task you need to do this week. Write down what layers of the stack you would normally activate, most people use layers 1, 3, and maybe 9 by default. Now consider which additional layers are relevant to this task. What would you add if you invested two more minutes in the setup?
 
 ---
 
@@ -455,21 +457,23 @@ The research on what makes AI interactions succeed points consistently to three 
 
 > **WATCH OUT**
 >
-> The stack is a mental model, not a procedure. It does not mean you should spend twenty minutes preparing every AI prompt. A quick factual question needs layers 1 and 3, briefly addressed, and that's correct. The stack is useful when you are planning a complex task or diagnosing a poor result — not as mandatory overhead for every interaction.
+> The stack is a mental model, not a procedure. It does not mean you should spend twenty minutes preparing every AI prompt. A quick factual question needs layers 1 and 3, briefly addressed, and that's correct. The stack is useful when you are planning a complex task or diagnosing a poor result, not as mandatory overhead for every interaction.
 
 ---
 
 ## Chapter 3
 
-### The 7 Questions — Your Portable AI Framework
+### The 7 Questions, Your Portable AI Framework
 
 **A framework you can carry in your head**
 
-The AI Interaction Stack gives you a complete map. But maps aren't always what you need. Sometimes you need a quick checklist — something you can run through in sixty seconds before an important interaction.
+The AI Interaction Stack gives you a complete map. But maps aren't always what you need. Sometimes you need a quick checklist, something you can run through in sixty seconds before an important interaction.
 
 The 7 Questions is that checklist.
 
 It is derived from the stack but simplified into seven questions that cover the most important dimensions of any significant AI interaction. It is short enough to memorise. It is structured enough to catch the most common input failures. And it is abstract enough to work on any AI platform, with any model, now or in the future.
+
+<!-- VISUAL: seven-questions -->
 
 ---
 
@@ -491,7 +495,7 @@ What documents, data, notes, examples, or materials exist that would make AI's o
 
 **4. What exactly should AI do?**
 
-What is the specific action? Not "help with" — do. Write, summarise, extract, compare, analyse, rewrite, draft, plan. Be precise about the verb and the scope.
+What is the specific action? Not "help with", do. Write, summarise, extract, compare, analyse, rewrite, draft, plan. Be precise about the verb and the scope.
 
 **5. What should the result look like?**
 
@@ -521,25 +525,25 @@ Sarah needs to create a briefing document on a potential new supplier for her di
 
 Let's run through the questions:
 
-**Q1 — What am I trying to achieve?**
+**Q1, What am I trying to achieve?**
 My director needs to decide whether to invite this supplier to a formal tender. I need to give her the information required to make that decision, not a complete company profile.
 
-**Q2 — What does AI need to know?**
+**Q2, What does AI need to know?**
 The decision context (tender shortlist), the supplier's name (TechFlow Ltd), what the tender is for (CRM software implementation), our current system (Salesforce), our rough budget (£80,000), and what factors matter most to us (integration capability, support quality, UK presence).
 
-**Q3 — What information can I provide?**
+**Q3, What information can I provide?**
 I have the supplier's website, a brochure they sent us, and notes from a call I took with their sales contact last week.
 
-**Q4 — What exactly should AI do?**
+**Q4, What exactly should AI do?**
 Create a supplier briefing document using the materials I provide. Organised under the headings: Company Overview, Relevant Experience, Key Capabilities, Potential Risks, Recommended Questions to Ask.
 
-**Q5 — What should the result look like?**
+**Q5, What should the result look like?**
 One page, maximum. Professional but plain language. My director doesn't have time for anything longer. Bullet points under each heading.
 
-**Q6 — How will I check it?**
+**Q6, How will I check it?**
 I'll verify any specific facts against the brochure and my call notes. I'll flag for my director any claims from the supplier that couldn't be independently verified.
 
-**Q7 — What should happen next?**
+**Q7, What should happen next?**
 This document will go to my director for her review. If she decides to proceed, I'll use AI to help draft the invitation to tender based on the same materials.
 
 Now Sarah turns this into a prompt:
@@ -558,13 +562,13 @@ This is a complete interaction. It took about three minutes to prepare using the
 >
 > James is a recent graduate preparing for a job interview. He runs through the 7 Questions:
 >
-> Q1 — I want to walk into this interview well-prepared, able to give specific answers about why I want this role.
-> Q2 — The company is Meridian Digital, a mid-size marketing agency. The role is Junior Account Manager. My background is a marketing degree and six months of internship experience. The interview is in two days.
-> Q3 — I have the job description, the company's website, their LinkedIn page, and a Glassdoor page with recent employee reviews.
-> Q4 — I want AI to help me prepare for likely interview questions, draft answers to the hardest ones, and identify things about the company I should know.
-> Q5 — I want a structured prep document: company background summary, ten likely questions with draft answers, and a section on questions I should ask them.
-> Q6 — I'll verify any company facts against their current website before the interview.
-> Q7 — I'll use the document to do a practice run the night before.
+> Q1, I want to walk into this interview well-prepared, able to give specific answers about why I want this role.
+> Q2, The company is Meridian Digital, a mid-size marketing agency. The role is Junior Account Manager. My background is a marketing degree and six months of internship experience. The interview is in two days.
+> Q3, I have the job description, the company's website, their LinkedIn page, and a Glassdoor page with recent employee reviews.
+> Q4, I want AI to help me prepare for likely interview questions, draft answers to the hardest ones, and identify things about the company I should know.
+> Q5, I want a structured prep document: company background summary, ten likely questions with draft answers, and a section on questions I should ask them.
+> Q6, I'll verify any company facts against their current website before the interview.
+> Q7, I'll use the document to do a practice run the night before.
 >
 > The resulting prompt takes forty seconds to write. The output he gets is interview prep he can actually use, not generic "tell me about a time you overcame a challenge" boilerplate.
 
@@ -572,21 +576,21 @@ This is a complete interaction. It took about three minutes to prepare using the
 
 **The 7 Questions as a portable card**
 
-The 7 Questions are reproduced as a reference card in Appendix A. You can photograph it, print it, or simply remember it. The goal is that it becomes automatic — something you run through mentally before any AI interaction that matters.
+The 7 Questions are reproduced as a reference card in Appendix A. You can photograph it, print it, or simply remember it. The goal is that it becomes automatic, something you run through mentally before any AI interaction that matters.
 
-You do not need to answer every question in full every time. For a simple, low-stakes task, three or four seconds on each question is sufficient. For a complex, high-stakes task — a document going to a senior stakeholder, a recommendation with significant consequences, a piece of work that will be published — the full seven questions deserve a full minute each.
+You do not need to answer every question in full every time. For a simple, low-stakes task, three or four seconds on each question is sufficient. For a complex, high-stakes task, a document going to a senior stakeholder, a recommendation with significant consequences, a piece of work that will be published, the full seven questions deserve a full minute each.
 
 ---
 
 > **PRO TIP**
 >
-> Once you have a well-developed answer to the 7 Questions for a recurring task — a weekly report, a client email format, a type of document you produce regularly — save it as a template. The 7 Questions become a workspace setup (Chapter 11). Run once; reuse indefinitely.
+> Once you have a well-developed answer to the 7 Questions for a recurring task, a weekly report, a client email format, a type of document you produce regularly, save it as a template. The 7 Questions become a workspace setup (Chapter 11). Run once; reuse indefinitely.
 
 ---
 
 > **WATCH OUT**
 >
-> The 7 Questions are a preparation tool, not a rigid protocol. If you find yourself spending ten minutes answering the questions before a thirty-second task, you are misapplying the framework. Use judgment about scale. The questions exist to catch the gaps that consistently cause problems — not to add overhead to interactions that don't need it.
+> The 7 Questions are a preparation tool, not a rigid protocol. If you find yourself spending ten minutes answering the questions before a thirty-second task, you are misapplying the framework. Use judgment about scale. The questions exist to catch the gaps that consistently cause problems, not to add overhead to interactions that don't need it.
 
 ---
 
@@ -618,7 +622,7 @@ This has three practical implications:
 A longer, more specific prompt does not confuse AI. It constrains the range of possible responses toward what you actually need. Specificity is an advantage.
 
 **2. A fresh conversation should not be assumed to know your previous work.**
-Unless the platform explicitly provides and uses a memory, project, history, or connected-source feature, a new conversation begins without dependable knowledge of who you are, what you've discussed before, or what your preferences are. This is why context must be provided explicitly — and why workspaces (Part III) matter so much for regular users.
+Unless the platform explicitly provides and uses a memory, project, history, or connected-source feature, a new conversation begins without dependable knowledge of who you are, what you've discussed before, or what your preferences are. This is why context must be provided explicitly, and why workspaces (Part III) matter so much for regular users.
 
 **3. AI generates plausible text, not necessarily accurate text.**
 AI's training teaches it what good writing looks like in a given context. This means it can generate fluent, confident text on subjects it is wrong about. The confidence in the prose is not correlated with the accuracy of the content. This is the most important habit to build: treating AI output as a draft that requires verification, not a source that can be trusted.
@@ -627,7 +631,7 @@ AI's training teaches it what good writing looks like in a given context. This m
 
 > **WHY IT WORKS**
 >
-> Understanding the generation model — rather than thinking of AI as an oracle or a search engine — changes how you interact with it. It explains why providing examples works (they constrain the generated text toward the style you want). It explains why AI can be confidently wrong (plausibility and accuracy are different things). It explains why asking AI to explain its reasoning helps (it forces more systematic text generation). These are not quirks to work around; they are features of the model to use deliberately.
+> Understanding the generation model, rather than thinking of AI as an oracle or a search engine, changes how you interact with it. It explains why providing examples works (they constrain the generated text toward the style you want). It explains why AI can be confidently wrong (plausibility and accuracy are different things). It explains why asking AI to explain its reasoning helps (it forces more systematic text generation). These are not quirks to work around; they are features of the model to use deliberately.
 
 ---
 
@@ -681,7 +685,7 @@ This is not a template to apply rigidly. It is a map of what a complete prompt i
 
 > **TRY THIS**
 >
-> Take a standard query you might type into a search engine and rewrite it as an AI prompt using the anatomy above. You don't need all six elements — pick the three most relevant.
+> Take a standard query you might type into a search engine and rewrite it as an AI prompt using the anatomy above. You don't need all six elements, pick the three most relevant.
 >
 > For example:
 >
@@ -697,7 +701,7 @@ This is not a template to apply rigidly. It is a map of what a complete prompt i
 
 One of the most underused techniques is asking AI to reason through a problem before producing an answer.
 
-When AI generates text quickly, it sometimes takes the most obvious route. Asking AI to think first — to break down the problem, identify considerations, or outline before drafting — tends to produce more thoughtful, more accurate results.
+When AI generates text quickly, it sometimes takes the most obvious route. Asking AI to think first, to break down the problem, identify considerations, or outline before drafting, tends to produce more thoughtful, more accurate results.
 
 Phrases that invoke this:
 - *"Before answering, think through the main considerations."*
@@ -705,19 +709,19 @@ Phrases that invoke this:
 - *"Walk me through your reasoning."*
 - *"What are the main risks or failure points here?"*
 
-This works because it changes the pattern of text generation — the model is working through intermediate steps rather than jumping to a conclusion. You can think of it as asking someone to show their work rather than just hand you an answer.
+This works because it changes the pattern of text generation, the model is working through intermediate steps rather than jumping to a conclusion. You can think of it as asking someone to show their work rather than just hand you an answer.
 
 ---
 
 > **PRO TIP**
 >
-> When you receive an output that is close to what you want but not quite right, do not start again from scratch. Respond to the output with a specific refinement instruction: "That's good but the tone is too formal — can you make it sound more conversational?" or "The summary is accurate but too long — cut it to three bullet points and keep only the most important point in each." Iteration on an existing draft is almost always faster than rewriting.
+> When you receive an output that is close to what you want but not quite right, do not start again from scratch. Respond to the output with a specific refinement instruction: "That's good but the tone is too formal, can you make it sound more conversational?" or "The summary is accurate but too long, cut it to three bullet points and keep only the most important point in each." Iteration on an existing draft is almost always faster than rewriting.
 
 ---
 
 > **WATCH OUT**
 >
-> AI confidently produces wrong answers. The fluency of AI prose — the fact that it reads well, sounds authoritative, and doesn't hedge — can make it easy to accept without checking. Any output that contains specific facts, numbers, names, dates, quotes, citations, or recommendations deserves verification before you rely on it. Chapter 20 covers verification in detail. For now, adopt the rule: polished prose is not evidence of accuracy.
+> AI confidently produces wrong answers. The fluency of AI prose, the fact that it reads well, sounds authoritative, and doesn't hedge, can make it easy to accept without checking. Any output that contains specific facts, numbers, names, dates, quotes, citations, or recommendations deserves verification before you rely on it. Chapter 20 covers verification in detail. For now, adopt the rule: polished prose is not evidence of accuracy.
 
 ---
 
@@ -728,7 +732,7 @@ You now have the foundation:
 - Generic inputs produce generic outputs because AI fills gaps with averages
 - The AI Interaction Stack identifies the eleven layers that determine output quality
 - The 7 Questions give you a portable framework for activating the right layers
-- A basic AI chat is a generation tool, not a retrieval tool; search and connected-source tools change what it can access — and conversation is the natural mode of interaction
+- A basic AI chat is a generation tool, not a retrieval tool; search and connected-source tools change what it can access, and conversation is the natural mode of interaction
 
 Part II takes each element of a strong interaction and develops it into a skill.
 
@@ -755,13 +759,13 @@ A question invites a response. A job assigns a task with a clear deliverable, a 
 *Question:* "What do I need to know about redundancy letters?"
 *Job:* "You are an HR communications specialist. Draft a redundancy letter for a member of our sales team who has been with the company for three years. The reason is restructuring, not performance. Tone: respectful and clear. The letter must include: confirmation of the decision, notice period (one month), details of the settlement package (to be inserted), available support resources, and the process for appeal. UK employment law applies."
 
-The question gets you information about redundancy letters — a textbook answer pitched at an anonymous reader. The job gets you a document you can actually edit and use.
+The question gets you information about redundancy letters, a textbook answer pitched at an anonymous reader. The job gets you a document you can actually edit and use.
 
 ---
 
 > **WHY IT WORKS**
 >
-> Role assignment and job framing do not change what AI "knows." They change the frame through which AI selects and structures what it produces. A prompt that says "you are an experienced financial analyst" causes AI to draw more heavily from the patterns associated with financial analysis — more technical vocabulary, more rigorous structure, more appropriate caution. A prompt that specifies a deliverable (a letter, a report, an agenda) constrains the format. Together, role and job framing channel AI's generation toward something more precisely useful.
+> Role assignment and job framing do not change what AI "knows." They change the frame through which AI selects and structures what it produces. A prompt that says "you are an experienced financial analyst" causes AI to draw more heavily from the patterns associated with financial analysis, more technical vocabulary, more rigorous structure, more appropriate caution. A prompt that specifies a deliverable (a letter, a report, an agenda) constrains the format. Together, role and job framing channel AI's generation toward something more precisely useful.
 
 ---
 
@@ -795,7 +799,7 @@ What AI produces: A structured outline specific to this type of proposal with re
 
 *Write a proposal outline that: leads with their specific situation rather than our credentials; demonstrates understanding of the garden centre sector and its seasonal patterns; presents three pricing tiers (Starter / Growth / Full Service); and ends with a section on how we measure success and report to clients.*
 
-*Structure: section headings with one-sentence notes on content. Not the full proposal — the outline I will then develop. Max two pages when written up."*
+*Structure: section headings with one-sentence notes on content. Not the full proposal, the outline I will then develop. Max two pages when written up."*
 
 What AI produces: A highly specific outline that could only work for this client, this agency, and this competitive context. The structure respects the decision maker's stated values. The pricing presentation is appropriately tiered. The language is right for the relationship.
 
@@ -828,7 +832,7 @@ Role frames that don't help much: overly elaborate backstories, fictional identi
 
 **Assigning a specific, actionable job**
 
-The instruction "help me with X" is not a job. It is an open invitation that AI will answer with whatever seems most plausibly helpful — which is usually the most generic interpretation of the task.
+The instruction "help me with X" is not a job. It is an open invitation that AI will answer with whatever seems most plausibly helpful, which is usually the most generic interpretation of the task.
 
 A job has:
 - A clear action verb: write, summarise, extract, compare, identify, structure, rewrite, analyse
@@ -853,7 +857,7 @@ Compare:
 
 > **WATCH OUT**
 >
-> Assigning an expert role does not make AI's output more accurate. It may make it more fluently confident — which, as noted in Chapter 4, can be more convincing and equally wrong. Role framing improves format, voice, and structure. It does not improve factual accuracy. Verify subject-matter claims regardless of the role you assigned.
+> Assigning an expert role does not make AI's output more accurate. It may make it more fluently confident, which, as noted in Chapter 4, can be more convincing and equally wrong. Role framing improves format, voice, and structure. It does not improve factual accuracy. Verify subject-matter claims regardless of the role you assigned.
 
 ---
 
@@ -867,7 +871,7 @@ Here is the practical starting point for most AI interactions: unless you provid
 
 You know all of these things. They seem obvious. So you don't mention them.
 
-This is the context gap — the difference between what AI needs to know to give you a genuinely useful answer, and what you actually provide. It is the single most valuable gap to close.
+This is the context gap, the difference between what AI needs to know to give you a genuinely useful answer, and what you actually provide. It is the single most valuable gap to close.
 
 ---
 
@@ -875,17 +879,17 @@ This is the context gap — the difference between what AI needs to know to give
 
 Context is not just background information. It is any fact about your situation that would change how a knowledgeable person would approach the task. It includes:
 
-**Situational context** — What is happening? What is the history? Why does this matter now?
+**Situational context**, What is happening? What is the history? Why does this matter now?
 
-**Audience context** — Who is going to read, use, or act on this output? What do they know? What do they need? What are their constraints?
+**Audience context**, Who is going to read, use, or act on this output? What do they know? What do they need? What are their constraints?
 
-**Relationship context** — What is the relationship between parties? Long-standing client? New contact? Internal colleague? Adversarial negotiation?
+**Relationship context**, What is the relationship between parties? Long-standing client? New contact? Internal colleague? Adversarial negotiation?
 
-**Constraint context** — What must the output not include? What word count, format, or style requirements apply? What legal, regulatory, or policy constraints apply?
+**Constraint context**, What must the output not include? What word count, format, or style requirements apply? What legal, regulatory, or policy constraints apply?
 
-**Resource context** — What documents, data, or previous work is relevant? What has already been tried?
+**Resource context**, What documents, data, or previous work is relevant? What has already been tried?
 
-**Goal context** — What does success look like? What decision will this output inform? What action will it prompt?
+**Goal context**, What does success look like? What decision will this output inform? What action will it prompt?
 
 ---
 
@@ -893,7 +897,7 @@ Context is not just background information. It is any fact about your situation 
 >
 > David runs a small consulting firm. He is writing a proposal for a client renewal and asks AI to help draft the pricing section.
 >
-> Without context: AI produces a generic template for presenting consulting fees — day rates, retainer structures, and payment terms that could apply to any consulting firm anywhere.
+> Without context: AI produces a generic template for presenting consulting fees, day rates, retainer structures, and payment terms that could apply to any consulting firm anywhere.
 >
 > With context: David tells AI that this client has been with the firm for four years, has three times mentioned "feeling nickel-and-dimed" by itemised billing, is a family business where the owner and CFO are the same person, and that David wants to move to a monthly retainer to create predictable revenue on both sides. He also notes the client's previous annual spend was around £42,000.
 >
@@ -909,7 +913,7 @@ A useful diagnostic: before sending a prompt, ask yourself:
 
 *"If I had just hired a very good human assistant who was new to this job, what would they need to know before I asked them to do this?"*
 
-That question surfaces most of the context you are probably omitting. A good assistant would ask about the audience, the history, the constraints, the goal, and the format before starting work. Providing that context in your prompt removes the need for them to ask — and removes the iterations required when AI guesses wrong.
+That question surfaces most of the context you are probably omitting. A good assistant would ask about the audience, the history, the constraints, the goal, and the format before starting work. Providing that context in your prompt removes the need for them to ask, and removes the iterations required when AI guesses wrong.
 
 ---
 
@@ -933,7 +937,7 @@ Output: A specific email that references the order type, the operational impact,
 
 *BEST*
 
-*"Write an email to BuildRight Ltd, our packaging supplier of five years. Our contact is James Thornton in their sales team. The delivery of 500 units of promotional packaging (order number BRTX-2241) is now 12 days late. This delivery was critical for our Christmas campaign — production was due to start on Monday and we have an external print deadline of 18th November.*
+*"Write an email to BuildRight Ltd, our packaging supplier of five years. Our contact is James Thornton in their sales team. The delivery of 500 units of promotional packaging (order number BRTX-2241) is now 12 days late. This delivery was critical for our Christmas campaign, production was due to start on Monday and we have an external print deadline of 18th November.*
 
 *We do not want to damage the relationship, which has been excellent until this point. The tone should be: firm and clear about the business impact, but not accusatory. We want two things: a confirmed delivery date in writing and an explanation of what happened.*
 
@@ -964,7 +968,7 @@ These are obvious to you. They are invisible to AI. State every constraint that 
 Useful constraint phrasing:
 - *"Do not include [X]."*
 - *"This cannot mention [X] for legal reasons."*
-- *"The tone must not suggest [X] — this would damage the relationship."*
+- *"The tone must not suggest [X], this would damage the relationship."*
 - *"UK spelling and law applies throughout."*
 - *"This will be reviewed by [X] so should not contain [Y]."*
 
@@ -972,7 +976,7 @@ Useful constraint phrasing:
 
 > **PRO TIP**
 >
-> For recurring tasks where the context is always the same, you don't need to retype it every time. Chapter 11 covers persistent instructions — a way of establishing your standard context once so it applies automatically to every conversation. The context you would type for every client email, every report, every team communication becomes a standing brief that AI carries forward.
+> For recurring tasks where the context is always the same, you don't need to retype it every time. Chapter 11 covers persistent instructions, a way of establishing your standard context once so it applies automatically to every conversation. The context you would type for every client email, every report, every team communication becomes a standing brief that AI carries forward.
 
 ---
 
@@ -988,11 +992,11 @@ Useful constraint phrasing:
 
 **Why most instructions are too vague**
 
-Instructions are where most users put most of their effort — and still get disappointing results. The reason is usually not that the instructions are wrong. It is that they are underspecified.
+Instructions are where most users put most of their effort, and still get disappointing results. The reason is usually not that the instructions are wrong. It is that they are underspecified.
 
 *"Make it more professional"* is an instruction. But "more professional" in what dimension? More formal vocabulary? Shorter sentences? No contractions? Different paragraph structure? Fewer qualifications? More precise language?
 
-AI will choose. And it will choose the version of "more professional" that appears most frequently in its training data for this type of text — which may not be what you meant at all.
+AI will choose. And it will choose the version of "more professional" that appears most frequently in its training data for this type of text, which may not be what you meant at all.
 
 Effective instructions are specific enough that a capable human could follow them without asking a clarifying question.
 
@@ -1019,9 +1023,9 @@ Instructions can specify what to do (positive) or what not to do (negative). Bot
 
 Negative instructions are particularly useful for:
 - Tone and register: *"Do not use exclamation marks. Do not use filler phrases like 'I hope this finds you well.'"*
-- Content constraints: *"Do not mention the merger — this is not public."*
-- Style: *"Do not use bullet points — this should be flowing prose."*
-- Claims: *"Do not make specific claims about delivery times — these vary by region."*
+- Content constraints: *"Do not mention the merger, this is not public."*
+- Style: *"Do not use bullet points, this should be flowing prose."*
+- Claims: *"Do not make specific claims about delivery times, these vary by region."*
 
 A well-instructed prompt often includes both: *"Write this in a direct, confident tone. Do not use passive voice. Do not hedge claims with phrases like 'it could be argued' or 'some might say.'"*
 
@@ -1031,20 +1035,20 @@ A well-instructed prompt often includes both: *"Write this in a direct, confiden
 
 Different tasks benefit from different instruction types:
 
-**Format instructions** — What structure should the output take?
+**Format instructions**, What structure should the output take?
 *"Use a numbered list." / "Present this as a table with columns for X, Y, Z." / "Use three short paragraphs, no headings." / "One page maximum, A4, with a heading and four bullet points."*
 
-**Tone instructions** — How should it sound?
-*"Direct and professional." / "Warm but concise." / "Technical but accessible — assume the reader has a science degree but is not a specialist in this field." / "In the voice of the existing document I'm attaching."*
+**Tone instructions**, How should it sound?
+*"Direct and professional." / "Warm but concise." / "Technical but accessible, assume the reader has a science degree but is not a specialist in this field." / "In the voice of the existing document I'm attaching."*
 
-**Priority instructions** — What matters most?
-*"Lead with the cost saving, not the process improvement." / "The most important point must be in the first sentence." / "The client's concern about timeline is more important than the features list — address it first."*
+**Priority instructions**, What matters most?
+*"Lead with the cost saving, not the process improvement." / "The most important point must be in the first sentence." / "The client's concern about timeline is more important than the features list, address it first."*
 
-**Exclusion instructions** — What to leave out?
-*"Do not include implementation details — this is for a non-technical audience." / "Exclude anything older than 2024 — the reader will already know the history." / "Do not include a summary — the reader will read the whole thing."*
+**Exclusion instructions**, What to leave out?
+*"Do not include implementation details, this is for a non-technical audience." / "Exclude anything older than 2024, the reader will already know the history." / "Do not include a summary, the reader will read the whole thing."*
 
-**Role instructions** — From whose perspective?
-*"Write this as if the reader has never heard of our company." / "The reader is a sceptic — address their likely objections before they ask."*
+**Role instructions**, From whose perspective?
+*"Write this as if the reader has never heard of our company." / "The reader is a sceptic, address their likely objections before they ask."*
 
 ---
 
@@ -1073,10 +1077,10 @@ Output: AI produces a version that avoids the worst clichés and becomes more sp
 *"Rewrite this paragraph for inclusion in a proposal to a housing association considering a digital transformation project. The audience is a director who has seen many similar proposals and is sceptical of vague claims.*
 
 *Instructions:*
-*— Remove all clichés: 'extensive experience', 'wide range', 'proven track record', 'multiple sectors' must all go.*
-*— Replace vague claims with specific patterns of evidence. I will provide specifics in a moment — for now, leave [BRACKETS] as placeholders for: number of years in the sector, number of completed projects, one specific client sector, and one specific result we achieved.*
-*— First sentence should establish relevance to housing sector specifically, not generic technology experience.*
-*— Maximum two sentences. Punchy, not promotional."*
+*Remove all clichés: 'extensive experience', 'wide range', 'proven track record', 'multiple sectors' must all go.*
+*Replace vague claims with specific patterns of evidence. I will provide specifics in a moment, for now, leave [BRACKETS] as placeholders for: number of years in the sector, number of completed projects, one specific client sector, and one specific result we achieved.*
+*First sentence should establish relevance to housing sector specifically, not generic technology experience.*
+*Maximum two sentences. Punchy, not promotional."*
 
 Output: A tightly constructed two-sentence paragraph that is specific in structure, leaves appropriate placeholders, and is pitched correctly at the sceptical reader.
 
@@ -1095,7 +1099,7 @@ Output: A tightly constructed two-sentence paragraph that is specific in structu
 
 > **TRY THIS**
 >
-> Take the last AI output you were dissatisfied with. Identify one thing that was wrong with it — too long, wrong tone, too generic, incorrect emphasis, wrong format.
+> Take the last AI output you were dissatisfied with. Identify one thing that was wrong with it, too long, wrong tone, too generic, incorrect emphasis, wrong format.
 >
 > Write a follow-up instruction that specifically addresses that one thing, using the specificity test: could two people interpret this instruction differently?
 >
@@ -1105,7 +1109,7 @@ Output: A tightly constructed two-sentence paragraph that is specific in structu
 
 > **WATCH OUT**
 >
-> Instructions that conflict produce confused output. If you say "be brief and comprehensive," "be formal but conversational," or "be specific but applicable to all situations," AI will attempt to honour all instructions simultaneously and usually succeed at none of them. When instructions conflict, decide which takes priority and say so: *"Be brief — prioritise this over comprehensiveness if necessary."*
+> Instructions that conflict produce confused output. If you say "be brief and comprehensive," "be formal but conversational," or "be specific but applicable to all situations," AI will attempt to honour all instructions simultaneously and usually succeed at none of them. When instructions conflict, decide which takes priority and say so: *"Be brief, prioritise this over comprehensiveness if necessary."*
 
 ---
 
@@ -1145,7 +1149,7 @@ Something you don't want. "Do not write like this" is sometimes as effective as 
 
 > **WHY IT WORKS**
 >
-> Providing examples is what AI researchers call "few-shot prompting" — giving AI a small number of examples from which to infer the desired pattern. The technical reason it works is that examples constrain the generation space toward outputs with similar characteristics: similar vocabulary choices, similar sentence length, similar structural decisions. Your description of "professional" is abstract; an example of it is concrete.
+> Providing examples is what AI researchers call "few-shot prompting", giving AI a small number of examples from which to infer the desired pattern. The technical reason it works is that examples constrain the generation space toward outputs with similar characteristics: similar vocabulary choices, similar sentence length, similar structural decisions. Your description of "professional" is abstract; an example of it is concrete.
 
 ---
 
@@ -1176,13 +1180,13 @@ Output: Less formal, but still not quite right. "Conversational" is interpreted 
 *[EXAMPLE SUMMARY]*
 
 *'Three things from this week:*
-*1. The EU is tightening its position on recycled content claims — this matters for our German clients more than anywhere else. Worth watching.*
+*1. The EU is tightening its position on recycled content claims, this matters for our German clients more than anywhere else. Worth watching.*
 *2. Paperboard prices stabilised in October after six months of increases. Our procurement team will already know this, but the sector analysis I've linked to is good background.*
 *3. Maersk announced a new bio-methanol shipping route. Too early to know if this is real progress or PR. I'll share more when I know more.'*
 
 *Write this week's summary in the same format and voice. Source material I'm attaching covers: [pasted or uploaded articles]. Keep it to three items unless something genuinely warrants a fourth."*
 
-Output: A summary that reads like it could have been written by Margaret — same three-item structure, same direct tone, same characteristic qualification ("too early to know"). She edits two words and sends it.
+Output: A summary that reads like it could have been written by Margaret, same three-item structure, same direct tone, same characteristic qualification ("too early to know"). She edits two words and sends it.
 
 *WHAT CHANGED?*
 
@@ -1214,7 +1218,7 @@ The method: provide two or three examples of your writing in the relevant genre,
 
 **When not to use examples**
 
-Examples constrain AI toward the example. This is usually what you want — but not always.
+Examples constrain AI toward the example. This is usually what you want, but not always.
 
 If you want AI to be creative, novel, or to produce something better than your existing examples, providing examples can limit the output. In those cases, describe the qualities you want and explicitly say: *"Feel free to go beyond this starting point."*
 
@@ -1243,7 +1247,7 @@ It uses a slightly different structure than you specified.
 
 This happens because output defaults are baked into AI's training. Without explicit specifications, AI produces the type, length, and format of output most commonly associated with your type of request. That default is often close but rarely exactly right.
 
-Controlling output is the final step in building an effective interaction — specifying not just what to produce, but what the result should look like when it arrives.
+Controlling output is the final step in building an effective interaction, specifying not just what to produce, but what the result should look like when it arrives.
 
 ---
 
@@ -1252,7 +1256,7 @@ Controlling output is the final step in building an effective interaction — sp
 Five dimensions of output are almost always worth specifying for significant tasks:
 
 **1. Length**
-The most commonly underspecified dimension. How long? Not "short" — how many words, sentences, bullet points, or paragraphs? "A one-page briefing," "a three-bullet summary," "a maximum of 150 words," "five sentences" — these are unambiguous. "Brief" is not.
+The most commonly underspecified dimension. How long? Not "short", how many words, sentences, bullet points, or paragraphs? "A one-page briefing," "a three-bullet summary," "a maximum of 150 words," "five sentences", these are unambiguous. "Brief" is not.
 
 **2. Format**
 How should the information be structured? Prose paragraphs, numbered list, bullet points, table, structured document with headings, slide deck content, script, dialogue? Different formats serve different purposes. The format should match how the reader will use the output.
@@ -1261,7 +1265,7 @@ How should the information be structured? Prose paragraphs, numbered list, bulle
 If the output has sections or parts, what are they and in what order? Specifying structure prevents AI from inventing a structure that may not serve your purpose. "The document should have four sections: Background, Key Findings, Recommendation, Next Steps" is better than allowing AI to choose.
 
 **4. Tone**
-How should it sound? The vocabulary level, the degree of formality, the use of first person or third person, the amount of hedging or qualification, the presence or absence of technical language — all are specifiable. Use examples when description alone is insufficient (Chapter 8).
+How should it sound? The vocabulary level, the degree of formality, the use of first person or third person, the amount of hedging or qualification, the presence or absence of technical language, all are specifiable. Use examples when description alone is insufficient (Chapter 8).
 
 **5. Audience**
 Who will read this? What do they know? What do they need? The same information presented to a technical expert and a first-time reader should be substantially different. Specifying audience tells AI how to calibrate complexity, assumed knowledge, and depth of explanation.
@@ -1270,7 +1274,7 @@ Who will read this? What do they know? What do they need? The same information p
 
 > **WHY IT WORKS**
 >
-> AI has no inherent preference for one format over another. It defaults to the format most common in its training data for a given type of request. Explicit output specifications don't constrain AI in ways that affect quality — they redirect its generation toward the format you need. Specifying output is not about limiting AI; it is about using what AI has already generated to its best effect for your purpose.
+> AI has no inherent preference for one format over another. It defaults to the format most common in its training data for a given type of request. Explicit output specifications don't constrain AI in ways that affect quality, they redirect its generation toward the format you need. Specifying output is not about limiting AI; it is about using what AI has already generated to its best effect for your purpose.
 
 ---
 
@@ -1331,7 +1335,7 @@ When you need:
 | A concise summary | "Three to five bullet points, one sentence each" |
 | A structured document | List the sections explicitly with brief descriptions |
 | A table | "Present this as a table with columns for [X], [Y], [Z]" |
-| Prose, not bullet points | "Write in flowing paragraphs — no bullet points" |
+| Prose, not bullet points | "Write in flowing paragraphs, no bullet points" |
 | An email | "Subject line + body, professional tone, under 150 words" |
 | An outline | "Numbered outline with second-level sub-points" |
 | A list | "Numbered list, [n] items, no more" |
@@ -1345,11 +1349,11 @@ Output control is not only an upfront specification. It is also a live tool in c
 
 When the output is close but not quite right, you can redirect it with a specific instruction:
 
-- *"Good structure but too long — cut it by half."*
-- *"Remove the executive summary section — I don't need it."*
-- *"This is in bullet points — rewrite as prose paragraphs."*
-- *"The third point is the most important — lead with it."*
-- *"Change the tone — this reads too formally for the audience."*
+- *"Good structure but too long, cut it by half."*
+- *"Remove the executive summary section, I don't need it."*
+- *"This is in bullet points, rewrite as prose paragraphs."*
+- *"The third point is the most important, lead with it."*
+- *"Change the tone, this reads too formally for the audience."*
 
 Each of these is a specific, actionable correction. AI will act on them precisely. The instruction "make it better" is not a specific correction. Be specific about the dimension you want changed.
 
@@ -1371,7 +1375,7 @@ Each of these is a specific, actionable correction. AI will act on them precisel
 
 > **WATCH OUT**
 >
-> Excessive output specification can overconstrain the response. If you specify every sentence, paragraph, and word choice, you are writing the document yourself and asking AI to type it. Specify the frame — length, format, structure, tone, audience — and leave AI to fill it in appropriately. The goal is a usable first draft, not a perfect document that required more work to specify than it would have taken to write.
+> Excessive output specification can overconstrain the response. If you specify every sentence, paragraph, and word choice, you are writing the document yourself and asking AI to type it. Specify the frame, length, format, structure, tone, audience, and leave AI to fill it in appropriately. The goal is a usable first draft, not a perfect document that required more work to specify than it would have taken to write.
 
 ---
 
@@ -1385,4 +1389,4 @@ You can now build an effective AI interaction from the ground up:
 - Show AI examples when style, format, or tone matter
 - Specify the output in terms of length, format, structure, tone, and audience
 
-Part III moves from individual interactions to the environment in which they happen — and the significant gains available from building that environment deliberately.
+Part III moves from individual interactions to the environment in which they happen, and the significant gains available from building that environment deliberately.
