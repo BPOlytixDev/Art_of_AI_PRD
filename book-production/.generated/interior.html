@@ -190,6 +190,12 @@ body {
   list-style: none;
 }
 
+/* Contents may span several physical pages; do not create an empty page after
+   its final page before the Introduction's explicit opener break. */
+.contents-page {
+  break-after: auto;
+}
+
 .contents-page li.contents-entry {
   display: grid;
   grid-template-columns: minmax(0, 1fr) auto auto;
@@ -1095,7 +1101,9 @@ tr:last-child td {
 <li class="contents-entry contents-appendix-child"><span class="contents-entry-title">E5, Cross-Platform Notes</span><span class="contents-leader" aria-hidden="true"></span><span class="contents-page-number">200</span></li>
 <li class="contents-entry contents-appendix-child"><span class="contents-entry-title">E6, Image Generation (All Platforms)</span><span class="contents-leader" aria-hidden="true"></span><span class="contents-page-number">201</span></li>
 <li class="contents-entry contents-index"><span class="contents-entry-title">Index</span><span class="contents-leader" aria-hidden="true"></span><span class="contents-page-number">202</span></li>
-<li class="contents-entry contents-section"><span class="contents-entry-title">A Note on Sources</span><span class="contents-leader" aria-hidden="true"></span><span class="contents-page-number">205</span></li></ul>
+<li class="contents-entry contents-section"><span class="contents-entry-title">A Note on Sources</span><span class="contents-leader" aria-hidden="true"></span><span class="contents-page-number">205</span></li>
+<li class="contents-entry contents-section"><span class="contents-entry-title">About the Author</span><span class="contents-leader" aria-hidden="true"></span><span class="contents-page-number">206</span></li>
+<li class="contents-entry contents-section"><span class="contents-entry-title">About This Book</span><span class="contents-leader" aria-hidden="true"></span><span class="contents-page-number">207</span></li></ul>
     </section>
   <article class="manuscript"><h2 class="chapter-heading">INTRODUCTION</h2>
 <h3>You Are Not Bad at AI</h3>
@@ -3497,23 +3505,23 @@ assumptions you have made.</code></pre>
 <div class="index-entry"><span class="index-term">AI Interaction Stack</span><span class="index-pages">10, 16, 17, 23, 34, 35, 180</span></div>
 <div class="index-entry"><span class="index-term">chains</span><span class="index-pages">93, 108, 109, 112</span></div>
 <div class="index-entry"><span class="index-term">code execution</span><span class="index-pages">77, 80, 81, 165, 192, 196, 200</span></div>
-<div class="index-entry"><span class="index-term">context</span><span class="index-pages">7, 13, 14, 15, 17, 19, 22, 24, 25, 30, 31, 35, 37, 38, 41, 42, 43, 44, 45, 46, 57, 63, 64, 65, 66, 67, 68, 69, 71, 72, 79, 82, 84, 85, 86, 87, 88, 90, 91, 92, 100, 102, 107, 108, 115, 116, 117, 118, 119, 122, 125, 128, 133, 135, 137, 143, 149, 155, 157, 159, 162, 164, 165, 172, 173, 175, 177, 179, 183, 184, 185, 186, 188, 193, 194, 196, 198, 201</span></div>
+<div class="index-entry"><span class="index-term">context</span><span class="index-pages">7, 8, 13, 14, 15, 17, 19, 22, 24, 25, 30, 31, 35, 37, 38, 41, 42, 43, 44, 45, 46, 57, 63, 64, 65, 66, 67, 68, 69, 71, 72, 79, 82, 84, 85, 86, 87, 88, 90, 91, 92, 100, 102, 107, 108, 115, 116, 117, 118, 119, 122, 125, 128, 133, 135, 137, 143, 149, 155, 157, 159, 162, 164, 165, 172, 173, 175, 177, 179, 183, 184, 185, 186, 188, 193, 194, 196, 198, 201</span></div>
 <div class="index-entry"><span class="index-term">context documents</span><span class="index-pages">66, 85, 86, 177</span></div>
 <div class="index-entry"><span class="index-term">context drift</span><span class="index-pages">162, 165</span></div>
 <div class="index-entry"><span class="index-term">constraints</span><span class="index-pages">7, 13, 14, 17, 24, 31, 38, 41, 43, 45, 48, 67, 68, 70, 86, 87, 89, 90, 91, 115, 137, 139, 141, 156, 158, 165, 166, 167, 175, 177, 183, 185, 187, 188, 189, 190, 192</span></div>
 <div class="index-entry"><span class="index-term">Deep Research</span><span class="index-pages">78, 195</span></div>
-<div class="index-entry"><span class="index-term">examples</span><span class="index-pages">7, 17, 18, 24, 30, 35, 47, 52, 53, 55, 56, 58, 63, 131, 132, 133, 179, 183, 184</span></div>
+<div class="index-entry"><span class="index-term">examples</span><span class="index-pages">8, 17, 18, 24, 30, 35, 47, 52, 53, 55, 56, 58, 63, 131, 132, 133, 179, 183, 184</span></div>
 <div class="index-entry"><span class="index-term">few-shot prompting</span><span class="index-pages">53</span></div>
 <div class="index-entry"><span class="index-term">hallucination</span><span class="index-pages">157, 162, 163, 169, 193</span></div>
 <div class="index-entry"><span class="index-term">handoffs</span><span class="index-pages">93, 98, 101, 108, 109, 110, 111, 112</span></div>
-<div class="index-entry"><span class="index-term">instructions</span><span class="index-pages">7, 14, 17, 18, 19, 22, 35, 45, 47, 48, 49, 50, 51, 55, 57, 63, 64, 65, 66, 68, 69, 70, 71, 85, 88, 89, 90, 91, 92, 118, 158, 167, 175, 177, 179, 183, 195, 196, 197, 198</span></div>
+<div class="index-entry"><span class="index-term">instructions</span><span class="index-pages">7, 8, 14, 17, 18, 19, 22, 35, 45, 47, 48, 49, 50, 51, 55, 57, 63, 64, 65, 66, 68, 69, 70, 71, 85, 88, 89, 90, 91, 92, 118, 158, 167, 175, 177, 179, 183, 195, 196, 197, 198</span></div>
 <div class="index-entry"><span class="index-term">iteration</span><span class="index-pages">17, 20, 33, 43, 67, 108, 109, 175, 178, 182, 183</span></div>
 <div class="index-entry"><span class="index-term">memory</span><span class="index-pages">30, 64, 65, 78, 84, 85, 87, 88, 92, 128, 195, 196, 198</span></div>
-<div class="index-entry"><span class="index-term">output format</span><span class="index-pages">7, 31</span></div>
+<div class="index-entry"><span class="index-term">output format</span><span class="index-pages">8, 31</span></div>
 <div class="index-entry"><span class="index-term">persistent instructions</span><span class="index-pages">45, 64, 65, 68, 69, 70, 71, 88, 89, 90, 91, 92, 177, 196, 197</span></div>
 <div class="index-entry"><span class="index-term">privacy</span><span class="index-pages">200</span></div>
 <div class="index-entry"><span class="index-term">Projects</span><span class="index-pages">49, 50, 64, 65, 66, 67, 68, 69, 71, 72, 86, 88, 90, 92, 142, 195, 197, 200</span></div>
-<div class="index-entry"><span class="index-term">role</span><span class="index-pages">7, 27, 31, 32, 36, 37, 38, 39, 40, 49, 63, 67, 68, 70, 86, 87, 89, 91, 115, 116, 118, 122, 123, 124, 125, 128, 129, 144, 145, 163, 185, 186, 187, 194</span></div>
+<div class="index-entry"><span class="index-term">role</span><span class="index-pages">8, 27, 31, 32, 36, 37, 38, 39, 40, 49, 63, 67, 68, 70, 86, 87, 89, 91, 115, 116, 118, 122, 123, 124, 125, 128, 129, 144, 145, 163, 185, 186, 187, 194</span></div>
 <div class="index-entry"><span class="index-term">source material</span><span class="index-pages">14, 17, 18, 31, 40, 54, 55, 64, 73, 77, 113, 126, 127, 152, 183, 184, 185</span></div>
 <div class="index-entry"><span class="index-term">sycophancy</span><span class="index-pages">162, 166, 169</span></div>
 <div class="index-entry"><span class="index-term">verification</span><span class="index-pages">8, 14, 17, 19, 20, 22, 24, 26, 27, 30, 31, 33, 40, 56, 70, 72, 74, 75, 77, 78, 79, 80, 81, 82, 83, 85, 86, 90, 113, 115, 117, 119, 120, 121, 123, 125, 127, 128, 130, 132, 133, 134, 135, 137, 138, 140, 141, 143, 144, 145, 147, 148, 149, 151, 153, 154, 155, 156, 157, 158, 159, 160, 161, 163, 164, 165, 168, 169, 170, 171, 172, 173, 174, 175, 176, 177, 178, 179, 180, 181, 182, 183, 185, 186, 187, 188, 189, 191, 192, 194, 196, 197, 198, 199, 200, 201</span></div>
@@ -3528,6 +3536,25 @@ assumptions you have made.</code></pre>
 <p>Standards for AI output verification in professional contexts are still emerging. In the UK, professional bodies in law, accounting, and medicine have begun to publish guidance, check your relevant professional body's current guidance.</p>
 <h4 class="label-heading"><strong>On platform features:</strong></h4>
 <p>All platform-specific information should be verified from the platform's own documentation. The most current information is always on the platform's help centre, not in any third-party publication.</p>
+<h2 class="author-heading">About the Author</h2>
+<!-- ============================================================
+PRODUCTION NOTE, PHOTO PLACEMENT
+Insert a professional author headshot here.
+Dimensions: 1:1 square crop, minimum 300 dpi for print.
+Alignment: centred, or floated left with text wrapping right,
+depending on interior layout template.
+File reference: eleanor-mercer-author-photo.jpg
+See photo brief in the Author File for full specification.
+============================================================ -->
+<figure class="author-photo"><img src="../../attached_assets/eleanor-mercer-author-photo.png" alt="Eleanor Mercer"></figure>
+<p>Eleanor Mercer is a professional development trainer and consultant who has worked with professionals across law, financial services, and management consulting for fifteen years. Her original practice focused on communication, writing, and presentation, the skills that separate people who can do excellent work from people who can also explain it clearly.</p>
+<p>When AI tools entered professional workplaces in 2022, she began testing them, helping clients use them, and watching closely what happened when capable professionals sat down with capable technology and still got mediocre results.</p>
+<p>The pattern was consistent: the gap was almost never technical. It was what people gave AI before they started, the context, the instructions, the job description, the source material, and the verification process.</p>
+<p>The 7 Questions framework and the AI Interaction Stack in this book were developed through that observation, tested in professional training practice, and refined over two years of real use before appearing in print.</p>
+<p><em>The Art of AI</em> is the first book in a planned series on professional AI skills for non-technical users. Eleanor writes, trains, and publishes through The Art of AI.</p>
+<h4 class="label-heading"><strong>theartofai.com</strong></h4>
+<h2 class="about-book-heading">About This Book</h2>
+<p class="standfirst"><em>The Art of AI, Book 1, is the first in a planned series covering practical AI skills for non-technical professionals. Future books in the series will cover AI for specific professional contexts, advanced workflow design, and team-level AI integration.</em></p>
 <p class="standfirst"><em>AI tools were used in the research, drafting, and editing of this book. All factual claims were verified against primary sources at the time of writing. All examples were tested. All editorial decisions, structure, voice, inclusion, emphasis, are the author's own.</em></p>
-<p class="standfirst"><em>Published 2026. First edition.</em></p></article></main></body>
+<p class="standfirst"><em>Published 2026. First edition.</em></p></article><div class="blank-page" aria-hidden="true"></div></main></body>
 </html>

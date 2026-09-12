@@ -5,7 +5,7 @@
 
 **Baseline reviewed:** 214-page interior PDF, repository documentation, manuscript sources, production renderer, metadata, and current output files.
 
-**Publication author decision:** Use **Eleanor Mercer** consistently as the public author name. Replace `Mitesh Maharaj` wherever it appears in publication-facing material, generated metadata, production code, documentation, cover text, title-page output, and the final PDF. Do not preserve the conflicting name in any public-facing artifact.
+**Publication author decision:** Use **Eleanor Mercer** consistently as the public author name. Replace any conflicting legacy author name wherever it appears in publication-facing material, generated metadata, production code, documentation, cover text, title-page output, and the final PDF. Do not preserve the conflicting name in any public-facing artifact.
 
 ## 1. Purpose and scope
 
@@ -28,7 +28,7 @@ The plan does not authorise execution. Manuscript edits, code changes, asset cre
 
 ### Confirmed and accepted as must-fix
 
-1. **Author conflict is real.** The generated title page and production metadata use `Mitesh Maharaj`; the supplied author page uses `Eleanor Mercer`. The renderer also hard-codes the former name. The implementation decision is now fixed: use `Eleanor Mercer` throughout.
+1. **Author conflict is real.** Older generated material and production records contain a conflicting legacy author name; the supplied author page uses `Eleanor Mercer`. The implementation decision is now fixed: use `Eleanor Mercer` throughout.
 
 2. **The 214-page baseline is real.** The current interior is 6 × 9 inches and 214 pages. It is even, but any revision that changes pagination must regenerate the cover spine and complete-book PDF.
 
@@ -68,14 +68,14 @@ The plan does not authorise execution. Manuscript edits, code changes, asset cre
 
 Before any substantive revision:
 
-1. Replace the hard-coded renderer author constant with `Eleanor Mercer`.
+1. Replace any legacy renderer author constant with `Eleanor Mercer`.
 2. Update the production README and repository-facing publication note where they describe the book's public author.
 3. Regenerate title page, cover front/spine, HTML metadata, complete-book PDF, and metadata JSON.
-4. Search all tracked publication-facing files and generated outputs for `Mitesh Maharaj`.
+4. Search all tracked publication-facing files and generated outputs for any conflicting legacy author name.
 5. Confirm that the supplied biography, author photo, title page, copyright page, cover, spine, metadata, and any KDP-facing records all use `Eleanor Mercer`.
 6. Do not change unrelated historical notes or commit metadata unless they are presented as publication-facing information.
 
-**Acceptance test:** zero occurrences of `Mitesh Maharaj` in the final publication package; `Eleanor Mercer` appears consistently in the title page, cover, metadata, and author page.
+**Acceptance test:** no conflicting legacy author name remains in the final publication package; `Eleanor Mercer` appears consistently in the title page, cover, metadata, and author page.
 
 ## 4. Editorial implementation phases
 

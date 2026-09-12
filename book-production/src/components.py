@@ -284,7 +284,7 @@ class TryThisBox(Flowable):
         c.rect(0, h - 34, w, 14, fill=1, stroke=0)   # flatten bottom corners
         c.setFillColor(NAVY)
         c.setFont("Helvetica-Bold", 11)
-        c.drawString(16, h - 23, "\u270f  TRY THIS")
+        c.drawString(16, h - 23, "TRY THIS")
 
         # Body lines
         c.setFont("Helvetica", 9.5)
@@ -331,7 +331,7 @@ class WatchOutBox(Flowable):
         c.rect(0, h - 34, w, 14, fill=1, stroke=0)   # flatten bottom corners
         c.setFillColor(WHITE)
         c.setFont("Helvetica-Bold", 11)
-        c.drawString(16, h - 23, "\u26a0  WATCH OUT")
+        c.drawString(16, h - 23, "WATCH OUT")
 
         # Body lines
         c.setFont("Helvetica", 9.5)
@@ -420,7 +420,8 @@ class PageFooter(Flowable):
         c.setFillColor(MID_GRAY)
         c.setFont("Helvetica", 8)
         c.drawString(0, 4, self.book_title)
-        c.drawRightString(self.w, 4, str(self.page_num))
+        page_num = self.canv.getPageNumber() if self.page_num is None else self.page_num
+        c.drawRightString(self.w, 4, str(page_num))
 
     def wrap(self, *args):
         return self.w, self.h
@@ -741,7 +742,10 @@ class FlowDiagram(Flowable):
                 ax = x + box_w
                 c.setFillColor(GOLD)
                 c.setFont("Helvetica-Bold", 14)
-                c.drawCentredString(ax + arrow_w / 2, h / 2 - 5, "\u2192")
+                c.setLineWidth(1.2)
+                c.line(ax + 2, h / 2, ax + arrow_w - 5, h / 2)
+                c.line(ax + arrow_w - 5, h / 2, ax + arrow_w - 9, h / 2 + 4)
+                c.line(ax + arrow_w - 5, h / 2, ax + arrow_w - 9, h / 2 - 4)
 
     def wrap(self, *args):
         return self.w, self.h

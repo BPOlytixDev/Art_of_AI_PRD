@@ -25,29 +25,30 @@
   "cover": {
     "style": "modern editorial",
     "bleed": 0.125,
-    "spineWidthInches": 0.4639
+    "spineWidthInches": 0.4684
   },
-  "pageCount": 206,
+  "pageCount": 208,
   "isbn": null,
   "kdpBarcode": "reserved-for-KDP-or-publisher-supplied-ISBN",
   "sourceFiles": [
-    "manuscript_part1_1789036104062.md",
-    "manuscript_part2_1789036104061.md",
-    "manuscript_part3_1789036104060.md",
-    "docs/manuscript_part4.md"
+    "manuscript_part1.md",
+    "manuscript_part2.md",
+    "manuscript_part3.md",
+    "manuscript_part4.md"
   ],
   "sourceSha256": {
-    "manuscript_part1_1789036104062.md": "31cf2104d169e2b02e9cf601347f8aabbb52e4a668cc3c2e98ba5097982ac018",
-    "manuscript_part2_1789036104061.md": "d5c56663b6152f0021ccfc6c9fbb055d54bd3f21d9cff3e838e056ec0e142de4",
-    "manuscript_part3_1789036104060.md": "0f85a26de5ea1e1587cde410431e717bb0ae3f543e090bb98a453e9adb02c156",
-    "docs/manuscript_part4.md": "4ca9eac554973dff54c4db6a8f2980a649121f3c64ad04aca3934f48a7b67282"
+    "manuscript_part1.md": "31cf2104d169e2b02e9cf601347f8aabbb52e4a668cc3c2e98ba5097982ac018",
+    "manuscript_part2.md": "d5c56663b6152f0021ccfc6c9fbb055d54bd3f21d9cff3e838e056ec0e142de4",
+    "manuscript_part3.md": "0f85a26de5ea1e1587cde410431e717bb0ae3f543e090bb98a453e9adb02c156",
+    "manuscript_part4.md": "4ca9eac554973dff54c4db6a8f2980a649121f3c64ad04aca3934f48a7b67282"
   },
   "outputs": {
+    "completeInteriorPdf": "output/Complete_Interior.pdf",
     "interiorPdf": "output/the-art-of-ai-book-1-interior.pdf",
     "fullWrapCoverPdf": "output/the-art-of-ai-book-1-full-wrap-cover.pdf",
     "completeBookPdf": "output/the-art-of-ai-book-1-complete-book.pdf",
     "metadataJson": "output/the-art-of-ai-book-1-metadata.json"
   },
   "contentsNote": "The production contents list is generated from the supplied headings so Appendices D and E are included.",
-  "generatedAt": "2026-09-11T15:00:11.026Z"
+  "generatedAt": "2026-09-12T05:19:02.900Z"
 }

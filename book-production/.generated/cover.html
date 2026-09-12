@@ -190,6 +190,12 @@ body {
   list-style: none;
 }
 
+/* Contents may span several physical pages; do not create an empty page after
+   its final page before the Introduction's explicit opener break. */
+.contents-page {
+  break-after: auto;
+}
+
 .contents-page li.contents-entry {
   display: grid;
   grid-template-columns: minmax(0, 1fr) auto auto;
@@ -1015,9 +1021,9 @@ tr:last-child td {
   .back-note { max-width: 3.45in; margin-top: .22in; color: #544c44; font-family: Georgia, serif; font-size: 10pt; line-height: 1.32; }
   .barcode-reserve { position: absolute; right: .52in; bottom: .45in; width: 1.5in; height: .9in; background: #fff; }
   
-@page { size: 12.713912in 9.25in; margin: 0; @bottom-center { content: none; } }</style>
+@page { size: 12.718416in 9.25in; margin: 0; @bottom-center { content: none; } }</style>
 </head>
-<body><main class="cover" style="--cover-width:12.713912in;--cover-height:9.25in;--front-x:6.588912in;--spine:0.46391200000000005in">
+<body><main class="cover" style="--cover-width:12.718416in;--cover-height:9.25in;--front-x:6.593416in;--spine:0.468416in">
     <div class="cover-back">
       <div class="back-rule"></div>
       <p class="back-series">The Art of AI, Book 1</p>

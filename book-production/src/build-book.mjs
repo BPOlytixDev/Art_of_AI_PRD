@@ -1,6 +1,6 @@
 import { execFileSync } from "node:child_process";
 import { createHash } from "node:crypto";
-import { mkdir, readFile, readdir, rename, writeFile } from "node:fs/promises";
+import { copyFile, mkdir, readFile, readdir, rename, writeFile } from "node:fs/promises";
 import { readFileSync } from "node:fs";
 import { basename, dirname, join, resolve } from "node:path";
 import { fileURLToPath } from "node:url";
@@ -10,7 +10,6 @@ const here = dirname(fileURLToPath(import.meta.url));
 const root = resolve(here, "..");
 const repositoryRoot = resolve(root, "..");
 const sourceDir = join(root, "source");
-const docsDir = join(repositoryRoot, "docs");
 const outputDir = join(root, "output");
 const generatedDir = join(root, ".generated");
 const python = "/tmp/art-of-ai-pdfvenv/bin/python";
@@ -35,7 +34,6 @@ const productionSourceFiles = (await readdir(sourceDir))
 
 const sourceSpecs = [
   ...productionSourceFiles.map((name) => ({ name, path: join(sourceDir, name) })),
-  { name: "docs/manuscript_part4.md", path: join(docsDir, "manuscript_part4.md") },
 ].sort((a, b) => {
   const partA = Number(a.name.match(/part(\d+)/)?.[1] ?? 0);
   const partB = Number(b.name.match(/part(\d+)/)?.[1] ?? 0);
@@ -71,12 +69,7 @@ const bodyParts = [
   ...sourceTexts.slice(1).map(({ text }) => text.split(/\r?\n/)),
 ];
 const bodyLines = bodyParts.flat();
-const authorStart = bodyLines.findIndex((line) => /^## About the Author$/i.test(line.trim()));
-const colophonStart = bodyLines.findIndex((line) => /^\*AI tools were used in the research/i.test(line.trim()));
-const renderBodyLines =
-  authorStart >= 0 && colophonStart > authorStart
-    ? [...bodyLines.slice(0, authorStart), ...bodyLines.slice(colophonStart)]
-    : bodyLines;
+const renderBodyLines = bodyLines;
 
 const indexTerms = [
   { term: "7 Questions", searches: ["7 Questions"] },
@@ -519,6 +512,8 @@ const headerOutputPath = join(generatedDir, "interior-with-headers.pdf");
 await writeFile(headerPlanPath, JSON.stringify(headerPlan(pageMap, interiorPdfPath), null, 2));
 execFileSync(python, [join(here, "add-running-headers.py"), interiorPdfPath, headerOutputPath, headerPlanPath], { stdio: "inherit" });
 await rename(headerOutputPath, interiorPdfPath);
+const completeInteriorPdfPath = join(outputDir, "Complete_Interior.pdf");
+await copyFile(interiorPdfPath, completeInteriorPdfPath);
 
 const bleed = 0.125;
 const trimWidth = 6;
@@ -628,6 +623,7 @@ const metadata = {
   sourceFiles,
   sourceSha256: fileHashes,
   outputs: {
+    completeInteriorPdf: "output/Complete_Interior.pdf",
     interiorPdf: "output/the-art-of-ai-book-1-interior.pdf",
     fullWrapCoverPdf: "output/the-art-of-ai-book-1-full-wrap-cover.pdf",
     completeBookPdf: "output/the-art-of-ai-book-1-complete-book.pdf",

@@ -186,6 +186,10 @@ Index
 202
 A Note on Sources
 205
+About the Author
+206
+About This Book
+207
 7
 INTRODUCTION
 You Are Not Bad at AI
@@ -215,10 +219,10 @@ something good. That understanding alone is worth more than
 any list of prompts, because it means you can diagnose what
 went wrong in any interaction and fix it, rather than just trying
 different words until something works.
+8
 By the end of Part II, you will know how to build an AI interaction
 deliberately: giving AI the role, the context, the instructions, the
 examples, and the output format that get you the result you
-8
 need.
 By the end of Part III, you will know how to build an AI
 environment, a persistent workspace where you stop repeating
@@ -248,10 +252,10 @@ know what a token is, or an API, or an embedding. When
 technical concepts appear in this book, they appear because they
 directly affect how you use AI, and they are always explained in
 ordinary language before the technical term is introduced.
+9
 What you need is the willingness to think about AI interactions
 differently, not as typing questions into a search engine, but as
 briefing a capable colleague who starts every conversation
-9
 knowing nothing about you, your work, or what you need.
 Once you understand that, everything else follows.
 Let's begin.
@@ -5730,7 +5734,7 @@ code execution
 77, 80, 81, 165, 192,
 196, 200
 context
-7, 13, 14, 15, 17, 19,
+7, 8, 13, 14, 15, 17, 19,
 22, 24, 25, 30, 31, 35,
 37, 38, 41, 42, 43, 44,
 45, 46, 57, 63, 64, 65,
@@ -5763,7 +5767,7 @@ Deep Research
 78, 195
 203
 examples
-7, 17, 18, 24, 30, 35,
+8, 17, 18, 24, 30, 35,
 47, 52, 53, 55, 56, 58,
 63, 131, 132, 133, 179,
 183, 184
@@ -5775,7 +5779,7 @@ handoffs
 93, 98, 101, 108, 109,
 110, 111, 112
 instructions
-7, 14, 17, 18, 19, 22,
+7, 8, 14, 17, 18, 19, 22,
 35, 45, 47, 48, 49, 50,
 51, 55, 57, 63, 64, 65,
 66, 68, 69, 70, 71, 85,
@@ -5791,7 +5795,7 @@ memory
 87, 88, 92, 128, 195,
 196, 198
 output format
-7, 31
+8, 31
 persistent instructions
 45, 64, 65, 68, 69, 70,
 71, 88, 89, 90, 91, 92,
@@ -5804,7 +5808,7 @@ Projects
 90, 92, 142, 195, 197,
 200
 role
-7, 27, 31, 32, 36, 37,
+8, 27, 31, 32, 36, 37,
 38, 39, 40, 49, 63, 67,
 68, 70, 86, 87, 89, 91,
 115, 116, 118, 122,
@@ -5885,9 +5889,40 @@ platform's own documentation. The most current information is
 always on the platform's help centre, not in any third-party
 publication.
 206
+ABOUT THE AUTHOR
+Eleanor Mercer is a professional development trainer and
+consultant who has worked with professionals across law,
+financial services, and management consulting for fifteen years.
+Her original practice focused on communication, writing, and
+presentation, the skills that separate people who can do
+excellent work from people who can also explain it clearly.
+When AI tools entered professional workplaces in 2022, she
+began testing them, helping clients use them, and watching
+closely what happened when capable professionals sat down with
+capable technology and still got mediocre results.
+The pattern was consistent: the gap was almost never technical.
+It was what people gave AI before they started, the context, the
+instructions, the job description, the source material, and the
+verification process.
+The 7 Questions framework and the AI Interaction Stack in this
+book were developed through that observation, tested in
+professional training practice, and refined over two years of real
+use before appearing in print.
+The Art of AI is the first book in a planned series on professional
+AI skills for non-technical users. Eleanor writes, trains, and
+publishes through The Art of AI.
+THEARTOFAI.COM
+207
+About This Book
+The Art of AI, Book 1, is the first in a planned series
+covering practical AI skills for non-technical professionals.
+Future books in the series will cover AI for specific
+professional contexts, advanced workflow design, and team-
+level AI integration.
 AI tools were used in the research, drafting, and editing of
 this book. All factual claims were verified against primary
 sources at the time of writing. All examples were tested. All
 editorial decisions, structure, voice, inclusion, emphasis, are
 the author's own.
 Published 2026. First edition.
+208

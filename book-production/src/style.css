@@ -183,6 +183,12 @@ body {
   list-style: none;
 }
 
+/* Contents may span several physical pages; do not create an empty page after
+   its final page before the Introduction's explicit opener break. */
+.contents-page {
+  break-after: auto;
+}
+
 .contents-page li.contents-entry {
   display: grid;
   grid-template-columns: minmax(0, 1fr) auto auto;
